@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Provider: R for Healthcare Administrative Data Analysis - NPPES</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./summary.html" rel="next">
+<link href="./npi.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nppes.html">NPPES</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Provider: R for Healthcare Administrative Data Analysis</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/andrewallenbruce/provider_book" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./npi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The NPI</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nppes.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">NPPES</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#individual-providers" id="toc-individual-providers" class="nav-link active" data-scroll-target="#individual-providers">Individual Providers</a></li>
+  <li><a href="#organizational-providers" id="toc-organizational-providers" class="nav-link" data-scroll-target="#organizational-providers">Organizational Providers</a></li>
+  <li><a href="#taxonomy-codes" id="toc-taxonomy-codes" class="nav-link" data-scroll-target="#taxonomy-codes">Taxonomy Codes</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/andrewallenbruce/provider_book/edit/main/nppes.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/andrewallenbruce/provider_book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">NPPES</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(provider)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="individual-providers" class="level2">
+<h2 class="anchored" data-anchor-id="individual-providers">Individual Providers</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>atl_ind <span class="ot">&lt;-</span> provider<span class="sc">::</span><span class="fu">nppes_npi</span>(<span class="at">entype =</span> <span class="st">"I"</span>, </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                               <span class="at">state =</span> <span class="st">"GA"</span>, </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                               <span class="at">city =</span> <span class="st">"Atlanta"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>atl_ind</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 889 × 56
+   npi      entype enumeration_date years_passed last_updated certification_date
+   &lt;chr&gt;    &lt;chr&gt;  &lt;date&gt;                  &lt;dbl&gt; &lt;date&gt;       &lt;date&gt;            
+ 1 1710538… Indiv… 2019-09-21               3.82 2019-09-21   NA                
+ 2 1710538… Indiv… 2019-09-21               3.82 2019-09-21   NA                
+ 3 1346991… Indiv… 2022-01-13               1.51 2022-01-13   2022-01-10        
+ 4 1346991… Indiv… 2022-01-13               1.51 2022-01-13   2022-01-10        
+ 5 1750491… Indiv… 2006-08-31              16.9  2007-07-08   NA                
+ 6 1750491… Indiv… 2006-08-31              16.9  2007-07-08   NA                
+ 7 1740741… Indiv… 2019-03-29               4.3  2023-03-16   2023-03-16        
+ 8 1740741… Indiv… 2019-03-29               4.3  2023-03-16   2023-03-16        
+ 9 1740741… Indiv… 2019-03-29               4.3  2023-03-16   2023-03-16        
+10 1740741… Indiv… 2019-03-29               4.3  2023-03-16   2023-03-16        
+# ℹ 879 more rows
+# ℹ 50 more variables: status &lt;chr&gt;, first_name &lt;chr&gt;, middle_name &lt;chr&gt;,
+#   last_name &lt;chr&gt;, credential &lt;chr&gt;, gender &lt;chr&gt;, sole_proprietor &lt;lgl&gt;,
+#   purpose &lt;chr&gt;, street &lt;chr&gt;, city &lt;chr&gt;, state &lt;chr&gt;, zipcode &lt;chr&gt;,
+#   country &lt;chr&gt;, phone_number &lt;chr&gt;, fax_number &lt;chr&gt;, tx_code &lt;chr&gt;,
+#   tx_desc &lt;chr&gt;, tx_group &lt;chr&gt;, tx_state &lt;chr&gt;, tx_license &lt;chr&gt;,
+#   tx_primary &lt;lgl&gt;, id_issuer &lt;chr&gt;, id_identifier &lt;chr&gt;, id_state &lt;chr&gt;, …</code></pre>
+</div>
+</div>
+<p>Certification Date: NPPES allows providers to attest to the accuracy of their NPI data. When a provider requests any change to their NPI record, the certification date is updated. This may also effect the Last Updated column as well.</p>
+</section>
+<section id="organizational-providers" class="level2">
+<h2 class="anchored" data-anchor-id="organizational-providers">Organizational Providers</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>atl_org <span class="ot">&lt;-</span> provider<span class="sc">::</span><span class="fu">nppes_npi</span>(<span class="at">entype =</span> <span class="st">"O"</span>, </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                               <span class="at">state =</span> <span class="st">"GA"</span>, </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                               <span class="at">city =</span> <span class="st">"Atlanta"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>atl_org</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 651 × 52
+   npi      entype enumeration_date years_passed last_updated certification_date
+   &lt;chr&gt;    &lt;chr&gt;  &lt;date&gt;                  &lt;dbl&gt; &lt;date&gt;       &lt;date&gt;            
+ 1 1881942… Organ… 2012-08-27              10.9  2012-08-27   NA                
+ 2 1881942… Organ… 2012-08-27              10.9  2012-08-27   NA                
+ 3 1881942… Organ… 2012-08-27              10.9  2012-08-27   NA                
+ 4 1881942… Organ… 2012-08-27              10.9  2012-08-27   NA                
+ 5 1598140… Organ… 2015-07-23               7.99 2016-12-03   NA                
+ 6 1598140… Organ… 2015-07-23               7.99 2016-12-03   NA                
+ 7 1801411… Organ… 2020-06-10               3.1  2020-06-10   2020-06-10        
+ 8 1801411… Organ… 2020-06-10               3.1  2020-06-10   2020-06-10        
+ 9 1639793… Organ… 2020-06-05               3.12 2020-06-05   2020-06-05        
+10 1639793… Organ… 2020-06-05               3.12 2020-06-05   2020-06-05        
+# ℹ 641 more rows
+# ℹ 46 more variables: status &lt;chr&gt;, organization_name &lt;chr&gt;,
+#   organizational_subpart &lt;lgl&gt;, purpose &lt;chr&gt;, street &lt;chr&gt;, city &lt;chr&gt;,
+#   state &lt;chr&gt;, zipcode &lt;chr&gt;, country &lt;chr&gt;, phone_number &lt;chr&gt;,
+#   fax_number &lt;chr&gt;, authorized_official_first_name &lt;chr&gt;,
+#   authorized_official_middle_name &lt;chr&gt;, authorized_official_last_name &lt;chr&gt;,
+#   authorized_official_title_or_position &lt;chr&gt;, …</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nppes_npi</span>(<span class="dv">1588375828</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 49
+  npi       entype enumeration_date years_passed last_updated certification_date
+  &lt;chr&gt;     &lt;chr&gt;  &lt;date&gt;                  &lt;dbl&gt; &lt;date&gt;       &lt;date&gt;            
+1 15883758… Organ… 2022-12-07               0.61 2022-12-07   2022-12-07        
+2 15883758… Organ… 2022-12-07               0.61 2022-12-07   2022-12-07        
+# ℹ 43 more variables: status &lt;chr&gt;, organization_name &lt;chr&gt;,
+#   organizational_subpart &lt;lgl&gt;, purpose &lt;chr&gt;, street &lt;chr&gt;, city &lt;chr&gt;,
+#   state &lt;chr&gt;, zipcode &lt;chr&gt;, country &lt;chr&gt;, phone_number &lt;chr&gt;,
+#   authorized_official_first_name &lt;chr&gt;, authorized_official_last_name &lt;chr&gt;,
+#   authorized_official_title_or_position &lt;chr&gt;,
+#   authorized_official_telephone_number &lt;chr&gt;, tx_code &lt;chr&gt;, tx_desc &lt;chr&gt;,
+#   tx_group &lt;chr&gt;, tx_state &lt;lgl&gt;, tx_license &lt;lgl&gt;, tx_primary &lt;lgl&gt;, …</code></pre>
+</div>
+</div>
+<p>Identifiers are used to associate other provider identifiers such as Medicaid or other insurers (ie:, Blue Cross, Blue Shield, Aetna, Kaiser-Permanente, etc.), with their NPI number. These identifiers can be used in matching an NPI number to an insurer’s records. However, not all providers have such numbers and not all providers choose to include them in their NPI information.</p>
+</section>
+<section id="taxonomy-codes" class="level2">
+<h2 class="anchored" data-anchor-id="taxonomy-codes">Taxonomy Codes</h2>
+<p>The Health Care Provider Taxonomy code set is an external, nonmedical data code set designed for use in an electronic environment, specifically within the ASC X12N Health Care transactions. This includes the transactions mandated under HIPAA.</p>
+<p>The taxonomy code is a unique alphanumeric code, ten characters in length. The code set is structured into 3 distinct “Levels” including Provider Grouping, Classification, and Area of Specialization.</p>
+<p>Level I, Provider Grouping A major grouping of service(s) or occupation(s) of health care providers. For example: Allopathic &amp; Osteopathic Physicians, Dental Providers, Hospitals, etc.</p>
+<p>Level II, Classification A more specific service or occupation related to the Provider Grouping. For example, the Classification for Allopathic &amp; Osteopathic Physicians is based upon the General Specialty Certificates as issued by the appropriate national boards. The following boards will however, have their general certificates appear as Level III areas of specialization strictly due to display limitations of the code set for Boards that have multiple general certificates: Medical Genetics, Preventive Medicine, Psychiatry &amp; Neurology, Radiology, Surgery, Otolaryngology, Pathology.</p>
+<p>Level III, Area of Specialization A more specialized area of the Classification in which a provider chooses to practice or make services available. For example, the Area of Specialization for provider grouping Allopathic &amp; Osteopathic Physicians is based upon the Subspecialty Certificates as issued by the appropriate national boards.</p>
+<p>A taxonomy code is a code that describes the health care service provider’s type, classification, and the area of specialization. The primary specialty for this provider is indicated as (Primary) below. The taxonomy codes are selected by the provider at the time of NPI registration. Selection of a taxonomy code does not replace any credentialing or validation process that the provider requesting the code should complete.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>nucc_taxonomy_230</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 873 × 8
+   code     grouping classification specialization definition notes display_name
+   &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;       
+ 1 1932000… Group    Multi-Special… &lt;NA&gt;           A busines… [7/1… Multi-Speci…
+ 2 1934000… Group    Single Specia… &lt;NA&gt;           A busines… [7/1… Single Spec…
+ 3 207K000… Allopat… Allergy &amp; Imm… &lt;NA&gt;           An allerg… Sour… Allergy &amp; I…
+ 4 207KA02… Allopat… Allergy &amp; Imm… Allergy        A physici… Sour… Allergy Phy…
+ 5 207KI00… Allopat… Allergy &amp; Imm… Clinical &amp; La… An allerg… Sour… Clinical &amp; …
+ 6 207L000… Allopat… Anesthesiology &lt;NA&gt;           An anesth… Sour… Anesthesiol…
+ 7 207LA04… Allopat… Anesthesiology Addiction Med… An anesth… Sour… Addiction M…
+ 8 207LC02… Allopat… Anesthesiology Critical Care… An anesth… Sour… Critical Ca…
+ 9 207LH00… Allopat… Anesthesiology Hospice and P… An anesth… Sour… Hospice and…
+10 207LP29… Allopat… Anesthesiology Pain Medicine  An anesth… Sour… Pain Medici…
+# ℹ 863 more rows
+# ℹ 1 more variable: section &lt;chr&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">provider_enrollment</span>(<span class="at">npi =</span> <span class="dv">1417918293</span>, <span class="at">specialty_code =</span> <span class="st">"14-41"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 11
+  npi   pac_id enroll_id specialty_code specialty_desc state org_name first_name
+  &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;     
+1 1417… 38704… I2004030… 14-41          PRACTITIONER … FL    &lt;NA&gt;     STEVEN    
+# ℹ 3 more variables: middle_name &lt;chr&gt;, last_name &lt;chr&gt;, gender &lt;chr&gt;</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">doctors_and_clinicians</span>(<span class="at">enroll_id =</span> <span class="st">"I20040309000221"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 25
+  npi        pac_id     enroll_id first_name middle_name last_name suffix gender
+  &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;  &lt;chr&gt; 
+1 1417918293 3870481252 I2004030… STEVEN     D           SHEINER   &lt;NA&gt;   M     
+# ℹ 17 more variables: credential &lt;chr&gt;, school &lt;chr&gt;, grad_year &lt;int&gt;,
+#   grad_duration &lt;Duration&gt;, specialty &lt;chr&gt;, specialty_sec &lt;chr&gt;,
+#   telehealth &lt;lgl&gt;, org_name &lt;chr&gt;, org_pac_id &lt;chr&gt;, org_members &lt;int&gt;,
+#   address &lt;chr&gt;, city &lt;chr&gt;, state &lt;chr&gt;, zipcode &lt;chr&gt;, phone &lt;chr&gt;,
+#   ind_assn &lt;chr&gt;, group_assn &lt;chr&gt;</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">facility_affiliations</span>(</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">npi =</span> <span class="dv">1588375828</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">#pac_id = 6103733050</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✖ No results for npi: 1588375828</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hospital_enrollment</span>(<span class="at">city =</span> <span class="st">"Atlanta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 20 × 36
+   npi        enroll_id  enroll_state specialty_code specialty_desc facility_ccn
+   &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;       
+ 1 1922178789 O20041013… GA           00-09          PART A PROVID… 113301      
+ 2 1679664395 O20071016… GA           00-09          PART A PROVID… 110082      
+ 3 1457396079 O20080118… GA           00-09          PART A PROVID… 110161      
+ 4 1962461681 O20080307… GA           00-09          PART A PROVID… 110083      
+ 5 1588640692 O20080331… GA           00-09          PART A PROVID… 110010      
+ 6 1437136918 O20080331… GA           00-09          PART A PROVID… 11S010      
+ 7 1356328199 O20080331… GA           00-09          PART A PROVID… 11T010      
+ 8 1689744450 O20080619… GA           00-09          PART A PROVID… 113300      
+ 9 1992799050 O20080822… GA           00-09          PART A PROVID… 110079      
+10 1629297478 O20081013… GA           00-09          PART A PROVID… 11S079      
+11 1144203563 O20090708… GA           00-09          PART A PROVID… 110078      
+12 1023095429 O20100521… GA           00-09          PART A PROVID… 114032      
+13 1093781544 O20100803… GA           00-09          PART A PROVID… 114010      
+14 1043311715 O20101027… GA           00-09          PART A PROVID… 112003      
+15 1548698723 O20140709… GA           00-09          PART A PROVID… 113031      
+16 1235598095 O20160715… GA           00-09          PART A PROVID… 112004      
+17 1902852841 O20200520… GA           00-09          PART A PROVID… 110243      
+18 1649791641 O20201203… GA           00-09          PART A PROVID… 110248      
+19 1295256295 O20201204… GA           00-09          PART A PROVID… 110250      
+20 1649248626 O20230207… GA           00-09          PART A PROVID… 11S035      
+# ℹ 30 more variables: pac_id_org &lt;chr&gt;, org_name &lt;chr&gt;,
+#   doing_business_as &lt;chr&gt;, incorp_date &lt;date&gt;, incorp_length &lt;dbl&gt;,
+#   incorp_state &lt;chr&gt;, org_structure &lt;chr&gt;, org_other &lt;chr&gt;, address &lt;chr&gt;,
+#   city &lt;chr&gt;, state &lt;chr&gt;, zipcode &lt;int&gt;, location_type &lt;chr&gt;,
+#   location_other &lt;chr&gt;, multiple_npis &lt;lgl&gt;, proprietary_nonprofit &lt;lgl&gt;,
+#   sg_general &lt;lgl&gt;, sg_acute_care &lt;lgl&gt;, sg_alcohol_drug &lt;lgl&gt;,
+#   sg_childrens &lt;lgl&gt;, sg_long_term &lt;lgl&gt;, sg_short_term &lt;lgl&gt;, …</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hospital_enrollment</span>(<span class="at">city =</span> <span class="st">"Atlanta"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(npi) <span class="sc">|&gt;</span> </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  purrr<span class="sc">::</span><span class="fu">map</span>(nppes_npi) <span class="sc">|&gt;</span> </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  purrr<span class="sc">::</span><span class="fu">list_rbind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 68 × 36
+   npi      entype enumeration_date years_passed last_updated certification_date
+   &lt;chr&gt;    &lt;chr&gt;  &lt;date&gt;                  &lt;dbl&gt; &lt;date&gt;       &lt;date&gt;            
+ 1 1922178… Organ… 2006-11-09               16.7 2023-02-23   2023-02-23        
+ 2 1922178… Organ… 2006-11-09               16.7 2023-02-23   2023-02-23        
+ 3 1922178… Organ… 2006-11-09               16.7 2023-02-23   2023-02-23        
+ 4 1922178… Organ… 2006-11-09               16.7 2023-02-23   2023-02-23        
+ 5 1922178… Organ… 2006-11-09               16.7 2023-02-23   2023-02-23        
+ 6 1922178… Organ… 2006-11-09               16.7 2023-02-23   2023-02-23        
+ 7 1922178… Organ… 2006-11-09               16.7 2023-02-23   2023-02-23        
+ 8 1922178… Organ… 2006-11-09               16.7 2023-02-23   2023-02-23        
+ 9 1679664… Organ… 2006-09-27               16.8 2008-03-20   NA                
+10 1679664… Organ… 2006-09-27               16.8 2008-03-20   NA                
+# ℹ 58 more rows
+# ℹ 30 more variables: status &lt;chr&gt;, organization_name &lt;chr&gt;,
+#   organizational_subpart &lt;lgl&gt;, purpose &lt;chr&gt;, street &lt;chr&gt;, city &lt;chr&gt;,
+#   state &lt;chr&gt;, zipcode &lt;chr&gt;, country &lt;chr&gt;, phone_number &lt;chr&gt;,
+#   authorized_official_first_name &lt;chr&gt;, authorized_official_last_name &lt;chr&gt;,
+#   authorized_official_title_or_position &lt;chr&gt;,
+#   authorized_official_telephone_number &lt;chr&gt;, tx_code &lt;chr&gt;, tx_desc &lt;chr&gt;, …</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nchar</span>(<span class="st">"I20040309000221"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nchar</span>(<span class="st">"O20041013000409"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15</code></pre>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./npi.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">The NPI</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">This book was built with <a href="https://quarto.org/">Quarto</a>.</div>
+  </div>
+</footer>
+
+
+
+</body></html>

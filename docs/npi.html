@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Andrew Bruce, RHIT, CPC, CPPM">
 
-<title>Provider: R for Healthcare Administrative Data Analysis</title>
+<title>Provider: R for Healthcare Administrative Data Analysis - The NPI</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
+<link href="./nppes.html" rel="next">
+<link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./npi.html">The NPI</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -109,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
@@ -117,6 +117,18 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./npi.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">The NPI</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nppes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NPPES</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -137,32 +149,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/andrewallenbruce/provider_book/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/andrewallenbruce/provider_book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Provider: R for Healthcare Administrative Data Analysis</h1>
+<h1 class="title">The NPI</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Andrew Bruce, RHIT, CPC, CPPM </p>
-          </div>
-  </div>
     
   
     
@@ -171,12 +171,15 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="welcome" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome</h1>
-<p>This is the website for “Provider: R for Healthcare Administrative Data Analysis”.</p>
+<p>A National Provider Identifier (NPI) is a unique 10-digit identification number issued to health care providers in the United States by the Centers for Medicare and Medicaid Services (CMS). The NPI has replaced the Unique Physician Identification Number (UPIN) as the required identifier for Medicare services, and is used by other payers, including commercial healthcare insurers. The transition to the NPI was mandated as part of the Administrative Simplifications portion of the Health Insurance Portability and Accountability Act of 1996 (HIPAA).</p>
+<p>HIPAA–covered entities such as providers completing electronic transactions, healthcare clearinghouses, and large health plans were required by regulation to use only the NPI to identify covered healthcare providers by May 23, 2007. CMS subsequently announced that as of May 23, 2008, CMS will not impose penalties on covered entities that deploy contingency plans to facilitate the compliance of their trading partners (e.g., those healthcare providers who bill them). The posted guidance document can be used by covered entities to design and implement a contingency plan. Details are contained in a CMS document entitled, “Guidance on Compliance with the HIPAA National Provider Identifier (NPI) Rule.” Small health plans have one additional year to comply.</p>
+<p>All individual HIPAA–covered healthcare providers or organizations must obtain an NPI for use in all HIPAA standard transactions, even if a billing agency prepares the transaction. Individual HIPAA–covered healthcare providers include physicians, pharmacists, physician assistants, midwives, nurse practitioners, nurse anesthetists, dentists, denturists, licensed opticians, optometrists, chiropractors, clinical social workers, professional counselors, physical therapists, occupational therapists, prosthetists, orthotists, pharmacy technicians and athletic trainers. Organizations include hospitals, home health care agencies, nursing homes, residential treatment centers, group practices, laboratories, pharmacies and medical equipment companies. Once assigned, a provider’s NPI is permanent and remains with the provider regardless of job or location changes.</p>
+<p>Other health industry workers who provide support services but not health care (such as admissions and medical billing personnel, housekeeping staff and orderlies) are not required to obtain an NPI.</p>
+<p>The NPI must be used in connection with the electronic transactions identified in HIPAA. In addition, the NPI may be used in several other ways:</p>
+<p>by health care providers to identify themselves in health care transactions identified in HIPAA or on related correspondence; by health care providers to identify other health care providers in health care transactions or on related correspondence; by health care providers on prescriptions (however, the NPI will not replace requirements for the DEA number or state license number); by health plans in their internal provider files to process transactions and communicate with health care providers; by health plans to coordinate benefits with other health plans; by health care clearinghouses in their internal files to create and process standard transactions and to communicate with health care providers and health plans; by electronic patient record systems to identify treating health care providers in patient medical records; by the Department of Health and Human Services to cross reference health care providers in fraud and abuse files and other program integrity files; for any other lawful activity requiring individual identification.</p>
+<p>The NPI number can be obtained online through the National Plan and Provider Enumeration System (NPPES) pages on CMS’s website.[3] Turnaround time for obtaining a number is from 1 to 20 days. NPI numbers can be searched on the CMS website listed in external links ‘National Plan and Provider Enumeration System information from CMS’.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -414,10 +417,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./nppes.html" class="pagination-link">
+        <span class="nav-page-text">NPPES</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -429,7 +435,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
+    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/andrewallenbruce/provider_book/edit/main/npi.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/andrewallenbruce/provider_book/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
     <div class="nav-footer-right">This book was built with <a href="https://quarto.org/">Quarto</a>.</div>
   </div>
 </footer>

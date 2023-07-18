@@ -5,12 +5,21 @@ execute:
   freeze: auto
 
 book:
-  title: "book"
-  author: "Norah Jones"
-  date: "7/18/2023"
+  title: "Provider: R for Healthcare Administrative Data Analysis"
+  reader-mode: true
+  author: "Andrew Bruce, RHIT, CPC, CPPM"
+  page-footer:
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>.
+  site-url: https://andrewallenbruce.github.io/provider_book/
+  repo-url: https://github.com/andrewallenbruce/provider_book
+  repo-branch: main
+  repo-actions: [edit, issue]
   chapters:
     - index.qmd
     - intro.qmd
+    - npi.qmd
+    - nppes.qmd
     - summary.qmd
     - references.qmd
 
@@ -22,5 +31,5 @@ format:
   pdf:
     documentclass: scrreprt
 
-editor: visual
+editor: source
 
