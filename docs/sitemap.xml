@@ -2,18 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://andrewallenbruce.github.io/provider_book/intro.html</loc>
-    <lastmod>2023-07-18T11:04:38.706Z</lastmod>
+    <lastmod>2023-07-18T17:35:55.377Z</lastmod>
   </url>
   <url>
     <loc>https://andrewallenbruce.github.io/provider_book/index.html</loc>
-    <lastmod>2023-07-18T10:18:02.146Z</lastmod>
+    <lastmod>2023-07-18T17:35:39.967Z</lastmod>
   </url>
   <url>
     <loc>https://andrewallenbruce.github.io/provider_book/nppes.html</loc>
-    <lastmod>2023-07-18T17:29:53.040Z</lastmod>
+    <lastmod>2023-07-18T17:36:18.310Z</lastmod>
   </url>
   <url>
     <loc>https://andrewallenbruce.github.io/provider_book/npi.html</loc>
-    <lastmod>2023-07-18T17:29:20.231Z</lastmod>
+    <lastmod>2023-07-18T17:36:10.334Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andrewallenbruce.github.io/provider_book/summary.html</loc>
+    <lastmod>2023-07-18T17:36:27.136Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andrewallenbruce.github.io/provider_book/references.html</loc>
+    <lastmod>2023-07-18T17:36:33.687Z</lastmod>
   </url>
 </urlset>
