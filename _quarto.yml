@@ -1,6 +1,8 @@
 project:
   type: book
   output-dir: docs
+execute:
+  freeze: auto
 
 book:
   title: "Provider: R for Healthcare Administrative Data Analysis"

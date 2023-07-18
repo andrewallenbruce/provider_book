@@ -31,6 +31,8 @@ nppes_npi(1588375828)
 
 Identifiers are used to associate other provider identifiers such as Medicaid or other insurers (ie:, Blue Cross, Blue Shield, Aetna, Kaiser-Permanente, etc.), with their NPI number. These identifiers can be used in matching an NPI number to an insurer's records. However, not all providers have such numbers and not all providers choose to include them in their NPI information.
 
+<br>
+
 ## Taxonomy Codes
 
 The Health Care Provider Taxonomy code set is an external, nonmedical data code set designed for use in an electronic environment, specifically within the ASC X12N Health Care transactions. This includes the transactions mandated under HIPAA.

@@ -21,3 +21,5 @@ by the Department of Health and Human Services to cross reference health care pr
 for any other lawful activity requiring individual identification.
 
 The NPI number can be obtained online through the National Plan and Provider Enumeration System (NPPES) pages on CMS's website.[3] Turnaround time for obtaining a number is from 1 to 20 days. NPI numbers can be searched on the CMS website listed in external links 'National Plan and Provider Enumeration System information from CMS'.
+
+<br>
