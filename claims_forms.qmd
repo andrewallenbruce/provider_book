@@ -11,51 +11,33 @@ The CMS-1500 claim form is used to submit claims for physicians, non-physician p
 #| warning: false
 library(provider)
 library(tidyverse)
-library(flextable)
+library(knitr)
 ```
 
 I've chosen a provider at random and I'll go ahead and retrieve his NPPES information:
 
 ```{r}
-abbott_nppes <- nppes_npi(npi = 1730455775)
+nppes <- nppes_npi(npi = 1730455775)
 ```
 
-```{r}
-abbott_nppes |> 
-  select(purpose:fax_number, 
-         -country) |> 
-  distinct() |> 
-  flextable()
-```
-
-
-```{r}
-abbott_nppes |> 
-  select(tx_code:tx_primary, 
-         -tx_group) |> 
-  distinct() |> 
-  flextable()
-```
 
 ### Item 17
 
-Enter the name of the referring or ordering physician if the service or item was ordered or referred by a physician. The name should be entered as First Name, Middle Initial, Last Name, followed by the provider’s credentials. Do not use commas or periods. A hyphen can be used for a hyphenated name. In addition to the information above, the supervising physician can also be reported in this field. When multiple providers are involved, enter one provider using the following priority order:
+Enter the name of the *referring* or *ordering* physician if applicable. The name should be entered as First Name, Middle Initial, Last Name, followed by the provider’s credentials. Do not use commas or periods. Enter the applicable qualifier to the left of the vertical dotted line. In addition, the supervising physician can also be reported in this field. When multiple providers are involved, enter one provider using the following priority order:
 
    1. Referring Provider (Qualifier `DN`)
    2. Ordering Provider (Qualifier `DK`)
    3. Supervising Provider (Qualifier `DQ`)
 
-Enter the applicable qualifier to the left of the vertical dotted line.
-
 ```{r}
-abbott_nppes |> 
+nppes |> 
   select(npi, first_name:credential) |> 
   distinct() |> 
-  flextable()
+  kable()
 ```
 
 ::: {.callout-caution}
-## Medicare
+## Medicare Requirements
 
 All physicians who order services or refer Medicare beneficiaries must report this data. When more than one provider is involved, use a separate CMS-1500 claim form for each referring, ordering, or supervising physician.
 :::
@@ -69,12 +51,6 @@ Enter the Other ID number of the referring, ordering, or supervising provider. E
    * `G2` Provider Commercial Number
    * `LU` Location Number (used for the supervising provider only)
 
-::: {.callout-caution}
-## Medicare
-
-Leave Item 17a blank.
-:::
-
 ### Item 17b
 
 Enter the National Provider Identifier (NPI) of the referring/ordering/supervising physician or non-physician practitioner listed in item 17. NPIs are required for all providers and facilities.
@@ -82,27 +58,127 @@ Enter the National Provider Identifier (NPI) of the referring/ordering/supervisi
 ![Items 17, 17a, and 17b](img/item17.jpg){#fig-item17}
 
 
+### Item 24I
+
+Enter the qualifier identifying if the number is a non-NPI. The qualifier identifies what type of number is used in 24J. 
+
+Taxonomy Qualifier = ZZ
+
+### Item 24J
+
+Enter the non-NPI number in the shaded area of the field and enter the rendering provider’s NPI number in the unshaded portion. 
+
+Primary Taxonomy.
 
 ```{r}
-abbott_enroll <- provider_enrollment(npi = 1730455775)
+nppes |> 
+  select(contains("tx"), -tx_group) |> 
+  distinct() |> 
+  kable()
+```
 
-abbott_enroll
+### Item 25
+
+Enter the Federal Tax ID number (Employer Identification Number or Social Security Number) of the provider of service or supplier and check the appropriate check box. A common reason for claims rejection is the Tax ID not being associated with the billing provider’s NPI.
+
+### Item 27
+
+Check the appropriate block to indicate whether the provider of service or supplier accepts assignment. Accepting assignment means the provider agrees to the allowed amount (negotiated rate) for the charge. When a provider accepts assignment, the difference between the charged amount and the allowed amount will be a contractual write-off for the provider.
+
+Medicare requires the following types of providers to accept assignment:
+
+   * Clinical diagnostic laboratory services
+   * Physician services to individuals dually entitled to Medicare and Medicaid
+   * Participating physician/supplier services
+   * Services of physician assistants, nurse practitioners, clinical nurse specialists, nurse midwives, certified registered nurse anesthetists, clinical psychologists, and clinical social workers
+   * Ambulatory surgical center services for covered ASC procedures
+   * Home dialysis supplies and equipment paid under Method II
+   * Ambulance services
+   * Drugs and biologicals
+   * Simplified Billing Roster for influenza virus vaccine and pneumococcal vaccine
+
+### Item 32
+
+Enter the address where the services were provided if different from the billing provider’s address.
+
+### Item 32a
+
+If required by the payer, enter the facility’s NPI.
+
+### Item 32b
+
+Enter the qualifier identifying the non-NPI number followed by the ID number.
+
+### Item 33
+
+Enter the provider of service/supplier’s billing name, address, 9-digit ZIP code (without the hyphen), and telephone number. This is a required item. The 5010A1 electronic version requires the billing provider address to be a physical address. This cannot be a P.O. box number. A P.O. box number in this field will cause the claim to be rejected.
+
+### Item 33a
+
+Enter the NPI of the billing provider or group.
+
+### Item 33b
+
+Enter the qualifier identifying the non-NPI number followed by the ID number. Qualifiers for use in the 5010A1 version are:
+
+   * `0B`  State License Number
+   * `G2`  Provider Commercial Number
+   * `PXC` Provider Taxonomy for electronic claims (`ZZ` is the Provider Taxonomy qualifier for paper claims)
+
+
+```{r}
+nppes |> 
+  select(purpose:state) |> 
+  distinct() |> 
+  kable()
+```
+
+
+
+```{r}
+enroll <- provider_enrollment(npi = 1730455775)
+
+enroll |> 
+  select(pac_id:specialty_desc) |> 
+  glimpse()
+```
+
+
+
+```{r}
+reval <- revalidation_reassign(npi = 1730455775)
+
+reval |> select(pac_id_group:state_group)
+```
+
+
+
+```{r}
+drs <- doctors_and_clinicians(npi = 1730455775)
+
+drs |> 
+  select(org_name:group_assn) |> 
+  glimpse()
+```
+
+
+
+```{r}
+aff <- facility_affiliations(npi = 1730455775)
+
+aff |> select(facility_type,
+              facility_ccn)
 ```
 
 ```{r}
-abbott_revalid <- revalidation_reassign(npi = 1730455775)
+hosp <- hospital_enrollment(facility_ccn = 180051)
 
-abbott_revalid
-```
-
-```{r}
-doctors_and_clinicians(npi = 1730455775)
-```
-
-```{r}
-facility_affiliations(npi = 1730455775)
-```
-
-```{r}
-hospital_enrollment(facility_ccn = 180051)
+hosp |> select(org_name, 
+               org_structure, 
+               address, 
+               city, 
+               state, 
+               location_type, 
+               multiple_npis) |> 
+  glimpse()
 ```

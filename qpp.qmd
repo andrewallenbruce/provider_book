@@ -21,19 +21,19 @@ Clinicians are included and required to participate in MIPS if they meet all 3 o
 
 MIPS eligible clinicians — who are the focus of this report — are both physicians and non-physician clinicians who are eligible to participate in MIPS. Through rulemaking, CMS defines the MIPS eligible clinician types for a specific performance year. MIPS eligible clinician types in the CY 2021 performance year included the following physicians and non-physician clinicians:
 
-   • Physicians (including doctors of medicine, osteopathy, dental surgery, dental medicine, podiatric medicine, and optometry) 
-   • Osteopathic practitioners 
-   • Chiropractors 
-   • Physician assistants 
-   • Nurse practitioners 
-   • Clinical nurse specialists 
-   • Certified registered nurse anesthetists 
-   • Physical therapists 
-   • Occupational therapists 
-   • Clinical psychologists 
-   • Qualified speech-language pathologists 
-   • Qualified audiologists 
-   • Registered dietitians or nutrition professionals 
+   * Physicians (including doctors of medicine, osteopathy, dental surgery, dental medicine, podiatric medicine, and optometry) 
+   * Osteopathic practitioners 
+   * Chiropractors 
+   * Physician assistants 
+   * Nurse practitioners 
+   * Clinical nurse specialists 
+   * Certified registered nurse anesthetists 
+   * Physical therapists 
+   * Occupational therapists 
+   * Clinical psychologists 
+   * Qualified speech-language pathologists 
+   * Qualified audiologists 
+   * Registered dietitians or nutrition professionals 
 
 In 2021, MIPS eligible clinicians required to participate in MIPS could report data as an individual, a group, a virtual group, or an APM Entity:
 

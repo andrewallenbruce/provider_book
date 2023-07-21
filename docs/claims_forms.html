@@ -96,8 +96,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<link href="site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
-<script src="site_libs/tabwid-1.1.3/tabwid.js"></script>
 
 
 </head>
@@ -241,6 +239,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#item-17" id="toc-item-17" class="nav-link" data-scroll-target="#item-17">Item 17</a></li>
   <li><a href="#item-17a" id="toc-item-17a" class="nav-link" data-scroll-target="#item-17a">Item 17a</a></li>
   <li><a href="#item-17b" id="toc-item-17b" class="nav-link" data-scroll-target="#item-17b">Item 17b</a></li>
+  <li><a href="#item-24i" id="toc-item-24i" class="nav-link" data-scroll-target="#item-24i">Item 24I</a></li>
+  <li><a href="#item-24j" id="toc-item-24j" class="nav-link" data-scroll-target="#item-24j">Item 24J</a></li>
+  <li><a href="#item-25" id="toc-item-25" class="nav-link" data-scroll-target="#item-25">Item 25</a></li>
+  <li><a href="#item-27" id="toc-item-27" class="nav-link" data-scroll-target="#item-27">Item 27</a></li>
+  <li><a href="#item-32" id="toc-item-32" class="nav-link" data-scroll-target="#item-32">Item 32</a></li>
+  <li><a href="#item-32a" id="toc-item-32a" class="nav-link" data-scroll-target="#item-32a">Item 32a</a></li>
+  <li><a href="#item-32b" id="toc-item-32b" class="nav-link" data-scroll-target="#item-32b">Item 32b</a></li>
+  <li><a href="#item-33" id="toc-item-33" class="nav-link" data-scroll-target="#item-33">Item 33</a></li>
+  <li><a href="#item-33a" id="toc-item-33a" class="nav-link" data-scroll-target="#item-33a">Item 33a</a></li>
+  <li><a href="#item-33b" id="toc-item-33b" class="nav-link" data-scroll-target="#item-33b">Item 33b</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/andrewallenbruce/provider_book/edit/main/claims_forms.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/andrewallenbruce/provider_book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -272,51 +280,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(provider)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(flextable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>I’ve chosen a provider at random and I’ll go ahead and retrieve his NPPES information:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>abbott_nppes <span class="ot">&lt;-</span> <span class="fu">nppes_npi</span>(<span class="at">npi =</span> <span class="dv">1730455775</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>abbott_nppes <span class="sc">|&gt;</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(purpose<span class="sc">:</span>fax_number, </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span>country) <span class="sc">|&gt;</span> </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">flextable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-
-<div class="tabwid"><style>.cl-9799f7a8{}.cl-978d9d00{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-9792b542{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-9792d112{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9792d11c{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9792d126{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-9799f7a8"><thead><tr style="overflow-wrap:break-word;"><th class="cl-9792d112"><p class="cl-9792b542"><span class="cl-978d9d00">purpose</span></p></th><th class="cl-9792d112"><p class="cl-9792b542"><span class="cl-978d9d00">street</span></p></th><th class="cl-9792d112"><p class="cl-9792b542"><span class="cl-978d9d00">city</span></p></th><th class="cl-9792d112"><p class="cl-9792b542"><span class="cl-978d9d00">state</span></p></th><th class="cl-9792d112"><p class="cl-9792b542"><span class="cl-978d9d00">zipcode</span></p></th><th class="cl-9792d112"><p class="cl-9792b542"><span class="cl-978d9d00">phone_number</span></p></th><th class="cl-9792d112"><p class="cl-9792b542"><span class="cl-978d9d00">fax_number</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-9792d11c"><p class="cl-9792b542"><span class="cl-978d9d00">PRACTICE</span></p></td><td class="cl-9792d11c"><p class="cl-9792b542"><span class="cl-978d9d00">650 JOEL DR</span></p></td><td class="cl-9792d11c"><p class="cl-9792b542"><span class="cl-978d9d00">FORT CAMPBELL</span></p></td><td class="cl-9792d11c"><p class="cl-9792b542"><span class="cl-978d9d00">KY</span></p></td><td class="cl-9792d11c"><p class="cl-9792b542"><span class="cl-978d9d00">42223</span></p></td><td class="cl-9792d11c"><p class="cl-9792b542"><span class="cl-978d9d00">270-798-8151</span></p></td><td class="cl-9792d11c"><p class="cl-9792b542"><span class="cl-978d9d00"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9792d11c"><p class="cl-9792b542"><span class="cl-978d9d00">MAILING</span></p></td><td class="cl-9792d11c"><p class="cl-9792b542"><span class="cl-978d9d00">102 W 18TH ST</span></p></td><td class="cl-9792d11c"><p class="cl-9792b542"><span class="cl-978d9d00">HOPKINSVILLE</span></p></td><td class="cl-9792d11c"><p class="cl-9792b542"><span class="cl-978d9d00">KY</span></p></td><td class="cl-9792d11c"><p class="cl-9792b542"><span class="cl-978d9d00">422401961</span></p></td><td class="cl-9792d11c"><p class="cl-9792b542"><span class="cl-978d9d00">270-707-2100</span></p></td><td class="cl-9792d11c"><p class="cl-9792b542"><span class="cl-978d9d00">270-707-2103</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9792d126"><p class="cl-9792b542"><span class="cl-978d9d00">LOCATION</span></p></td><td class="cl-9792d126"><p class="cl-9792b542"><span class="cl-978d9d00">1717 HIGH ST STE 4B</span></p></td><td class="cl-9792d126"><p class="cl-9792b542"><span class="cl-978d9d00">HOPKINSVILLE</span></p></td><td class="cl-9792d126"><p class="cl-9792b542"><span class="cl-978d9d00">KY</span></p></td><td class="cl-9792d126"><p class="cl-9792b542"><span class="cl-978d9d00">422406300</span></p></td><td class="cl-9792d126"><p class="cl-9792b542"><span class="cl-978d9d00">270-887-9058</span></p></td><td class="cl-9792d126"><p class="cl-9792b542"><span class="cl-978d9d00">270-887-9341</span></p></td></tr></tbody></table></div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>abbott_nppes <span class="sc">|&gt;</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(tx_code<span class="sc">:</span>tx_primary, </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span>tx_group) <span class="sc">|&gt;</span> </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">flextable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-
-<div class="tabwid"><style>.cl-97c979a6{}.cl-97b43fe6{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-97bbb438{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-97bbb44c{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-97bbd9ea{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97bbd9f4{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97bbd9fe{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97bbda08{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97bbda12{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97bbda13{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-97c979a6"><thead><tr style="overflow-wrap:break-word;"><th class="cl-97bbd9ea"><p class="cl-97bbb438"><span class="cl-97b43fe6">tx_code</span></p></th><th class="cl-97bbd9ea"><p class="cl-97bbb438"><span class="cl-97b43fe6">tx_desc</span></p></th><th class="cl-97bbd9ea"><p class="cl-97bbb438"><span class="cl-97b43fe6">tx_state</span></p></th><th class="cl-97bbd9ea"><p class="cl-97bbb438"><span class="cl-97b43fe6">tx_license</span></p></th><th class="cl-97bbd9f4"><p class="cl-97bbb44c"><span class="cl-97b43fe6">tx_primary</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-97bbd9fe"><p class="cl-97bbb438"><span class="cl-97b43fe6">207V00000X</span></p></td><td class="cl-97bbd9fe"><p class="cl-97bbb438"><span class="cl-97b43fe6">Obstetrics &amp; Gynecology</span></p></td><td class="cl-97bbd9fe"><p class="cl-97bbb438"><span class="cl-97b43fe6">NE</span></p></td><td class="cl-97bbd9fe"><p class="cl-97bbb438"><span class="cl-97b43fe6">27615</span></p></td><td class="cl-97bbda08"><p class="cl-97bbb44c"><span class="cl-97b43fe6">FALSE</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-97bbda12"><p class="cl-97bbb438"><span class="cl-97b43fe6">207V00000X</span></p></td><td class="cl-97bbda12"><p class="cl-97bbb438"><span class="cl-97b43fe6">Obstetrics &amp; Gynecology</span></p></td><td class="cl-97bbda12"><p class="cl-97bbb438"><span class="cl-97b43fe6">KY</span></p></td><td class="cl-97bbda12"><p class="cl-97bbb438"><span class="cl-97b43fe6">52531</span></p></td><td class="cl-97bbda13"><p class="cl-97bbb44c"><span class="cl-97b43fe6">TRUE</span></p></td></tr></tbody></table></div>
-</div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nppes <span class="ot">&lt;-</span> <span class="fu">nppes_npi</span>(<span class="at">npi =</span> <span class="dv">1730455775</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="item-17" class="level3">
 <h3 class="anchored" data-anchor-id="item-17">Item 17</h3>
-<p>Enter the name of the referring or ordering physician if the service or item was ordered or referred by a physician. The name should be entered as First Name, Middle Initial, Last Name, followed by the provider’s credentials. Do not use commas or periods. A hyphen can be used for a hyphenated name. In addition to the information above, the supervising physician can also be reported in this field. When multiple providers are involved, enter one provider using the following priority order:</p>
+<p>Enter the name of the <em>referring</em> or <em>ordering</em> physician if applicable. The name should be entered as First Name, Middle Initial, Last Name, followed by the provider’s credentials. Do not use commas or periods. Enter the applicable qualifier to the left of the vertical dotted line. In addition, the supervising physician can also be reported in this field. When multiple providers are involved, enter one provider using the following priority order:</p>
 <ol type="1">
 <li>Referring Provider (Qualifier <code>DN</code>)</li>
 <li>Ordering Provider (Qualifier <code>DK</code>)</li>
 <li>Supervising Provider (Qualifier <code>DQ</code>)</li>
 </ol>
-<p>Enter the applicable qualifier to the left of the vertical dotted line.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>abbott_nppes <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(npi, first_name<span class="sc">:</span>credential) <span class="sc">|&gt;</span> </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">flextable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nppes <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(npi, first_name<span class="sc">:</span>credential) <span class="sc">|&gt;</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-
-<div class="tabwid"><style>.cl-97eb1b9c{}.cl-97defe66{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-97e44510{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-97e45d48{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97e45d52{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-97eb1b9c"><thead><tr style="overflow-wrap:break-word;"><th class="cl-97e45d48"><p class="cl-97e44510"><span class="cl-97defe66">npi</span></p></th><th class="cl-97e45d48"><p class="cl-97e44510"><span class="cl-97defe66">first_name</span></p></th><th class="cl-97e45d48"><p class="cl-97e44510"><span class="cl-97defe66">middle_name</span></p></th><th class="cl-97e45d48"><p class="cl-97e44510"><span class="cl-97defe66">last_name</span></p></th><th class="cl-97e45d48"><p class="cl-97e44510"><span class="cl-97defe66">credential</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-97e45d52"><p class="cl-97e44510"><span class="cl-97defe66">1730455775</span></p></td><td class="cl-97e45d52"><p class="cl-97e44510"><span class="cl-97defe66">JONATHAN</span></p></td><td class="cl-97e45d52"><p class="cl-97e44510"><span class="cl-97defe66">LAWRENCE</span></p></td><td class="cl-97e45d52"><p class="cl-97e44510"><span class="cl-97defe66">ABBOTT</span></p></td><td class="cl-97e45d52"><p class="cl-97e44510"><span class="cl-97defe66">MD</span></p></td></tr></tbody></table></div>
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">npi</th>
+<th style="text-align: left;">first_name</th>
+<th style="text-align: left;">middle_name</th>
+<th style="text-align: left;">last_name</th>
+<th style="text-align: left;">credential</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1730455775</td>
+<td style="text-align: left;">JONATHAN</td>
+<td style="text-align: left;">LAWRENCE</td>
+<td style="text-align: left;">ABBOTT</td>
+<td style="text-align: left;">MD</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
@@ -325,7 +328,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Medicare
+Medicare Requirements
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -342,19 +345,6 @@ Medicare
 <li><code>G2</code> Provider Commercial Number</li>
 <li><code>LU</code> Location Number (used for the supervising provider only)</li>
 </ul>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Medicare
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Leave Item 17a blank.</p>
-</div>
-</div>
 </section>
 <section id="item-17b" class="level3">
 <h3 class="anchored" data-anchor-id="item-17b">Item 17b</h3>
@@ -365,73 +355,220 @@ Medicare
 <figcaption class="figure-caption">Figure&nbsp;1: Items 17, 17a, and 17b</figcaption>
 </figure>
 </div>
+</section>
+<section id="item-24i" class="level3">
+<h3 class="anchored" data-anchor-id="item-24i">Item 24I</h3>
+<p>Enter the qualifier identifying if the number is a non-NPI. The qualifier identifies what type of number is used in 24J.</p>
+<p>Taxonomy Qualifier = ZZ</p>
+</section>
+<section id="item-24j" class="level3">
+<h3 class="anchored" data-anchor-id="item-24j">Item 24J</h3>
+<p>Enter the non-NPI number in the shaded area of the field and enter the rendering provider’s NPI number in the unshaded portion.</p>
+<p>Primary Taxonomy.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>abbott_enroll <span class="ot">&lt;-</span> <span class="fu">provider_enrollment</span>(<span class="at">npi =</span> <span class="dv">1730455775</span>)</span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>nppes <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">"tx"</span>), <span class="sc">-</span>tx_group) <span class="sc">|&gt;</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">tx_code</th>
+<th style="text-align: left;">tx_desc</th>
+<th style="text-align: left;">tx_state</th>
+<th style="text-align: left;">tx_license</th>
+<th style="text-align: left;">tx_primary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">207V00000X</td>
+<td style="text-align: left;">Obstetrics &amp; Gynecology</td>
+<td style="text-align: left;">NE</td>
+<td style="text-align: left;">27615</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">207V00000X</td>
+<td style="text-align: left;">Obstetrics &amp; Gynecology</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">52531</td>
+<td style="text-align: left;">TRUE</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="item-25" class="level3">
+<h3 class="anchored" data-anchor-id="item-25">Item 25</h3>
+<p>Enter the Federal Tax ID number (Employer Identification Number or Social Security Number) of the provider of service or supplier and check the appropriate check box. A common reason for claims rejection is the Tax ID not being associated with the billing provider’s NPI.</p>
+</section>
+<section id="item-27" class="level3">
+<h3 class="anchored" data-anchor-id="item-27">Item 27</h3>
+<p>Check the appropriate block to indicate whether the provider of service or supplier accepts assignment. Accepting assignment means the provider agrees to the allowed amount (negotiated rate) for the charge. When a provider accepts assignment, the difference between the charged amount and the allowed amount will be a contractual write-off for the provider.</p>
+<p>Medicare requires the following types of providers to accept assignment:</p>
+<ul>
+<li>Clinical diagnostic laboratory services</li>
+<li>Physician services to individuals dually entitled to Medicare and Medicaid</li>
+<li>Participating physician/supplier services</li>
+<li>Services of physician assistants, nurse practitioners, clinical nurse specialists, nurse midwives, certified registered nurse anesthetists, clinical psychologists, and clinical social workers</li>
+<li>Ambulatory surgical center services for covered ASC procedures</li>
+<li>Home dialysis supplies and equipment paid under Method II</li>
+<li>Ambulance services</li>
+<li>Drugs and biologicals</li>
+<li>Simplified Billing Roster for influenza virus vaccine and pneumococcal vaccine</li>
+</ul>
+</section>
+<section id="item-32" class="level3">
+<h3 class="anchored" data-anchor-id="item-32">Item 32</h3>
+<p>Enter the address where the services were provided if different from the billing provider’s address.</p>
+</section>
+<section id="item-32a" class="level3">
+<h3 class="anchored" data-anchor-id="item-32a">Item 32a</h3>
+<p>If required by the payer, enter the facility’s NPI.</p>
+</section>
+<section id="item-32b" class="level3">
+<h3 class="anchored" data-anchor-id="item-32b">Item 32b</h3>
+<p>Enter the qualifier identifying the non-NPI number followed by the ID number.</p>
+</section>
+<section id="item-33" class="level3">
+<h3 class="anchored" data-anchor-id="item-33">Item 33</h3>
+<p>Enter the provider of service/supplier’s billing name, address, 9-digit ZIP code (without the hyphen), and telephone number. This is a required item. The 5010A1 electronic version requires the billing provider address to be a physical address. This cannot be a P.O. box number. A P.O. box number in this field will cause the claim to be rejected.</p>
+</section>
+<section id="item-33a" class="level3">
+<h3 class="anchored" data-anchor-id="item-33a">Item 33a</h3>
+<p>Enter the NPI of the billing provider or group.</p>
+</section>
+<section id="item-33b" class="level3">
+<h3 class="anchored" data-anchor-id="item-33b">Item 33b</h3>
+<p>Enter the qualifier identifying the non-NPI number followed by the ID number. Qualifiers for use in the 5010A1 version are:</p>
+<ul>
+<li><code>0B</code> State License Number</li>
+<li><code>G2</code> Provider Commercial Number</li>
+<li><code>PXC</code> Provider Taxonomy for electronic claims (<code>ZZ</code> is the Provider Taxonomy qualifier for paper claims)</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>nppes <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(purpose<span class="sc">:</span>state) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">purpose</th>
+<th style="text-align: left;">street</th>
+<th style="text-align: left;">city</th>
+<th style="text-align: left;">state</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">PRACTICE</td>
+<td style="text-align: left;">650 JOEL DR</td>
+<td style="text-align: left;">FORT CAMPBELL</td>
+<td style="text-align: left;">KY</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MAILING</td>
+<td style="text-align: left;">102 W 18TH ST</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">1717 HIGH ST STE 4B</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>enroll <span class="ot">&lt;-</span> <span class="fu">provider_enrollment</span>(<span class="at">npi =</span> <span class="dv">1730455775</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>abbott_enroll</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>enroll <span class="sc">|&gt;</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(pac_id<span class="sc">:</span>specialty_desc) <span class="sc">|&gt;</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 11
-  npi   pac_id enroll_id specialty_code specialty_desc state org_name first_name
-  &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;     
-1 1730… 81232… I2019082… 14-16          PRACTITIONER … KY    &lt;NA&gt;     JONATHAN  
-# ℹ 3 more variables: middle_name &lt;chr&gt;, last_name &lt;chr&gt;, gender &lt;chr&gt;</code></pre>
+<pre><code>Rows: 1
+Columns: 4
+$ pac_id         &lt;chr&gt; "8123242633"
+$ enroll_id      &lt;chr&gt; "I20190826002517"
+$ specialty_code &lt;chr&gt; "14-16"
+$ specialty_desc &lt;chr&gt; "PRACTITIONER - OBSTETRICS/GYNECOLOGY"</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>abbott_revalid <span class="ot">&lt;-</span> <span class="fu">revalidation_reassign</span>(<span class="at">npi =</span> <span class="dv">1730455775</span>)</span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>reval <span class="ot">&lt;-</span> <span class="fu">revalidation_reassign</span>(<span class="at">npi =</span> <span class="dv">1730455775</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>abbott_revalid</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>reval <span class="sc">|&gt;</span> <span class="fu">select</span>(pac_id_group<span class="sc">:</span>state_group)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 16
-  npi        pac_id  enroll_id first_name last_name state specialty due_date_ind
-  &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;     &lt;date&gt;      
-1 1730455775 812324… I2019082… Jonathan   Abbott    KY    Obstetri… NA          
-2 1730455775 812324… I2019082… Jonathan   Abbott    KY    Obstetri… NA          
-3 1730455775 812324… I2019082… Jonathan   Abbott    KY    Obstetri… NA          
-# ℹ 8 more variables: ind_tot_emp_assn &lt;int&gt;, pac_id_group &lt;chr&gt;,
-#   enroll_id_group &lt;chr&gt;, business_name &lt;chr&gt;, state_group &lt;chr&gt;,
-#   due_date_group &lt;date&gt;, group_reassign_and_phys_assist &lt;int&gt;,
-#   record_type &lt;chr&gt;</code></pre>
+<pre><code># A tibble: 3 × 4
+  pac_id_group enroll_id_group business_name                    state_group
+  &lt;chr&gt;        &lt;chr&gt;           &lt;chr&gt;                            &lt;chr&gt;      
+1 5597867184   O20150219000942 Baptist Health Medical Group Inc KY         
+2 7012187925   O20110901000656 Fairview Physicians Network Llc  KY         
+3 4183607252   O20040609001506 Jennie Stuart Medical Center Inc KY         </code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">doctors_and_clinicians</span>(<span class="at">npi =</span> <span class="dv">1730455775</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>drs <span class="ot">&lt;-</span> <span class="fu">doctors_and_clinicians</span>(<span class="at">npi =</span> <span class="dv">1730455775</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>drs <span class="sc">|&gt;</span> </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(org_name<span class="sc">:</span>group_assn) <span class="sc">|&gt;</span> </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 25
-  npi        pac_id     enroll_id first_name middle_name last_name suffix gender
-  &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;  &lt;chr&gt; 
-1 1730455775 8123242633 I2019082… JONATHAN   LAWRENCE    ABBOTT    &lt;NA&gt;   M     
-# ℹ 17 more variables: credential &lt;chr&gt;, school &lt;chr&gt;, grad_year &lt;int&gt;,
-#   grad_duration &lt;Duration&gt;, specialty &lt;chr&gt;, specialty_sec &lt;chr&gt;,
-#   telehealth &lt;lgl&gt;, org_name &lt;chr&gt;, org_pac_id &lt;chr&gt;, org_members &lt;int&gt;,
-#   address &lt;chr&gt;, city &lt;chr&gt;, state &lt;chr&gt;, zipcode &lt;chr&gt;, phone &lt;chr&gt;,
-#   ind_assn &lt;chr&gt;, group_assn &lt;chr&gt;</code></pre>
+<pre><code>Rows: 1
+Columns: 10
+$ org_name    &lt;chr&gt; "JENNIE STUART MEDICAL CENTER INC"
+$ org_pac_id  &lt;chr&gt; "4183607252"
+$ org_members &lt;int&gt; 58
+$ address     &lt;chr&gt; "1621 NASHVILLE ST SUITE 102"
+$ city        &lt;chr&gt; "RUSSELLVILLE"
+$ state       &lt;chr&gt; "KY"
+$ zipcode     &lt;chr&gt; "422768871"
+$ phone       &lt;chr&gt; "2708879058"
+$ ind_assn    &lt;chr&gt; "Y"
+$ group_assn  &lt;chr&gt; "Y"</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">facility_affiliations</span>(<span class="at">npi =</span> <span class="dv">1730455775</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>aff <span class="ot">&lt;-</span> <span class="fu">facility_affiliations</span>(<span class="at">npi =</span> <span class="dv">1730455775</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>aff <span class="sc">|&gt;</span> <span class="fu">select</span>(facility_type,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>              facility_ccn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 9
-  npi        pac_id     first_name middle_name last_name suffix facility_type
-  &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;  &lt;chr&gt;        
-1 1730455775 8123242633 JONATHAN   LAWRENCE    ABBOTT    &lt;NA&gt;   Hospital     
-# ℹ 2 more variables: facility_ccn &lt;chr&gt;, parent_ccn &lt;chr&gt;</code></pre>
+<pre><code># A tibble: 1 × 2
+  facility_type facility_ccn
+  &lt;chr&gt;         &lt;chr&gt;       
+1 Hospital      180051      </code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hospital_enrollment</span>(<span class="at">facility_ccn =</span> <span class="dv">180051</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>hosp <span class="ot">&lt;-</span> <span class="fu">hospital_enrollment</span>(<span class="at">facility_ccn =</span> <span class="dv">180051</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>hosp <span class="sc">|&gt;</span> <span class="fu">select</span>(org_name, </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>               org_structure, </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>               address, </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>               city, </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>               state, </span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>               location_type, </span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>               multiple_npis) <span class="sc">|&gt;</span> </span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 36
-  npi        enroll_id   enroll_state specialty_code specialty_desc facility_ccn
-  &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;       
-1 1235139312 O200712180… KY           00-09          PART A PROVID… 180051      
-# ℹ 30 more variables: pac_id_org &lt;chr&gt;, org_name &lt;chr&gt;,
-#   doing_business_as &lt;chr&gt;, incorp_date &lt;date&gt;, incorp_length &lt;dbl&gt;,
-#   incorp_state &lt;chr&gt;, org_structure &lt;chr&gt;, org_other &lt;chr&gt;, address &lt;chr&gt;,
-#   city &lt;chr&gt;, state &lt;chr&gt;, zipcode &lt;int&gt;, location_type &lt;chr&gt;,
-#   location_other &lt;chr&gt;, multiple_npis &lt;lgl&gt;, proprietary_nonprofit &lt;lgl&gt;,
-#   sg_general &lt;lgl&gt;, sg_acute_care &lt;lgl&gt;, sg_alcohol_drug &lt;lgl&gt;,
-#   sg_childrens &lt;lgl&gt;, sg_long_term &lt;lgl&gt;, sg_short_term &lt;lgl&gt;, …</code></pre>
+<pre><code>Rows: 1
+Columns: 7
+$ org_name      &lt;chr&gt; "JENNIE STUART MEDICAL CENTER INC"
+$ org_structure &lt;chr&gt; "CORPORATION"
+$ address       &lt;chr&gt; "320W 18TH ST"
+$ city          &lt;chr&gt; "HOPKINSVILLE"
+$ state         &lt;chr&gt; "KY"
+$ location_type &lt;chr&gt; "OTHER HOSPITAL PRACTICE LOCATION"
+$ multiple_npis &lt;lgl&gt; FALSE</code></pre>
 </div>
 </div>
 
