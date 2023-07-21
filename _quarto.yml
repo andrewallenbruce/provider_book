@@ -18,16 +18,26 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - npi.qmd
-    - nppes.qmd
-    - summary.qmd
-    - references.qmd
+    - part: "Identifiers"
+      chapters: 
+        - npi.qmd
+        - taxonomy.qmd
+        - enroll_id.qmd
+    - part: "Data Sources"
+      chapters: 
+        - nppes.qmd
+        - qpp.qmd
+    - part: "Use Cases"
+      chapters: 
+        - claims_forms.qmd
 
 bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
+    theme:
+      light: cosmo
+      dark: [cosmo, theme-dark.scss]
   pdf:
     documentclass: scrreprt
 

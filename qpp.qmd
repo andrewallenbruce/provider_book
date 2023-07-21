@@ -1,0 +1,56 @@
+# Quality Payment Program {.unnumbered}
+
+In 2017, the Centers for Medicare & Medicaid Services (CMS) launched the Quality Payment Program (QPP), which aims to reward improved patient outcomes and drive fundamental movement toward a value-based system of care. The program offers 2 payment tracks: the Merit-based Incentive Payment System (MIPS) and Advanced Alternative Payment Models (APMs).  
+
+The **MIPS track** streamlined 3 legacy CMS programs (the Physician Quality Reporting System [PQRS], the Value-Based Payment Modifier, and the Medicare Electronic Health Record [EHR] Incentive [or Meaningful Use] Program) into a single program. Clinicians are evaluated and receive payment adjustments based on their overall performance in up to 4 performance categories:  
+
+   • Quality  
+   • Cost  
+   • Improvement Activities  
+   • Promoting Interoperability  
+
+Clinicians who were eligible for MIPS in the 2021 performance year will receive a payment adjustment during the 2023 payment year — positive, neutral, or negative — based on their performance in 2021.  
+
+The **Advanced APM track** provides an opportunity to reward clinicians for significant participation in taking on greater risk and accountability for patient outcomes. Eligible clinicians who participated in an Advanced APM and achieved Qualifying APM Participant (QP) status, based on the level of their participation in 2021 through the Medicare or the All-Payer Combination Option, will be eligible to receive a 5% APM Incentive Payment in 2023. 
+
+Eligible clinicians with QP status are also excluded from MIPS. If an eligible clinician participating in an Advanced APM doesn’t achieve QP status for the year, they’ll need to participate in MIPS, unless they’re otherwise excluded.
+
+## MIPS Eligibility and Engagement
+
+Clinicians are included and required to participate in MIPS if they meet all 3 of the following requirements: (1) are a MIPS eligible clinician type and enrolled as a Medicare provider before January 1, 2021; (2) exceed the low-volume threshold, and (3) aren’t otherwise excluded (for example, by achieving QP status). We evaluate a clinician’s eligibility for MIPS based on their National Provider Identifier (NPI) and associated Taxpayer Identification Number (TIN).
+
+MIPS eligible clinicians — who are the focus of this report — are both physicians and non-physician clinicians who are eligible to participate in MIPS. Through rulemaking, CMS defines the MIPS eligible clinician types for a specific performance year. MIPS eligible clinician types in the CY 2021 performance year included the following physicians and non-physician clinicians:
+
+   • Physicians (including doctors of medicine, osteopathy, dental surgery, dental medicine, podiatric medicine, and optometry) 
+   • Osteopathic practitioners 
+   • Chiropractors 
+   • Physician assistants 
+   • Nurse practitioners 
+   • Clinical nurse specialists 
+   • Certified registered nurse anesthetists 
+   • Physical therapists 
+   • Occupational therapists 
+   • Clinical psychologists 
+   • Qualified speech-language pathologists 
+   • Qualified audiologists 
+   • Registered dietitians or nutrition professionals 
+
+In 2021, MIPS eligible clinicians required to participate in MIPS could report data as an individual, a group, a virtual group, or an APM Entity:
+
+   1. **Individual participation**: An individual is defined as a single MIPS eligible clinician, identified by a TIN/NPI combination. When you participate as an individual, you collect and report measures and activities based on your individual performance. We assess your performance across all performance categories at the individual level. 
+   2. **Group participation**: A group is defined as a single TIN with 2 or more clinicians as identified by their NPI who have assigned their Medicare billing rights to the TIN, provided that at least 1 clinician within the group must be MIPS eligible in order for the group to be MIPS eligible. When you participate as a group, the group submits data that’s been aggregated to reflect performance for all the clinicians billing under the TIN as appropriate for the measures and activities selected. We assess your performance across all performance categories at the group level.
+   3. **Virtual group participation**: A virtual group is a combination of 2 or more TINs assigned to one or more solo practitioners or to one or more groups consisting of 10 or fewer MIPS eligible clinicians, or both, that elect to form a virtual group for a performance year. When you participate as a virtual group, the group submits data that’s been aggregated to reflect performance for all the clinicians (across multiple TINs) in the virtual group as appropriate for the measures and activities selected. We assess your performance across all performance categories at the virtual group level.
+   4. **APM Entity participation**: An APM Entity is defined as an entity that participates in an Alternative Payment Model or other payer arrangement through a direct agreement with CMS or other payer or through federal or state law or regulation. APM Entities that participate in a MIPS APM can report MIPS data on behalf of the MIPS eligible clinicians in the APM Entity.2 When you participate as an APM Entity, the APM Entity submits quality and improvement activities data that has been aggregated to reflect performance for all the clinicians (sometimes across multiple TINs) in the Entity. Data for the MIPS Promoting Interoperability performance category is submitted at the group and individual level which CMS then aggregates to create an APM Entity score.
+
+The **low-volume threshold** is a critical step in determining whether a clinician is included in MIPS for a specific performance year. The low-volume threshold evaluates whether an otherwise MIPS eligible clinician saw an adequate number of eligible patients and provided enough services to meaningfully participate in MIPS. To make this determination, we review Medicare Part B claims for this information for two 12-month segments — referred to as the MIPS Determination Period — to see if a clinician exceeds the low-volume threshold criteria. The MIPS Determination Period for the CY 2021 performance year was: 
+
+
+```{r}
+library(provider)
+abbott_qpp <- 2017:2021 |> 
+  furrr::future_map(\(x) quality_payment(year = x, 
+                                         npi = 1730455775)) |> 
+  purrr::list_rbind()
+
+abbott_qpp
+```

@@ -1,0 +1,108 @@
+# Claim Forms {.unnumbered}
+
+Claim forms are used to report the procedures performed and the reason the procedures were performed to the insurance carrier to obtain payment for those services. There are two claim forms used; the **CMS-1500** (sometimes referred to as the HCFA) and the **UB-04**. The CMS-1500 is used to report the professional services performed by providers and Ambulatory Surgical Centers (ASCs). The UB-04 is used to report facility (hospital) services.
+
+## CMS-1500
+
+The CMS-1500 claim form is used to submit claims for physicians, non-physician practitioners (NPP), and ASC services to all payers. For this example, I'll load the `provider` package and use several of it's functions to fill out the Items pertaining to the physician.
+
+```{r setup}
+#| message: false
+#| warning: false
+library(provider)
+library(tidyverse)
+library(flextable)
+```
+
+I've chosen a provider at random and I'll go ahead and retrieve his NPPES information:
+
+```{r}
+abbott_nppes <- nppes_npi(npi = 1730455775)
+```
+
+```{r}
+abbott_nppes |> 
+  select(purpose:fax_number, 
+         -country) |> 
+  distinct() |> 
+  flextable()
+```
+
+
+```{r}
+abbott_nppes |> 
+  select(tx_code:tx_primary, 
+         -tx_group) |> 
+  distinct() |> 
+  flextable()
+```
+
+### Item 17
+
+Enter the name of the referring or ordering physician if the service or item was ordered or referred by a physician. The name should be entered as First Name, Middle Initial, Last Name, followed by the provider’s credentials. Do not use commas or periods. A hyphen can be used for a hyphenated name. In addition to the information above, the supervising physician can also be reported in this field. When multiple providers are involved, enter one provider using the following priority order:
+
+   1. Referring Provider (Qualifier `DN`)
+   2. Ordering Provider (Qualifier `DK`)
+   3. Supervising Provider (Qualifier `DQ`)
+
+Enter the applicable qualifier to the left of the vertical dotted line.
+
+```{r}
+abbott_nppes |> 
+  select(npi, first_name:credential) |> 
+  distinct() |> 
+  flextable()
+```
+
+::: {.callout-caution}
+## Medicare
+
+All physicians who order services or refer Medicare beneficiaries must report this data. When more than one provider is involved, use a separate CMS-1500 claim form for each referring, ordering, or supervising physician.
+:::
+
+### Item 17a
+
+Enter the Other ID number of the referring, ordering, or supervising provider. Enter the qualifier to indicate what number is being reported:
+
+   * `0B` State License Number
+   * `1G` Provider UPIN Number (no longer used, replaced by the NPI)
+   * `G2` Provider Commercial Number
+   * `LU` Location Number (used for the supervising provider only)
+
+::: {.callout-caution}
+## Medicare
+
+Leave Item 17a blank.
+:::
+
+### Item 17b
+
+Enter the National Provider Identifier (NPI) of the referring/ordering/supervising physician or non-physician practitioner listed in item 17. NPIs are required for all providers and facilities.
+
+![Items 17, 17a, and 17b](img/item17.jpg){#fig-item17}
+
+
+
+```{r}
+abbott_enroll <- provider_enrollment(npi = 1730455775)
+
+abbott_enroll
+```
+
+```{r}
+abbott_revalid <- revalidation_reassign(npi = 1730455775)
+
+abbott_revalid
+```
+
+```{r}
+doctors_and_clinicians(npi = 1730455775)
+```
+
+```{r}
+facility_affiliations(npi = 1730455775)
+```
+
+```{r}
+hospital_enrollment(facility_ccn = 180051)
+```

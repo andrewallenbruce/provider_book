@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Provider: R for Healthcare Administrative Data Analysis - 1&nbsp; Introduction</title>
+<title>Provider: R for Healthcare Administrative Data Analysis - Enrollment ID</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./npi.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./nppes.html" rel="next">
+<link href="./taxonomy.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./npi.html">Identifiers</a></li><li class="breadcrumb-item"><a href="./enroll_id.html">Enrollment ID</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -118,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
@@ -145,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./enroll_id.html" class="sidebar-item-text sidebar-link">
+  <a href="./enroll_id.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Enrollment ID</span></a>
   </div>
 </li>
@@ -197,20 +197,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#what-type-of-npi-do-you-need" id="toc-what-type-of-npi-do-you-need" class="nav-link active" data-scroll-target="#what-type-of-npi-do-you-need"><span class="header-section-number">2</span> What Type of NPI Do You Need?</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/andrewallenbruce/provider_book/edit/main/intro.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/andrewallenbruce/provider_book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title">Enrollment ID</h1>
 </div>
 
 
@@ -225,25 +219,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>You’re feeling good- you are on the road to starting a private SLP practice and you have your ducks in a row. You have your EIN and NPI, and you’re credentialed with a few insurance plans. You get ready to bill for your first insurance session- and see boxes 24J, 33A, and 33B on the CMS 1500 claim form. They all say “NPI” or “Identifier.” What does it mean? Do you need to put the same number in each box?</p>
-<p>Billing can be confusing, but I can help you figure out what the different types of NPI numbers are and what they mean.</p>
-<p>An NPI number- short for National Provider Identifier- is basically an ID number. It is issued by the CMS (Centers for Medicare and Medicaid Services) to identify individual healthcare providers, and was created as part of HIPAA regulations. It is specific to you, not the job you’re in, so it stays the same whether you’re in the schools, a medical facility, or a private practice. To check if you have an NPI, visit the NPPES website.</p>
-<section id="what-type-of-npi-do-you-need" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> What Type of NPI Do You Need?</h1>
-<p>If you are going to bill insurance - even indirectly by providing a superbill for clients to submit for Out of Network reimbursement- you DO need an NPI. So, which type of NPI do you need?</p>
-<p>There are two types of NPI numbers:</p>
-<p>Type 1: Individual/Personal NPI</p>
-<p>Type 2: Organizational/Group NPI</p>
-<p>In general, if you are a solo practitioner, you will just need a Type 1 NPI- UNLESS you have a single-member LLC/PLLC and plan to accept Medicare.</p>
-<p>In that case, you will also need to apply for a Type 2 NPI for your LLC- even though there is only one of you, an LLC is considered a “group/organization.”</p>
-<p>Where to Put a Type 2 NPI on the CMS 1500 form So, now that you have those numbers, what do you do with them? You put them on your CMS 1500 claim forms and superbills, and they will be your unique identifier with any insurance company you are credentialed with. Until you have them memorized, write them down- I use the Important Business Info page from my Private Practice Foundations Course handbook.</p>
-<p>When you are filling out the CMS 1500 form, your Type 1 (individual) NPI will go in box 24J- “Rendering Provider ID”. This is the box for whomever actually rendered (provided) the service being billed.</p>
-<p>Your Type 2 NPI will go in box 32A- “Service Facility Location Information”, again, IF you have an LLC or other group business structure (partnership, S- or C-corp, etc). This even applies to single-member LLCs.</p>
-<p>If you are a sole proprietor/solo practitioner and don’t have an LLC or other business structure, you’ll use your Type 1 NPI in this box. You use your private practice location address for this box, even if you see clients in their homes.</p>
-<p>You can choose if you would like to use your Type 1 or Type 2 NPI in Box 33A- “Billing Provider Info”- if you have a Type 2, use that. If you don’t, use your Type 1. This box just tells the insurance company who the “pay to” person/organization is, so make sure all of the info is correct so they can get you your money.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -596,13 +573,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      <a href="./taxonomy.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Taxonomy</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./npi.html" class="pagination-link">
-        <span class="nav-page-text">NPI</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./nppes.html" class="pagination-link">
+        <span class="nav-page-text">NPPES</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -614,7 +591,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
+    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/andrewallenbruce/provider_book/edit/main/enroll_id.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/andrewallenbruce/provider_book/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
     <div class="nav-footer-right">This book was built with <a href="https://quarto.org/">Quarto</a>.</div>
   </div>
 </footer>
