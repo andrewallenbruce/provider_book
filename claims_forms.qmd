@@ -1,10 +1,12 @@
 # Claim Forms {.unnumbered}
 
-Claim forms are used to report the procedures performed and the reason the procedures were performed to the insurance carrier to obtain payment for those services. There are two claim forms used; the **CMS-1500** (sometimes referred to as the HCFA) and the **UB-04**. The CMS-1500 is used to report the professional services performed by providers and Ambulatory Surgical Centers (ASCs). The UB-04 is used to report facility (hospital) services.
+Claim forms are used to report the procedures performed and the reason the procedures were performed to the insurance carrier to obtain payment for those services. There are two claim forms used; the **CMS-1500** (sometimes referred to as a **HCFA**) and the CMS-1450 (more commonly known as the **UB-04**). The CMS-1500 is used to . The UB-04 is used to report facility (hospital) services.
 
-## CMS-1500
+<br>
 
-The CMS-1500 claim form is used to submit claims for physicians, non-physician practitioners (NPP), and ASC services to all payers. For this example, I'll load the `provider` package and use several of it's functions to fill out the Items pertaining to the physician.
+# CMS-1500
+
+The CMS-1500 claim form is used to report the professional services performed by physicians, non-physician practitioners (NPP), and Ambulatory Surgical Centers (ASCs) to all payers. For this example, I'll load the `provider` package and use several of it's functions to fill out the Items pertaining to the physician.
 
 ```{r setup}
 #| message: false
@@ -20,14 +22,34 @@ I've chosen a provider at random and I'll go ahead and retrieve his NPPES inform
 nppes <- nppes_npi(npi = 1730455775)
 ```
 
+<br>
 
-### Item 17
+## Item 17
 
-Enter the name of the *referring* or *ordering* physician if applicable. The name should be entered as First Name, Middle Initial, Last Name, followed by the provider’s credentials. Do not use commas or periods. Enter the applicable qualifier to the left of the vertical dotted line. In addition, the supervising physician can also be reported in this field. When multiple providers are involved, enter one provider using the following priority order:
+> Enter the name of the *referring* or *ordering* physician if applicable. 
+> The name should be entered as First Name, Middle Initial, Last Name, followed by the provider’s credentials. 
+> Do not use commas or periods. Enter the applicable qualifier to the left of the vertical dotted line. 
+> In addition, the supervising physician can also be reported in this field. 
+> When multiple providers are involved, enter one provider using the following priority order:
 
-   1. Referring Provider (Qualifier `DN`)
-   2. Ordering Provider (Qualifier `DK`)
-   3. Supervising Provider (Qualifier `DQ`)
+   1. `DN` Referring Provider
+   2. `DK` Ordering Provider
+   3. `DQ` Supervising Provider
+
+<br>
+
+If Dr. Abbott is the Referring or Ordering Provider on this claim, we may want to check if he is eligible to do so. We can do that with the `order_refer()` function:
+
+```{r}
+order_refer(npi = 1730455775) |> 
+  kable()
+```
+
+<br>
+
+He's not only eligible to refer patients to Medicare Part B or a Home Health Agency (HHA), he's also eligible to order Durable Medical Equipment (DME) or Power Mobility Devices (PMD) for them.
+
+<br>
 
 ```{r}
 nppes |> 
@@ -36,39 +58,41 @@ nppes |>
   kable()
 ```
 
-::: {.callout-caution}
-## Medicare Requirements
-
-All physicians who order services or refer Medicare beneficiaries must report this data. When more than one provider is involved, use a separate CMS-1500 claim form for each referring, ordering, or supervising physician.
-:::
+<br>
 
 ### Item 17a
 
-Enter the Other ID number of the referring, ordering, or supervising provider. Enter the qualifier to indicate what number is being reported:
+> Enter the Other ID number of the referring, ordering, or supervising provider. 
+> Enter the qualifier to indicate what number is being reported:
 
-   * `0B` State License Number
-   * `1G` Provider UPIN Number (no longer used, replaced by the NPI)
-   * `G2` Provider Commercial Number
-   * `LU` Location Number (used for the supervising provider only)
+   * `0B`  State License Number
+   * `1G`  Provider UPIN Number (no longer used, replaced by the NPI)
+   * `G2`  Provider Commercial Number
+   * `LU`  Location Number (used for the supervising provider only)
+   * `ZZ`  Taxonomy Code (paper claims)
+   * `PXC` Taxonomy Code (electronic claims)
+
+<br>
 
 ### Item 17b
 
-Enter the National Provider Identifier (NPI) of the referring/ordering/supervising physician or non-physician practitioner listed in item 17. NPIs are required for all providers and facilities.
+> Enter the NPI of the referring/ordering/supervising physician or non-physician practitioner listed in item 17.
+> NPIs are required for all providers and facilities.
 
-![Items 17, 17a, and 17b](img/item17.jpg){#fig-item17}
+<br>
 
+## Item 24I
 
-### Item 24I
+> Enter the qualifier identifying if the number is a non-NPI. 
+> The qualifier identifies what type of number is used in 24J.
 
-Enter the qualifier identifying if the number is a non-NPI. The qualifier identifies what type of number is used in 24J. 
+<br>
 
-Taxonomy Qualifier = ZZ
+## Item 24J
 
-### Item 24J
+> Enter the non-NPI number in the shaded area of the field and 
+> enter the rendering provider’s NPI number in the unshaded portion.
 
-Enter the non-NPI number in the shaded area of the field and enter the rendering provider’s NPI number in the unshaded portion. 
-
-Primary Taxonomy.
 
 ```{r}
 nppes |> 
@@ -77,89 +101,307 @@ nppes |>
   kable()
 ```
 
-### Item 25
+<br>
 
-Enter the Federal Tax ID number (Employer Identification Number or Social Security Number) of the provider of service or supplier and check the appropriate check box. A common reason for claims rejection is the Tax ID not being associated with the billing provider’s NPI.
+## Item 25
 
-### Item 27
+> Enter the TIN (EIN or SSN) of the provider of service or supplier and check the appropriate check box. 
+> A common reason for claims rejection is the Tax ID not being associated with the billing provider’s NPI.
 
-Check the appropriate block to indicate whether the provider of service or supplier accepts assignment. Accepting assignment means the provider agrees to the allowed amount (negotiated rate) for the charge. When a provider accepts assignment, the difference between the charged amount and the allowed amount will be a contractual write-off for the provider.
+<br>
 
-Medicare requires the following types of providers to accept assignment:
+## Item 27
 
-   * Clinical diagnostic laboratory services
-   * Physician services to individuals dually entitled to Medicare and Medicaid
-   * Participating physician/supplier services
-   * Services of physician assistants, nurse practitioners, clinical nurse specialists, nurse midwives, certified registered nurse anesthetists, clinical psychologists, and clinical social workers
-   * Ambulatory surgical center services for covered ASC procedures
-   * Home dialysis supplies and equipment paid under Method II
-   * Ambulance services
-   * Drugs and biologicals
-   * Simplified Billing Roster for influenza virus vaccine and pneumococcal vaccine
+> Check the appropriate block to indicate whether the provider of service or supplier accepts assignment.
 
-### Item 32
+If this is a Medicare claim, we can check to see if the doctor and/or his group accepts assignment using the `doctors_and_clinicians()` function:
 
-Enter the address where the services were provided if different from the billing provider’s address.
+```{r}
+doctors_and_clinicians(npi = 1730455775) |> 
+  select(ind_assn, group_assn) |> 
+  kable()
+```
 
-### Item 32a
+<br>
 
-If required by the payer, enter the facility’s NPI.
+## Item 32
 
-### Item 32b
+> Enter the address where the services were provided if different from the billing provider’s address.
 
-Enter the qualifier identifying the non-NPI number followed by the ID number.
-
-### Item 33
-
-Enter the provider of service/supplier’s billing name, address, 9-digit ZIP code (without the hyphen), and telephone number. This is a required item. The 5010A1 electronic version requires the billing provider address to be a physical address. This cannot be a P.O. box number. A P.O. box number in this field will cause the claim to be rejected.
-
-### Item 33a
-
-Enter the NPI of the billing provider or group.
-
-### Item 33b
-
-Enter the qualifier identifying the non-NPI number followed by the ID number. Qualifiers for use in the 5010A1 version are:
-
-   * `0B`  State License Number
-   * `G2`  Provider Commercial Number
-   * `PXC` Provider Taxonomy for electronic claims (`ZZ` is the Provider Taxonomy qualifier for paper claims)
-
+This is where things become a little more complicated. Of course we have the doctor's practice and secondary location addresses from NPPES:
 
 ```{r}
 nppes |> 
-  select(purpose:state) |> 
+  select(purpose, 
+         street, 
+         city, 
+         state) |> 
+  filter(purpose != "MAILING") |> 
+  distinct() |> 
+  kable()
+```
+
+<br>
+
+But he may be billing through a group or organization NPI. It's difficult to find a definitive answer to this question using publicly available data, but there are a couple of options. First we can use the `revalidation_reassign()` function to search his Medicare revalidation date record:
+
+<br>
+
+```{r}
+revalidation_reassign(npi = 1730455775) |> 
+  select(pac_id_group,
+         enroll_id_group,
+         business_name,
+         state_group) |> 
+  kable()
+```
+
+<br>
+
+Great, this gives us three groups that he's a part of. We can get the groups' NPIs with the `provider_enrollment()` function:
+
+<br>
+
+```{r}
+bind_rows(
+  provider_enrollment(pac_id = "5597867184", 
+                      enroll_id = "O20150219000942"), 
+  provider_enrollment(pac_id = "7012187925",
+                      enroll_id = "O20110901000656"), 
+  provider_enrollment(pac_id = "4183607252",
+                      enroll_id = "O20040609001506")) |> 
+  select(npi, 
+         org_name,
+         specialty_desc, 
+         state) |> 
+  kable()
+```
+
+<br>
+
+### Baptist Health Medical Group Inc.
+
+```{r}
+baptist <- nppes_npi(npi = 1922401611)
+```
+
+
+::: {.panel-tabset}
+
+## Basic
+
+```{r}
+baptist |> 
+  select(org_name = organization_name,
+         entype,
+         enum_date = enumeration_date,
+         org_subpart = organizational_subpart) |> 
+  distinct() |> 
+  kable()
+```
+
+## Addresses
+
+```{r}
+baptist |> 
+  select(purpose,
+         street,
+         city,
+         state,
+         phone_number,
+         fax_number) |> 
+  distinct() |> 
+  kable()
+```
+
+## AO
+
+```{r}
+baptist |> 
+  select(ao_first_name = authorized_official_first_name,
+         ao_middle_name = authorized_official_middle_name,
+         ao_last_name = authorized_official_last_name,
+         ao_title = authorized_official_title_or_position) |> 
   distinct() |> 
   kable()
 ```
 
 
+## Taxonomies
 
 ```{r}
-enroll <- provider_enrollment(npi = 1730455775)
+baptist |> 
+  select(tx_code,
+         tx_desc,
+         tx_group,
+         tx_state,
+         tx_license,
+         tx_primary) |> 
+  distinct() |> 
+  kable()
+```
 
-enroll |> 
-  select(pac_id:specialty_desc) |> 
-  glimpse()
+:::
+
+<br>
+
+### Fairview Physicians Network LLC
+
+```{r}
+fairview <- nppes_npi(npi = 1821385329)
+```
+
+::: {.panel-tabset}
+
+## Basic
+
+```{r}
+fairview |> 
+  select(org_name = organization_name,
+         entype,
+         enum_date = enumeration_date,
+         org_subpart = organizational_subpart) |> 
+  distinct() |> 
+  kable()
+```
+
+## Addresses
+
+```{r}
+fairview |> 
+  select(purpose,
+         street,
+         city,
+         state,
+         phone_number,
+         fax_number) |> 
+  distinct() |> 
+  kable()
 ```
 
 
+## AO
 
 ```{r}
-reval <- revalidation_reassign(npi = 1730455775)
-
-reval |> select(pac_id_group:state_group)
+fairview |> 
+  select(ao_first_name = authorized_official_first_name,
+         ao_last_name = authorized_official_last_name,
+         ao_title = authorized_official_title_or_position) |> 
+  distinct() |> 
+  kable()
 ```
 
 
+## Taxonomies
 
 ```{r}
-drs <- doctors_and_clinicians(npi = 1730455775)
-
-drs |> 
-  select(org_name:group_assn) |> 
-  glimpse()
+fairview |> 
+  select(tx_code,
+         tx_desc,
+         tx_group,
+         tx_state,
+         tx_license,
+         tx_primary) |> 
+  distinct() |> 
+  kable()
 ```
+
+:::
+
+<br>
+
+### Jennie Stuart Medical Center Inc.
+
+```{r}
+jennie <- nppes_npi(npi = 1235139312)
+```
+
+::: {.panel-tabset}
+
+## Basic
+
+```{r}
+jennie |> 
+  select(org_name = organization_name,
+         entype,
+         enum_date = enumeration_date,
+         org_subpart = organizational_subpart) |> 
+  distinct() |> 
+  kable()
+```
+
+
+## Addresses
+
+```{r}
+jennie |> 
+  select(purpose,
+         street,
+         city,
+         state,
+         phone_number,
+         fax_number) |> 
+  distinct() |> 
+  kable()
+```
+
+
+## AO
+
+```{r}
+jennie |> 
+  select(ao_first_name = authorized_official_first_name,
+         ao_middle_name = authorized_official_middle_name,
+         ao_last_name = authorized_official_last_name,
+         ao_title = authorized_official_title_or_position) |> 
+  distinct() |> 
+  kable()
+```
+
+
+## Taxonomies
+
+```{r}
+jennie |> 
+  select(tx_code,
+         tx_desc,
+         tx_group,
+         tx_state,
+         tx_license,
+         tx_primary) |> 
+  distinct() |> 
+  kable()
+```
+
+:::
+
+<br>
+
+### Item 32a
+
+> If required by the payer, enter the facility’s NPI.
+
+### Item 32b
+
+> Enter the qualifier identifying the non-NPI number followed by the ID number.
+
+## Item 33
+
+> Enter the provider of service/supplier’s billing name, address, 9-digit ZIP code (without the hyphen), and telephone number. 
+> The billing provider's address must be a physical address, not a P.O. Box number.
+
+### Item 33a
+
+> Enter the NPI of the billing provider or group.
+
+### Item 33b
+
+> Enter the qualifier identifying the non-NPI number followed by the ID number:
+
+   * `0B`  State License Number
+   * `G2`  Provider Commercial Number
+   * `ZZ`  Taxonomy Code (paper claims)
+   * `PXC` Taxonomy Code (electronic claims)
 
 
 

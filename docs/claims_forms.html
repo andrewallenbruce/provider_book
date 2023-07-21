@@ -125,14 +125,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Provider: R for Healthcare Administrative Data Analysis</a> 
-        <div class="sidebar-tools-main tools-wide">
+        <div class="sidebar-tools-main">
     <a href="https://github.com/andrewallenbruce/provider_book" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
-  <div class="quarto-reader-toggle-btn">
-  <i class="bi"></i>
-  </div>
-</a>
 </div>
     </div>
       </div>
@@ -236,19 +231,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#cms-1500" id="toc-cms-1500" class="nav-link active" data-scroll-target="#cms-1500">CMS-1500</a>
   <ul class="collapse">
-  <li><a href="#item-17" id="toc-item-17" class="nav-link" data-scroll-target="#item-17">Item 17</a></li>
+  <li><a href="#item-17" id="toc-item-17" class="nav-link" data-scroll-target="#item-17">Item 17</a>
+  <ul class="collapse">
   <li><a href="#item-17a" id="toc-item-17a" class="nav-link" data-scroll-target="#item-17a">Item 17a</a></li>
   <li><a href="#item-17b" id="toc-item-17b" class="nav-link" data-scroll-target="#item-17b">Item 17b</a></li>
+  </ul></li>
   <li><a href="#item-24i" id="toc-item-24i" class="nav-link" data-scroll-target="#item-24i">Item 24I</a></li>
   <li><a href="#item-24j" id="toc-item-24j" class="nav-link" data-scroll-target="#item-24j">Item 24J</a></li>
   <li><a href="#item-25" id="toc-item-25" class="nav-link" data-scroll-target="#item-25">Item 25</a></li>
   <li><a href="#item-27" id="toc-item-27" class="nav-link" data-scroll-target="#item-27">Item 27</a></li>
-  <li><a href="#item-32" id="toc-item-32" class="nav-link" data-scroll-target="#item-32">Item 32</a></li>
+  <li><a href="#item-32" id="toc-item-32" class="nav-link" data-scroll-target="#item-32">Item 32</a>
+  <ul class="collapse">
+  <li><a href="#baptist-health-medical-group-inc." id="toc-baptist-health-medical-group-inc." class="nav-link" data-scroll-target="#baptist-health-medical-group-inc.">Baptist Health Medical Group Inc.</a></li>
+  <li><a href="#fairview-physicians-network-llc" id="toc-fairview-physicians-network-llc" class="nav-link" data-scroll-target="#fairview-physicians-network-llc">Fairview Physicians Network LLC</a></li>
+  <li><a href="#jennie-stuart-medical-center-inc." id="toc-jennie-stuart-medical-center-inc." class="nav-link" data-scroll-target="#jennie-stuart-medical-center-inc.">Jennie Stuart Medical Center Inc.</a></li>
   <li><a href="#item-32a" id="toc-item-32a" class="nav-link" data-scroll-target="#item-32a">Item 32a</a></li>
   <li><a href="#item-32b" id="toc-item-32b" class="nav-link" data-scroll-target="#item-32b">Item 32b</a></li>
-  <li><a href="#item-33" id="toc-item-33" class="nav-link" data-scroll-target="#item-33">Item 33</a></li>
+  </ul></li>
+  <li><a href="#item-33" id="toc-item-33" class="nav-link" data-scroll-target="#item-33">Item 33</a>
+  <ul class="collapse">
   <li><a href="#item-33a" id="toc-item-33a" class="nav-link" data-scroll-target="#item-33a">Item 33a</a></li>
   <li><a href="#item-33b" id="toc-item-33b" class="nav-link" data-scroll-target="#item-33b">Item 33b</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/andrewallenbruce/provider_book/edit/main/claims_forms.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/andrewallenbruce/provider_book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -273,10 +277,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>Claim forms are used to report the procedures performed and the reason the procedures were performed to the insurance carrier to obtain payment for those services. There are two claim forms used; the <strong>CMS-1500</strong> (sometimes referred to as the HCFA) and the <strong>UB-04</strong>. The CMS-1500 is used to report the professional services performed by providers and Ambulatory Surgical Centers (ASCs). The UB-04 is used to report facility (hospital) services.</p>
-<section id="cms-1500" class="level2">
-<h2 class="anchored" data-anchor-id="cms-1500">CMS-1500</h2>
-<p>The CMS-1500 claim form is used to submit claims for physicians, non-physician practitioners (NPP), and ASC services to all payers. For this example, I’ll load the <code>provider</code> package and use several of it’s functions to fill out the Items pertaining to the physician.</p>
+<p>Claim forms are used to report the procedures performed and the reason the procedures were performed to the insurance carrier to obtain payment for those services. There are two claim forms used; the <strong>CMS-1500</strong> (sometimes referred to as a <strong>HCFA</strong>) and the CMS-1450 (more commonly known as the <strong>UB-04</strong>). The CMS-1500 is used to . The UB-04 is used to report facility (hospital) services.</p>
+<p><br></p>
+<section id="cms-1500" class="level1">
+<h1>CMS-1500</h1>
+<p>The CMS-1500 claim form is used to report the professional services performed by physicians, non-physician practitioners (NPP), and Ambulatory Surgical Centers (ASCs) to all payers. For this example, I’ll load the <code>provider</code> package and use several of it’s functions to fill out the Items pertaining to the physician.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(provider)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -286,19 +291,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nppes <span class="ot">&lt;-</span> <span class="fu">nppes_npi</span>(<span class="at">npi =</span> <span class="dv">1730455775</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="item-17" class="level3">
-<h3 class="anchored" data-anchor-id="item-17">Item 17</h3>
+<p><br></p>
+<section id="item-17" class="level2">
+<h2 class="anchored" data-anchor-id="item-17">Item 17</h2>
+<blockquote class="blockquote">
 <p>Enter the name of the <em>referring</em> or <em>ordering</em> physician if applicable. The name should be entered as First Name, Middle Initial, Last Name, followed by the provider’s credentials. Do not use commas or periods. Enter the applicable qualifier to the left of the vertical dotted line. In addition, the supervising physician can also be reported in this field. When multiple providers are involved, enter one provider using the following priority order:</p>
+</blockquote>
 <ol type="1">
-<li>Referring Provider (Qualifier <code>DN</code>)</li>
-<li>Ordering Provider (Qualifier <code>DK</code>)</li>
-<li>Supervising Provider (Qualifier <code>DQ</code>)</li>
+<li><code>DN</code> Referring Provider</li>
+<li><code>DK</code> Ordering Provider</li>
+<li><code>DQ</code> Supervising Provider</li>
 </ol>
+<p><br></p>
+<p>If Dr.&nbsp;Abbott is the Referring or Ordering Provider on this claim, we may want to check if he is eligible to do so. We can do that with the <code>order_refer()</code> function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nppes <span class="sc">|&gt;</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(npi, first_name<span class="sc">:</span>credential) <span class="sc">|&gt;</span> </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">order_refer</span>(<span class="at">npi =</span> <span class="dv">1730455775</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">npi</th>
+<th style="text-align: left;">first_name</th>
+<th style="text-align: left;">last_name</th>
+<th style="text-align: left;">partb</th>
+<th style="text-align: left;">hha</th>
+<th style="text-align: left;">dme</th>
+<th style="text-align: left;">pmd</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1730455775</td>
+<td style="text-align: left;">JONATHAN</td>
+<td style="text-align: left;">ABBOTT</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">TRUE</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br></p>
+<p>He’s not only eligible to refer patients to Medicare Part B or a Home Health Agency (HHA), he’s also eligible to order Durable Medical Equipment (DME) or Power Mobility Devices (PMD) for them.</p>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>nppes <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(npi, first_name<span class="sc">:</span>credential) <span class="sc">|&gt;</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <thead>
@@ -322,54 +365,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Medicare Requirements
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>All physicians who order services or refer Medicare beneficiaries must report this data. When more than one provider is involved, use a separate CMS-1500 claim form for each referring, ordering, or supervising physician.</p>
-</div>
-</div>
-</section>
+<p><br></p>
 <section id="item-17a" class="level3">
 <h3 class="anchored" data-anchor-id="item-17a">Item 17a</h3>
+<blockquote class="blockquote">
 <p>Enter the Other ID number of the referring, ordering, or supervising provider. Enter the qualifier to indicate what number is being reported:</p>
+</blockquote>
 <ul>
 <li><code>0B</code> State License Number</li>
 <li><code>1G</code> Provider UPIN Number (no longer used, replaced by the NPI)</li>
 <li><code>G2</code> Provider Commercial Number</li>
 <li><code>LU</code> Location Number (used for the supervising provider only)</li>
+<li><code>ZZ</code> Taxonomy Code (paper claims)</li>
+<li><code>PXC</code> Taxonomy Code (electronic claims)</li>
 </ul>
+<p><br></p>
 </section>
 <section id="item-17b" class="level3">
 <h3 class="anchored" data-anchor-id="item-17b">Item 17b</h3>
-<p>Enter the National Provider Identifier (NPI) of the referring/ordering/supervising physician or non-physician practitioner listed in item 17. NPIs are required for all providers and facilities.</p>
-<div id="fig-item17" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="img/item17.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: Items 17, 17a, and 17b</figcaption>
-</figure>
-</div>
+<blockquote class="blockquote">
+<p>Enter the NPI of the referring/ordering/supervising physician or non-physician practitioner listed in item 17. NPIs are required for all providers and facilities.</p>
+</blockquote>
+<p><br></p>
 </section>
-<section id="item-24i" class="level3">
-<h3 class="anchored" data-anchor-id="item-24i">Item 24I</h3>
+</section>
+<section id="item-24i" class="level2">
+<h2 class="anchored" data-anchor-id="item-24i">Item 24I</h2>
+<blockquote class="blockquote">
 <p>Enter the qualifier identifying if the number is a non-NPI. The qualifier identifies what type of number is used in 24J.</p>
-<p>Taxonomy Qualifier = ZZ</p>
+</blockquote>
+<p><br></p>
 </section>
-<section id="item-24j" class="level3">
-<h3 class="anchored" data-anchor-id="item-24j">Item 24J</h3>
+<section id="item-24j" class="level2">
+<h2 class="anchored" data-anchor-id="item-24j">Item 24J</h2>
+<blockquote class="blockquote">
 <p>Enter the non-NPI number in the shaded area of the field and enter the rendering provider’s NPI number in the unshaded portion.</p>
-<p>Primary Taxonomy.</p>
+</blockquote>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>nppes <span class="sc">|&gt;</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">"tx"</span>), <span class="sc">-</span>tx_group) <span class="sc">|&gt;</span> </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>nppes <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">"tx"</span>), <span class="sc">-</span>tx_group) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <thead>
@@ -400,60 +436,59 @@ Medicare Requirements
 </table>
 </div>
 </div>
+<p><br></p>
 </section>
-<section id="item-25" class="level3">
-<h3 class="anchored" data-anchor-id="item-25">Item 25</h3>
-<p>Enter the Federal Tax ID number (Employer Identification Number or Social Security Number) of the provider of service or supplier and check the appropriate check box. A common reason for claims rejection is the Tax ID not being associated with the billing provider’s NPI.</p>
+<section id="item-25" class="level2">
+<h2 class="anchored" data-anchor-id="item-25">Item 25</h2>
+<blockquote class="blockquote">
+<p>Enter the TIN (EIN or SSN) of the provider of service or supplier and check the appropriate check box. A common reason for claims rejection is the Tax ID not being associated with the billing provider’s NPI.</p>
+</blockquote>
+<p><br></p>
 </section>
-<section id="item-27" class="level3">
-<h3 class="anchored" data-anchor-id="item-27">Item 27</h3>
-<p>Check the appropriate block to indicate whether the provider of service or supplier accepts assignment. Accepting assignment means the provider agrees to the allowed amount (negotiated rate) for the charge. When a provider accepts assignment, the difference between the charged amount and the allowed amount will be a contractual write-off for the provider.</p>
-<p>Medicare requires the following types of providers to accept assignment:</p>
-<ul>
-<li>Clinical diagnostic laboratory services</li>
-<li>Physician services to individuals dually entitled to Medicare and Medicaid</li>
-<li>Participating physician/supplier services</li>
-<li>Services of physician assistants, nurse practitioners, clinical nurse specialists, nurse midwives, certified registered nurse anesthetists, clinical psychologists, and clinical social workers</li>
-<li>Ambulatory surgical center services for covered ASC procedures</li>
-<li>Home dialysis supplies and equipment paid under Method II</li>
-<li>Ambulance services</li>
-<li>Drugs and biologicals</li>
-<li>Simplified Billing Roster for influenza virus vaccine and pneumococcal vaccine</li>
-</ul>
-</section>
-<section id="item-32" class="level3">
-<h3 class="anchored" data-anchor-id="item-32">Item 32</h3>
-<p>Enter the address where the services were provided if different from the billing provider’s address.</p>
-</section>
-<section id="item-32a" class="level3">
-<h3 class="anchored" data-anchor-id="item-32a">Item 32a</h3>
-<p>If required by the payer, enter the facility’s NPI.</p>
-</section>
-<section id="item-32b" class="level3">
-<h3 class="anchored" data-anchor-id="item-32b">Item 32b</h3>
-<p>Enter the qualifier identifying the non-NPI number followed by the ID number.</p>
-</section>
-<section id="item-33" class="level3">
-<h3 class="anchored" data-anchor-id="item-33">Item 33</h3>
-<p>Enter the provider of service/supplier’s billing name, address, 9-digit ZIP code (without the hyphen), and telephone number. This is a required item. The 5010A1 electronic version requires the billing provider address to be a physical address. This cannot be a P.O. box number. A P.O. box number in this field will cause the claim to be rejected.</p>
-</section>
-<section id="item-33a" class="level3">
-<h3 class="anchored" data-anchor-id="item-33a">Item 33a</h3>
-<p>Enter the NPI of the billing provider or group.</p>
-</section>
-<section id="item-33b" class="level3">
-<h3 class="anchored" data-anchor-id="item-33b">Item 33b</h3>
-<p>Enter the qualifier identifying the non-NPI number followed by the ID number. Qualifiers for use in the 5010A1 version are:</p>
-<ul>
-<li><code>0B</code> State License Number</li>
-<li><code>G2</code> Provider Commercial Number</li>
-<li><code>PXC</code> Provider Taxonomy for electronic claims (<code>ZZ</code> is the Provider Taxonomy qualifier for paper claims)</li>
-</ul>
+<section id="item-27" class="level2">
+<h2 class="anchored" data-anchor-id="item-27">Item 27</h2>
+<blockquote class="blockquote">
+<p>Check the appropriate block to indicate whether the provider of service or supplier accepts assignment.</p>
+</blockquote>
+<p>If this is a Medicare claim, we can check to see if the doctor and/or his group accepts assignment using the <code>doctors_and_clinicians()</code> function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>nppes <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(purpose<span class="sc">:</span>state) <span class="sc">|&gt;</span> </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">doctors_and_clinicians</span>(<span class="at">npi =</span> <span class="dv">1730455775</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(ind_assn, group_assn) <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">ind_assn</th>
+<th style="text-align: left;">group_assn</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">Y</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="item-32" class="level2">
+<h2 class="anchored" data-anchor-id="item-32">Item 32</h2>
+<blockquote class="blockquote">
+<p>Enter the address where the services were provided if different from the billing provider’s address.</p>
+</blockquote>
+<p>This is where things become a little more complicated. Of course we have the doctor’s practice and secondary location addresses from NPPES:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>nppes <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(purpose, </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>         street, </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>         city, </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>         state) <span class="sc">|&gt;</span> </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(purpose <span class="sc">!=</span> <span class="st">"MAILING"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <thead>
@@ -472,12 +507,6 @@ Medicare Requirements
 <td style="text-align: left;">KY</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">MAILING</td>
-<td style="text-align: left;">102 W 18TH ST</td>
-<td style="text-align: left;">HOPKINSVILLE</td>
-<td style="text-align: left;">KY</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">LOCATION</td>
 <td style="text-align: left;">1717 HIGH ST STE 4B</td>
 <td style="text-align: left;">HOPKINSVILLE</td>
@@ -487,60 +516,1192 @@ Medicare Requirements
 </table>
 </div>
 </div>
+<p><br></p>
+<p>But he may be billing through a group or organization NPI. It’s difficult to find a definitive answer to this question using publicly available data, but there are a couple of options. First we can use the <code>revalidation_reassign()</code> function to search his Medicare revalidation date record:</p>
+<p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>enroll <span class="ot">&lt;-</span> <span class="fu">provider_enrollment</span>(<span class="at">npi =</span> <span class="dv">1730455775</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>enroll <span class="sc">|&gt;</span> </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(pac_id<span class="sc">:</span>specialty_desc) <span class="sc">|&gt;</span> </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 1
-Columns: 4
-$ pac_id         &lt;chr&gt; "8123242633"
-$ enroll_id      &lt;chr&gt; "I20190826002517"
-$ specialty_code &lt;chr&gt; "14-16"
-$ specialty_desc &lt;chr&gt; "PRACTITIONER - OBSTETRICS/GYNECOLOGY"</code></pre>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">revalidation_reassign</span>(<span class="at">npi =</span> <span class="dv">1730455775</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(pac_id_group,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>         enroll_id_group,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>         business_name,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>         state_group) <span class="sc">|&gt;</span> </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 21%">
+<col style="width: 44%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">pac_id_group</th>
+<th style="text-align: left;">enroll_id_group</th>
+<th style="text-align: left;">business_name</th>
+<th style="text-align: left;">state_group</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">5597867184</td>
+<td style="text-align: left;">O20150219000942</td>
+<td style="text-align: left;">Baptist Health Medical Group Inc</td>
+<td style="text-align: left;">KY</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7012187925</td>
+<td style="text-align: left;">O20110901000656</td>
+<td style="text-align: left;">Fairview Physicians Network Llc</td>
+<td style="text-align: left;">KY</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4183607252</td>
+<td style="text-align: left;">O20040609001506</td>
+<td style="text-align: left;">Jennie Stuart Medical Center Inc</td>
+<td style="text-align: left;">KY</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
+<p><br></p>
+<p>Great, this gives us three groups that he’s a part of. We can get the groups’ NPIs with the <code>provider_enrollment()</code> function:</p>
+<p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>reval <span class="ot">&lt;-</span> <span class="fu">revalidation_reassign</span>(<span class="at">npi =</span> <span class="dv">1730455775</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>reval <span class="sc">|&gt;</span> <span class="fu">select</span>(pac_id_group<span class="sc">:</span>state_group)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 4
-  pac_id_group enroll_id_group business_name                    state_group
-  &lt;chr&gt;        &lt;chr&gt;           &lt;chr&gt;                            &lt;chr&gt;      
-1 5597867184   O20150219000942 Baptist Health Medical Group Inc KY         
-2 7012187925   O20110901000656 Fairview Physicians Network Llc  KY         
-3 4183607252   O20040609001506 Jennie Stuart Medical Center Inc KY         </code></pre>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_rows</span>(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">provider_enrollment</span>(<span class="at">pac_id =</span> <span class="st">"5597867184"</span>, </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">enroll_id =</span> <span class="st">"O20150219000942"</span>), </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">provider_enrollment</span>(<span class="at">pac_id =</span> <span class="st">"7012187925"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">enroll_id =</span> <span class="st">"O20110901000656"</span>), </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">provider_enrollment</span>(<span class="at">pac_id =</span> <span class="st">"4183607252"</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">enroll_id =</span> <span class="st">"O20040609001506"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(npi, </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>         org_name,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>         specialty_desc, </span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>         state) <span class="sc">|&gt;</span> </span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 36%">
+<col style="width: 44%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">npi</th>
+<th style="text-align: left;">org_name</th>
+<th style="text-align: left;">specialty_desc</th>
+<th style="text-align: left;">state</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1922401611</td>
+<td style="text-align: left;">BAPTIST HEALTH MEDICAL GROUP INC</td>
+<td style="text-align: left;">PART B SUPPLIER - CLINIC/GROUP PRACTICE</td>
+<td style="text-align: left;">KY</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1821385329</td>
+<td style="text-align: left;">FAIRVIEW PHYSICIANS NETWORK LLC</td>
+<td style="text-align: left;">PART B SUPPLIER - CLINIC/GROUP PRACTICE</td>
+<td style="text-align: left;">KY</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1235139312</td>
+<td style="text-align: left;">JENNIE STUART MEDICAL CENTER INC</td>
+<td style="text-align: left;">PART B SUPPLIER - CLINIC/GROUP PRACTICE</td>
+<td style="text-align: left;">KY</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
+<p><br></p>
+<section id="baptist-health-medical-group-inc." class="level3">
+<h3 class="anchored" data-anchor-id="baptist-health-medical-group-inc.">Baptist Health Medical Group Inc.</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>drs <span class="ot">&lt;-</span> <span class="fu">doctors_and_clinicians</span>(<span class="at">npi =</span> <span class="dv">1730455775</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>drs <span class="sc">|&gt;</span> </span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(org_name<span class="sc">:</span>group_assn) <span class="sc">|&gt;</span> </span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 1
-Columns: 10
-$ org_name    &lt;chr&gt; "JENNIE STUART MEDICAL CENTER INC"
-$ org_pac_id  &lt;chr&gt; "4183607252"
-$ org_members &lt;int&gt; 58
-$ address     &lt;chr&gt; "1621 NASHVILLE ST SUITE 102"
-$ city        &lt;chr&gt; "RUSSELLVILLE"
-$ state       &lt;chr&gt; "KY"
-$ zipcode     &lt;chr&gt; "422768871"
-$ phone       &lt;chr&gt; "2708879058"
-$ ind_assn    &lt;chr&gt; "Y"
-$ group_assn  &lt;chr&gt; "Y"</code></pre>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>baptist <span class="ot">&lt;-</span> <span class="fu">nppes_npi</span>(<span class="at">npi =</span> <span class="dv">1922401611</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Basic</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Addresses</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">AO</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Taxonomies</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>aff <span class="ot">&lt;-</span> <span class="fu">facility_affiliations</span>(<span class="at">npi =</span> <span class="dv">1730455775</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>aff <span class="sc">|&gt;</span> <span class="fu">select</span>(facility_type,</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>              facility_ccn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>baptist <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">org_name =</span> organization_name,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>         entype,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">enum_date =</span> enumeration_date,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">org_subpart =</span> organizational_subpart) <span class="sc">|&gt;</span> </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 18%">
+<col style="width: 15%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">org_name</th>
+<th style="text-align: left;">entype</th>
+<th style="text-align: left;">enum_date</th>
+<th style="text-align: left;">org_subpart</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">BAPTIST HEALTH MEDICAL GROUP INC</td>
+<td style="text-align: left;">Organization</td>
+<td style="text-align: left;">2014-10-08</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>baptist <span class="sc">|&gt;</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(purpose,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>         street,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>         city,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>         state,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>         phone_number,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>         fax_number) <span class="sc">|&gt;</span> </span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 38%">
+<col style="width: 13%">
+<col style="width: 7%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">purpose</th>
+<th style="text-align: left;">street</th>
+<th style="text-align: left;">city</th>
+<th style="text-align: left;">state</th>
+<th style="text-align: left;">phone_number</th>
+<th style="text-align: left;">fax_number</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">PRACTICE</td>
+<td style="text-align: left;">2605 KENTUCKY AVE</td>
+<td style="text-align: left;">PADUCAH</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-415-7653</td>
+<td style="text-align: left;">270-575-8359</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MAILING</td>
+<td style="text-align: left;">5200 COMMERCE CROSSINGS DR FL 3</td>
+<td style="text-align: left;">LOUISVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">502-253-4911</td>
+<td style="text-align: left;">502-489-5752</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>baptist <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">ao_first_name =</span> authorized_official_first_name,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">ao_middle_name =</span> authorized_official_middle_name,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">ao_last_name =</span> authorized_official_last_name,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">ao_title =</span> authorized_official_title_or_position) <span class="sc">|&gt;</span> </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 21%">
+<col style="width: 18%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">ao_first_name</th>
+<th style="text-align: left;">ao_middle_name</th>
+<th style="text-align: left;">ao_last_name</th>
+<th style="text-align: left;">ao_title</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">DANYEL</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">CLAY</td>
+<td style="text-align: left;">Executive Director Rev Cycle</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>baptist <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(tx_code,</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>         tx_desc,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>         tx_group,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>         tx_state,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>         tx_license,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>         tx_primary) <span class="sc">|&gt;</span> </span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 35%">
+<col style="width: 29%">
+<col style="width: 7%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">tx_code</th>
+<th style="text-align: left;">tx_desc</th>
+<th style="text-align: left;">tx_group</th>
+<th style="text-align: left;">tx_state</th>
+<th style="text-align: left;">tx_license</th>
+<th style="text-align: left;">tx_primary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">207RC0000X</td>
+<td style="text-align: left;">Internal Medicine, Cardiovascular Disease</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">207V00000X</td>
+<td style="text-align: left;">Obstetrics &amp; Gynecology</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">207Y00000X</td>
+<td style="text-align: left;">Otolaryngology</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2084N0400X</td>
+<td style="text-align: left;">Psychiatry &amp; Neurology, Neurology</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">208600000X</td>
+<td style="text-align: left;">Surgery</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">213E00000X</td>
+<td style="text-align: left;">Podiatrist</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">225100000X</td>
+<td style="text-align: left;">Physical Therapist</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">231H00000X</td>
+<td style="text-align: left;">Audiologist</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">235Z00000X</td>
+<td style="text-align: left;">Speech-Language Pathologist,</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">363A00000X</td>
+<td style="text-align: left;">Physician Assistant</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">363L00000X</td>
+<td style="text-align: left;">Nurse Practitioner</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">367500000X</td>
+<td style="text-align: left;">Nurse Anesthetist, Certified Registered</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">103T00000X</td>
+<td style="text-align: left;">Psychologist</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1041C0700X</td>
+<td style="text-align: left;">Social Worker, Clinical</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">207Q00000X</td>
+<td style="text-align: left;">Family Medicine</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">TRUE</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="fairview-physicians-network-llc" class="level3">
+<h3 class="anchored" data-anchor-id="fairview-physicians-network-llc">Fairview Physicians Network LLC</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>fairview <span class="ot">&lt;-</span> <span class="fu">nppes_npi</span>(<span class="at">npi =</span> <span class="dv">1821385329</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Basic</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Addresses</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">AO</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Taxonomies</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>fairview <span class="sc">|&gt;</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">org_name =</span> organization_name,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>         entype,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">enum_date =</span> enumeration_date,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">org_subpart =</span> organizational_subpart) <span class="sc">|&gt;</span> </span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 19%">
+<col style="width: 16%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">org_name</th>
+<th style="text-align: left;">entype</th>
+<th style="text-align: left;">enum_date</th>
+<th style="text-align: left;">org_subpart</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">FAIRVIEW PHYSICIANS NETWORK LLC</td>
+<td style="text-align: left;">Organization</td>
+<td style="text-align: left;">2011-07-05</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>fairview <span class="sc">|&gt;</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(purpose,</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>         street,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>         city,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>         state,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>         phone_number,</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>         fax_number) <span class="sc">|&gt;</span> </span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 30%">
+<col style="width: 16%">
+<col style="width: 7%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">purpose</th>
+<th style="text-align: left;">street</th>
+<th style="text-align: left;">city</th>
+<th style="text-align: left;">state</th>
+<th style="text-align: left;">phone_number</th>
+<th style="text-align: left;">fax_number</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">PRACTICE</td>
+<td style="text-align: left;">102 W 18TH ST</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-707-2100</td>
+<td style="text-align: left;">270-707-2103</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MAILING</td>
+<td style="text-align: left;">PO BOX 990</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-707-2100</td>
+<td style="text-align: left;">270-707-2103</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">10755 EAGLE WAY STE 202</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-887-5640</td>
+<td style="text-align: left;">270-886-5371</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">10755 EAGLE WAY STE 100</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-887-0270</td>
+<td style="text-align: left;">270-886-3969</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">1724 KENTON ST STE 1C</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-886-5141</td>
+<td style="text-align: left;">270-885-1877</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">10755 EAGLE WAY STE 200</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-889-0701</td>
+<td style="text-align: left;">270-889-0556</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>fairview <span class="sc">|&gt;</span> </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">ao_first_name =</span> authorized_official_first_name,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">ao_last_name =</span> authorized_official_last_name,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">ao_title =</span> authorized_official_title_or_position) <span class="sc">|&gt;</span> </span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">ao_first_name</th>
+<th style="text-align: left;">ao_last_name</th>
+<th style="text-align: left;">ao_title</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ERIC</td>
+<td style="text-align: left;">LEE</td>
+<td style="text-align: left;">President/CEO</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fairview <span class="sc">|&gt;</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(tx_code,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>         tx_desc,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>         tx_group,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>         tx_state,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>         tx_license,</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>         tx_primary) <span class="sc">|&gt;</span> </span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 34%">
+<col style="width: 29%">
+<col style="width: 7%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">tx_code</th>
+<th style="text-align: left;">tx_desc</th>
+<th style="text-align: left;">tx_group</th>
+<th style="text-align: left;">tx_state</th>
+<th style="text-align: left;">tx_license</th>
+<th style="text-align: left;">tx_primary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">363LA2200X</td>
+<td style="text-align: left;">Nurse Practitioner, Adult Health</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">363LF0000X</td>
+<td style="text-align: left;">Nurse Practitioner, Family</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">207N00000X</td>
+<td style="text-align: left;">Dermatology</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">207R00000X</td>
+<td style="text-align: left;">Internal Medicine</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">207RG0100X</td>
+<td style="text-align: left;">Internal Medicine, Gastroenterology</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">207RH0003X</td>
+<td style="text-align: left;">Internal Medicine, Hematology &amp; Oncology</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">207RX0202X</td>
+<td style="text-align: left;">Internal Medicine, Medical Oncology</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">207V00000X</td>
+<td style="text-align: left;">Obstetrics &amp; Gynecology</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">207X00000X</td>
+<td style="text-align: left;">Orthopaedic Surgery</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">208600000X</td>
+<td style="text-align: left;">Surgery</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">208800000X</td>
+<td style="text-align: left;">Urology</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">363A00000X</td>
+<td style="text-align: left;">Physician Assistant</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">363AS0400X</td>
+<td style="text-align: left;">Physician Assistant, Surgical</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">363L00000X</td>
+<td style="text-align: left;">Nurse Practitioner</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">207Q00000X</td>
+<td style="text-align: left;">Family Medicine</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">TRUE</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="jennie-stuart-medical-center-inc." class="level3">
+<h3 class="anchored" data-anchor-id="jennie-stuart-medical-center-inc.">Jennie Stuart Medical Center Inc.</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>jennie <span class="ot">&lt;-</span> <span class="fu">nppes_npi</span>(<span class="at">npi =</span> <span class="dv">1235139312</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Basic</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Addresses</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">AO</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false">Taxonomies</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>jennie <span class="sc">|&gt;</span> </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">org_name =</span> organization_name,</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>         entype,</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">enum_date =</span> enumeration_date,</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">org_subpart =</span> organizational_subpart) <span class="sc">|&gt;</span> </span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 18%">
+<col style="width: 15%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">org_name</th>
+<th style="text-align: left;">entype</th>
+<th style="text-align: left;">enum_date</th>
+<th style="text-align: left;">org_subpart</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">JENNIE STUART MEDICAL CENTER INC</td>
+<td style="text-align: left;">Organization</td>
+<td style="text-align: left;">2005-07-29</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>jennie <span class="sc">|&gt;</span> </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(purpose,</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>         street,</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>         city,</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>         state,</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>         phone_number,</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>         fax_number) <span class="sc">|&gt;</span> </span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 32%">
+<col style="width: 16%">
+<col style="width: 7%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">purpose</th>
+<th style="text-align: left;">street</th>
+<th style="text-align: left;">city</th>
+<th style="text-align: left;">state</th>
+<th style="text-align: left;">phone_number</th>
+<th style="text-align: left;">fax_number</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">PRACTICE</td>
+<td style="text-align: left;">320 W 18TH ST</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-887-0100</td>
+<td style="text-align: left;">270-887-9266</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MAILING</td>
+<td style="text-align: left;">PO BOX 2400</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-887-0100</td>
+<td style="text-align: left;">270-887-9266</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">1717 HIGH ST STE 4B</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-887-9058</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">1621 NASHVILLE ST STE 102</td>
+<td style="text-align: left;">RUSSELLVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-887-9058</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">222 W 18TH ST</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-886-4625</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">105 KEETON DR</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-887-6565</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">120 N MAIN ST</td>
+<td style="text-align: left;">TRENTON</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-466-9300</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">10755 EAGLE WAY STE 202</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-887-5640</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">231 BURLEY AVE</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-885-7300</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">8250 EAGLE WAY</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-885-6200</td>
+<td style="text-align: left;">270-886-2393</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">110 NICK TERHUNE DR</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-887-8311</td>
+<td style="text-align: left;">270-887-0439</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">10755 EAGLE WAY STE 102</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-886-1289</td>
+<td style="text-align: left;">270-885-4713</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">1724 KENTON ST STE 2B</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-632-4555</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">1722 HIGH ST</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-885-8505</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">10755 EAGLE WAY STE 200</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-889-0701</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">1724 KENTON ST STE 1C</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-886-5141</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">10755 EAGLE WAY STE 201</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-807-5430</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">10755 EAGLE WAY STE 100</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-887-0270</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">1717 HIGH ST STE 1A</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-885-0570</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOCATION</td>
+<td style="text-align: left;">1724 KENTON ST STE 1A</td>
+<td style="text-align: left;">HOPKINSVILLE</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">270-885-5003</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>jennie <span class="sc">|&gt;</span> </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">ao_first_name =</span> authorized_official_first_name,</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">ao_middle_name =</span> authorized_official_middle_name,</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">ao_last_name =</span> authorized_official_last_name,</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">ao_title =</span> authorized_official_title_or_position) <span class="sc">|&gt;</span> </span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">ao_first_name</th>
+<th style="text-align: left;">ao_middle_name</th>
+<th style="text-align: left;">ao_last_name</th>
+<th style="text-align: left;">ao_title</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ERIC</td>
+<td style="text-align: left;">ALAN</td>
+<td style="text-align: left;">LEE</td>
+<td style="text-align: left;">President / CEO</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="tabset-3-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-4-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>jennie <span class="sc">|&gt;</span> </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(tx_code,</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>         tx_desc,</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>         tx_group,</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>         tx_state,</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>         tx_license,</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>         tx_primary) <span class="sc">|&gt;</span> </span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 36%">
+<col style="width: 28%">
+<col style="width: 7%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">tx_code</th>
+<th style="text-align: left;">tx_desc</th>
+<th style="text-align: left;">tx_group</th>
+<th style="text-align: left;">tx_state</th>
+<th style="text-align: left;">tx_license</th>
+<th style="text-align: left;">tx_primary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">363L00000X</td>
+<td style="text-align: left;">Nurse Practitioner</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">363LF0000X</td>
+<td style="text-align: left;">Nurse Practitioner, Family</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">363LN0000X</td>
+<td style="text-align: left;">Nurse Practitioner, Neonatal</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">364SF0001X</td>
+<td style="text-align: left;">Clinical Nurse Specialist, Family Health</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">367500000X</td>
+<td style="text-align: left;">Nurse Anesthetist, Certified Registered</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">208M00000X</td>
+<td style="text-align: left;">Hospitalist</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">7100104890</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">103TC0700X</td>
+<td style="text-align: left;">Psychologist, Clinical</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">207L00000X</td>
+<td style="text-align: left;">Anesthesiology</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">207Q00000X</td>
+<td style="text-align: left;">Family Medicine</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">6593432500</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">207RC0000X</td>
+<td style="text-align: left;">Internal Medicine, Cardiovascular Disease</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">65939332</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2084N0400X</td>
+<td style="text-align: left;">Psychiatry &amp; Neurology, Neurology</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">208600000X</td>
+<td style="text-align: left;">Surgery</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">65941742</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2086S0122X</td>
+<td style="text-align: left;">Surgery, Plastic and Reconstructive Surgery</td>
+<td style="text-align: left;">193200000X - Multi-Specialty Group</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">78903788</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">282N00000X</td>
+<td style="text-align: left;">General Acute Care Hospital</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">KY</td>
+<td style="text-align: left;">100068</td>
+<td style="text-align: left;">TRUE</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="item-32a" class="level3">
+<h3 class="anchored" data-anchor-id="item-32a">Item 32a</h3>
+<blockquote class="blockquote">
+<p>If required by the payer, enter the facility’s NPI.</p>
+</blockquote>
+</section>
+<section id="item-32b" class="level3">
+<h3 class="anchored" data-anchor-id="item-32b">Item 32b</h3>
+<blockquote class="blockquote">
+<p>Enter the qualifier identifying the non-NPI number followed by the ID number.</p>
+</blockquote>
+</section>
+</section>
+<section id="item-33" class="level2">
+<h2 class="anchored" data-anchor-id="item-33">Item 33</h2>
+<blockquote class="blockquote">
+<p>Enter the provider of service/supplier’s billing name, address, 9-digit ZIP code (without the hyphen), and telephone number. The billing provider’s address must be a physical address, not a P.O. Box number.</p>
+</blockquote>
+<section id="item-33a" class="level3">
+<h3 class="anchored" data-anchor-id="item-33a">Item 33a</h3>
+<blockquote class="blockquote">
+<p>Enter the NPI of the billing provider or group.</p>
+</blockquote>
+</section>
+<section id="item-33b" class="level3">
+<h3 class="anchored" data-anchor-id="item-33b">Item 33b</h3>
+<blockquote class="blockquote">
+<p>Enter the qualifier identifying the non-NPI number followed by the ID number:</p>
+</blockquote>
+<ul>
+<li><code>0B</code> State License Number</li>
+<li><code>G2</code> Provider Commercial Number</li>
+<li><code>ZZ</code> Taxonomy Code (paper claims)</li>
+<li><code>PXC</code> Taxonomy Code (electronic claims)</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>aff <span class="ot">&lt;-</span> <span class="fu">facility_affiliations</span>(<span class="at">npi =</span> <span class="dv">1730455775</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>aff <span class="sc">|&gt;</span> <span class="fu">select</span>(facility_type,</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>              facility_ccn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
   facility_type facility_ccn
@@ -549,16 +1710,16 @@ $ group_assn  &lt;chr&gt; "Y"</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>hosp <span class="ot">&lt;-</span> <span class="fu">hospital_enrollment</span>(<span class="at">facility_ccn =</span> <span class="dv">180051</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>hosp <span class="sc">|&gt;</span> <span class="fu">select</span>(org_name, </span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>               org_structure, </span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>               address, </span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>               city, </span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>               state, </span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>               location_type, </span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>               multiple_npis) <span class="sc">|&gt;</span> </span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>hosp <span class="ot">&lt;-</span> <span class="fu">hospital_enrollment</span>(<span class="at">facility_ccn =</span> <span class="dv">180051</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>hosp <span class="sc">|&gt;</span> <span class="fu">select</span>(org_name, </span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>               org_structure, </span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>               address, </span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>               city, </span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>               state, </span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>               location_type, </span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>               multiple_npis) <span class="sc">|&gt;</span> </span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 1
 Columns: 7
@@ -573,6 +1734,7 @@ $ multiple_npis &lt;lgl&gt; FALSE</code></pre>
 </div>
 
 
+</section>
 </section>
 </section>
 

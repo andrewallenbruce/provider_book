@@ -6,7 +6,7 @@ execute:
 
 book:
   title: "Provider: R for Healthcare Administrative Data Analysis"
-  reader-mode: true
+  reader-mode: false
   author: "Andrew Bruce, RHIT, CPC, CPPM"
   page-footer:
     right: |
