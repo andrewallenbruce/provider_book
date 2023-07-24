@@ -19,7 +19,7 @@ Eligible clinicians with QP status are also excluded from MIPS. If an eligible c
 
 Clinicians are included and required to participate in MIPS if they meet all 3 of the following requirements: (1) are a MIPS eligible clinician type and enrolled as a Medicare provider before January 1, 2021; (2) exceed the low-volume threshold, and (3) aren’t otherwise excluded (for example, by achieving QP status). We evaluate a clinician’s eligibility for MIPS based on their National Provider Identifier (NPI) and associated Taxpayer Identification Number (TIN).
 
-MIPS eligible clinicians — who are the focus of this report — are both physicians and non-physician clinicians who are eligible to participate in MIPS. Through rulemaking, CMS defines the MIPS eligible clinician types for a specific performance year. MIPS eligible clinician types in the CY 2021 performance year included the following physicians and non-physician clinicians:
+MIPS eligible clinicians are both physicians and non-physician clinicians who are eligible to participate in MIPS. Through rulemaking, CMS defines the MIPS eligible clinician types for a specific performance year. MIPS eligible clinician types in the CY 2021 performance year included the following physicians and non-physician clinicians:
 
    * Physicians (including doctors of medicine, osteopathy, dental surgery, dental medicine, podiatric medicine, and optometry) 
    * Osteopathic practitioners 
@@ -47,10 +47,470 @@ The **low-volume threshold** is a critical step in determining whether a clinici
 
 ```{r}
 library(provider)
+library(dplyr)
+
 abbott_qpp <- 2017:2021 |> 
   furrr::future_map(\(x) quality_payment(year = x, 
                                          npi = 1730455775)) |> 
   purrr::list_rbind()
-
-abbott_qpp
 ```
+
+```{r}
+abbott_qpp |> 
+  select(year, 
+         contains("quality_measure")) |> 
+  tidyr::pivot_longer(!year, 
+                      names_to = "type", 
+                      values_to = "val") |> 
+  tidyr::separate_wider_delim(type, "_", 
+                              names = c("q", "m", "type", "qm_no")) |> 
+  tidyr::unite("name", 
+               c("q", "m"), 
+               remove = TRUE, 
+               sep = " ") |> 
+  tidyr::pivot_wider(names_from = type, 
+                     values_from = val,
+                     values_fn = list) |> 
+  tidyr::unnest(cols = c(id, score)) |> 
+  filter(!is.na(id))
+```
+
+```{r}
+abbott_qpp |> 
+  select(year, 
+         contains("quality_measure")) |> 
+  tidyr::pivot_longer(!year, 
+                      names_to = "type", 
+                      values_to = "val") |> 
+  tidyr::separate_wider_delim(type, "_", 
+                              names = c("q", "m", "type", "qm_no")) |> 
+  tidyr::unite("name", 
+               c("q", "m"), 
+               remove = TRUE, 
+               sep = " ") |> 
+  tidyr::pivot_wider(names_from = type, 
+                     values_from = val,
+                     values_fn = list) |> 
+  tidyr::unnest(cols = c(id, score)) |> 
+  filter(!is.na(id))
+```
+
+
+```{r}
+abbott_qpp |> 
+  select(year, 
+         final_score,
+         practice_size, 
+         part_type, 
+         beneficiaries, 
+         allowed_charges,
+         services, 
+         pmt_adj_pct, 
+         complex_patient_bonus,
+         quality_category_score,
+         quality_improvement_bonus,
+         pi_category_score,
+         ia_score,
+         cost_score) |> 
+  provider:::gt_prov()
+```
+
+
+
+```{r}
+hussain_qpp <- 2017:2021 |> 
+  furrr::future_map(\(x) quality_payment(
+    year = x, 
+    npi = 1043477615)) |> 
+  purrr::list_rbind()
+```
+
+
+```{r}
+hussain_qpp |> 
+  select(year, 
+         final_score,
+         practice_size, 
+         part_type, 
+         beneficiaries, 
+         allowed_charges,
+         services, 
+         pmt_adj_pct, 
+         complex_patient_bonus,
+         quality_category_score,
+         quality_improvement_bonus,
+         pi_category_score,
+         ia_score,
+         cost_score) |> 
+  provider:::gt_prov()
+```
+
+
+```{r}
+hussain_qpp |> 
+  select(year, 
+         contains("quality_measure")) |> 
+  tidyr::pivot_longer(!year, 
+                      names_to = "type", 
+                      values_to = "val") |> 
+  tidyr::separate_wider_delim(type, "_", 
+                              names = c("q", "m", "type", "qm_no")) |> 
+  tidyr::unite("name", 
+               c("q", "m"), 
+               remove = TRUE, 
+               sep = " ") |> 
+  tidyr::pivot_wider(names_from = type, 
+                     values_from = val,
+                     values_fn = list) |> 
+  tidyr::unnest(cols = c(id, score)) |> 
+  filter(!is.na(id))
+```
+
+
+```{r}
+qpp_ga <- 2017:2021 |> 
+  furrr::future_map(\(x) quality_payment(year = x, 
+                                         state = "GA", 
+                                         specialty = "Internal Medicine", 
+                                         part_type = "Individual")) |> 
+  purrr::list_rbind()
+```
+
+
+```{r}
+qpp_ga |> 
+  select(year, 
+         npi,
+         contains("quality_measure")) |> 
+  tidyr::pivot_longer(!c(year, npi), 
+                      names_to = "type", 
+                      values_to = "val") |> 
+  tidyr::separate_wider_delim(type, "_", 
+                              names = c("q", "m", "type", "qm_no")) |> 
+  tidyr::unite("name", 
+               c("q", "m"), 
+               remove = TRUE, 
+               sep = " ") |> 
+  tidyr::pivot_wider(names_from = type, 
+                     values_from = val,
+                     values_fn = list) |> 
+  tidyr::unnest(cols = c(id, score)) |> 
+  filter(!is.na(id))
+```
+
+
+```{r}
+qpp_ga |> 
+  select(year, 
+         npi,
+         contains("pi_measure")) |> 
+  tidyr::pivot_longer(
+    !c(year, npi), 
+    names_to = "type", 
+    values_to = "val") |> 
+  tidyr::separate_wider_delim(
+    type, "_", 
+    names = c("q", "m", "type", "qm_no")) |> 
+  tidyr::unite("name", 
+               c("q", "m"), 
+               remove = TRUE, 
+               sep = " ") |> 
+  tidyr::pivot_wider(names_from = type, 
+                     values_from = val,
+                     values_fn = list) |> 
+  tidyr::unnest(cols = c(id, score)) |> 
+  filter(!is.na(id))
+```
+
+```{r}
+qpp_ga |> 
+  select(year, 
+         npi,
+         final_score,
+         #practice_size, 
+         #part_type, 
+         #beneficiaries, 
+         #allowed_charges,
+         #services, 
+         pmt_adj_pct, 
+         complex_patient_bonus,
+         quality_category_score,
+         quality_improvement_bonus,
+         pi_category_score,
+         ia_score,
+         cost_score) |> 
+  group_by(npi) |> 
+  provider:::gt_prov()
+```
+
+
+## History
+
+The Medicare Access and CHIP Reauthorization Act of 2015 (MACRA): 
+
+   1. repealed the sustainable growth rate (SGR) formula used to update the Medicare Physician Fee Schedule (MPFS)
+   1. reauthorized the Children’s Health Insurance Program (CHIP) and 
+   1. changed the way Medicare incorporates quality measurement into payments. 
+
+Together, these policies are referred to as the Quality Payment Program (QPP). The SGR was enacted under the Balanced Budget Act of 1997 to control Medicare spending. The flaw in the system was that physicians’ payment rates under the rule dropped so low that the SGR had to be suspended or adjusted by Congress every year to prevent physicians from opting out of Medicare. MACRA provided automatic, annual update to the single conversion factor of 0.5 percent for all physicians and other qualified healthcare professionals through 2019. Medicare Part B payment rates will stay frozen at 2019 levels through 2025. Beginning in 2019, eligible clinicians (defined later) will either receive negative, neutral, or positive adjustments to their Medicare Part B payments based on their performance in the Merit-Based Incentive Payment System (MIPS) or a MIPS Alternative Payment Model (APM), or earn a lump sum bonus for participation in an Advanced Alternative Payment Model (APM). Under MACRA, Medicare’s costly and complex quality initiatives — the Physician Quality Reporting System (PQRS), the Value‐Based Modifier Program (VM), and the Medicare Electronic Health Record (EHR) Incentive Program, also known as Meaningful Use — ended on Dec. 31, 2018. Components of the PQRS, VM, and Meaningful Use programs live on in MIPS, however.
+
+The overarching goal of the QPP is to implement a patient-centered healthcare system that delivers better care, smarter spending, and healthier people. In theory, increasing the health of our population will reduce medical costs and preserve Medicare’s main trust fund, which is on track to run dry by 2026.
+
+## QPP Overview
+
+The bedrock of the QPP is “high-value, patient-centered care, informed by useful feedback, in a continuous cycle of improvement.” Quality care is tied to medical coding and medical coding is tied to reimbursement. The days of siloed expertise is a thing of the past and we must understand how each area of revenue cycle management (RCM) affects the next. Coders have a unique ability to understand how RCM works for both the physician and payer. To have a coder on the team who also understands the QPP is essential for clinicians who wish to receive full credit for the quality care they provide to patients.
+
+The QPP is comprised of two payment methodologies:
+
+   * Merit-Based Incentive Payment System (MIPS)
+   * Advanced Alternative Payment Models (APMs)
+
+Although there are two separate pathways within the QPP, both Advanced APMs and MIPS contribute toward the goal of seamless integration of the QPP into clinical practice workflows: Advanced APMs promote seamless integration by way of payment methodology and design that incentivize care coordination; and MIPS builds on the capacity of eligible clinicians to participate in APMs in later years of the QPP.
+
+### QPP Year 1
+
+CMS published a final rule in 2016 to establish special policies for year 1 (performance year 2017/payment year 2019) of the QPP. The Merit-Based Incentive Payment System (MIPS) and Alternative Payment Model (APM) Incentive under the Physician Fee Schedule, and Criteria for Physician-Focused Payment Models final rule, or 2017 QPP final rule, established:
+
+   * Incentives for participation in Advanced APMs
+   * The definition and processes for Qualifying APM Participants (QPs) in Advanced APMs
+   * Criteria for use of the Physician-Focused Payment Model Technical Advisory Committee (PTAC) and
+   *  Policies to phase in the implementation of MIPS
+
+### QPP Year 2
+
+The 2018 QPP final rule further implemented policies established in the 2017 QPP final rule, and addressed elements of MACRA that were not included in the first year of the program, including:
+
+   * Virtual groups
+   * 2019 performance period facility-based measurement
+   * Improvement scoring
+
+Added flexibilities were offered to small practices to alleviate perceived burden and several bonus opportunities were added to encourage participation.
+
+::: {.callout-note}
+## Automatic Extreme and Uncontrollable Circumstances
+
+2017 was a memorable year. Hurricanes tore through entire communities in Florida and Puerto Rico and fires blazed through California, leaving entire communities without water, electricity, and shelter. CMS released an interim final rule concurrently with the 2018 QPP final rule to establish an automatic extreme and uncontrollable circumstance policy for year 1 of MIPS to recognize the 2017 hurricanes and other natural disasters that impeded many MIPS eligible clinicians’ ability to participate in the QPP. In short, CMS applied the extreme and uncontrollable circumstances policies for all MIPS eligible clinicians in affected areas without requiring an application to be submitted. These MIPS eligible clinicians received a final score equal to the 2017 performance threshold.
+:::
+
+### QPP Year 3
+
+A third final rule, published in the Nov. 23, 2018, Federal Register, further implemented MACRA mandates and revised several previously finalized policies for year 3 (performance year 2019/payment year 2021) of the QPP.
+
+Notable changes included:
+
+   * An expanded list of eligible clinician types
+   * An opt-in to MIPS option
+   * A third criterion to the low-volume threshold calculation
+   * Weight changes to the Quality and Cost performance categories
+
+According to CMS, 99.99 percent of eligible clinicians participated in MIPS in 2019 with 954,614 eligible clinicians receiving a payment adjustment. Of those who received a payment adjustment, 97.6 percent received a positive payment adjustment for payment year 2021 based on their performance in 2019.
+
+Also, for the 2019 performance period, CMS reports that 195,564 eligible clinicians earned Qualifying APM Participant (QP) status, while another 27,995 eligible clinicians earned
+partial QP status.
+
+Due to the public health emergency (PHE) for the COVID-19 pandemic, CMS reports that 65,237 (approximately 6.83 percent of 954,614) MIPS eligible clinicians received reweighting of one or more MIPS performance categories for year 3 under the MIPS Extreme and Uncontrollable Circumstances policy.
+
+### QPP Year 4
+
+The 2020 QPP final rule continued to phase in previously finalized policies for year 4 (performance year 2020/payment year 2022) and introduced a radical change to how clinicians will select measures in the future. Notable changes to the QPP for year 4 include:
+
+   * Weight changes to the Quality and Cost performance categories
+   * Payment threshold changes
+   * Payment adjustment changes
+   * Definition of hospital-based clinicians
+   * Proposed MIPS Value Pathways (MVP)
+
+Due to the PHE for the COVID-19 pandemic, however, CMS finalized in the 2021 QPP final rule several changes to year 4 policy:
+
+   * An increase to the complex patient bonus. Clinicians, groups, virtual groups, and APM entities can earn up to 10 bonus points toward their final score for the 2020 performance year, only.
+   * APM entities may apply for reweighting of MIPS performance categories due to extreme and uncontrollable circumstances for the 2020 performance year, only. If approved, the APM entity will receive a score equal to the performance threshold.
+   * An extension for applying for reweighting due to extreme and uncontrollable circumstances for the 2019 performance period from Dec. 31, 2019, to Feb. 1, 2020.
+
+In separate rulemaking, CMS also added a new COVID-19 Clinical Trials improvement activity to the CY 2020 Improvement Activities inventory for use beginning with the 2020 performance period.
+
+## Eligibility and Exceptions
+
+Not every healthcare provider is required to participate in the Quality Payment Program (QPP). First and foremost, payment adjustments only apply to professional services paid under Medicare Part B, so providers who don’t accept Medicare Part B are excluded.
+
+::: {.callout-note}
+## MIPS Eligible Clinicians in 2021
+
+For the 2018 performance year, CMS defined eligible clinicians (identified by a unique billing Tax Identification Number (TIN) and National Provider Identifier (NPI) combination) as any of the following healthcare professionals:
+
+   * Certified Registered Nurse Anesthetists (CRNA)
+   * Clinical Nurse Specialists (CNS)
+   * Doctors of Chiropractic (DC)
+   * Doctors of Dental Medicine (DMD)
+   * Doctors of Dental Surgery (DDS)
+   * Doctors of Medicine (MD)
+   * Doctors of Optometry (OD)
+   * Doctors of Osteopathy (DO)
+   * Doctors of Podiatric Medicine (DPM)
+   * Nurse Practitioners (NP)
+   * Physician Assistants (PA)
+
+For performance year 2019, CMS expanded this list to include the following eligible clinicians for the purposes of MIPS participation:
+
+   * Clinical Psychologists
+   * Physical Therapists
+   * Occupational Therapists
+   * Qualified Speech-Language Pathologists
+   * Qualified Audiologists
+   * Registered Dietitian or Nutrition Professionals
+
+This list is unchanged for year 5 (performance year 2021/payment year 2023).
+:::
+
+
+All MIPS eligible clinicians, including those in a MIPS APM, may participate in MIPS as an individual, group, virtual group, or (new for 2021) an APM entity.
+
+### 2021 Low Volume Threshold
+
+The above-listed clinician types are automatically considered eligible clinicians if they meet or exceed the low-volume threshold. Beginning with performance year 2019, a MIPS
+eligible clinician:
+
+   * Earns more than $90,000 in Medicare Part B allowed charges; and
+   * Sees more than 200 Medicare Part B patients; and
+   * Provides more than 200 covered professional services under the Medicare Physician Fee Schedule (MPFS).
+
+CMS estimates approximately 228,000 clinicians will be MIPS eligible because they exceed the low volume threshold as individuals and are not otherwise excluded. CMS identifies these clinicians as having “required eligibility.” Of those required to participate, CMS estimates 27,115 (10%) will choose not to participate.
+
+As in performance year 2020, eligible clinicians who do not meet all three criteria are excluded from MIPS but may voluntarily report. Voluntary reporters do not receive payment adjustments and their performance results will not be published on the CMS Physician Compare website if they choose to opt out. The advantage of voluntary reporting is to generate feedback reports the clinician/group can use to prepare for future participation in the QPP; it also helps CMS improve the accuracy of benchmarks used to evaluate measures.
+
+Beginning in 2019, eligible clinicians who meet at least one criterion (but not all three) may opt-in to MIPS. For example, an eligible clinician who receives $90,000 in allowed Medicare charges but sees fewer than 200 patients and provides fewer than 200 professional services may opt-in to MIPS. Those who opt in are considered MIPS eligible clinicians and will receive payment adjustments based on performance.
+
+MIPS eligibility is based on two consecutive 12-month lookback periods that align with the fiscal year, beginning on Oct. 1. For 2021, the two determination periods are Oct. 1, 2019, to Sept. 30, 2020, and Oct. 1, 2020, to Sept. 30, 2021. Eligibility for the upcoming performance period is based on only the first 12-month period.
+
+An eligible clinician may also be excluded from MIPS payment adjustments if one or more of the following is true:
+
+   * The clinician is a Medicare freshman.
+   * The clinician is a Qualifying APM Participant (QP) or Partial QP (PQP) in an Advanced APM.
+
+### Significant Hardships
+
+There are automatic exclusions (based on the low volume threshold) from MIPS and then there are exceptions, which may or may not require application. For example, MIPS eligible clinicians without access to certified electronic health record technology (CEHRT) due to a significant hardship, such as decertification of their electronic health record (EHR),
+can apply to have the Promoting Interoperability (formerly Advancing Care Information) category reweighted to zero (the weight is then transferred to the Quality performance category).
+
+For performance year 2018, CMS added a significant hardship exception from the Promoting Interoperability performance category for MIPS eligible clinicians in small practices. To apply for a significant hardship for performance year 2021, clinicians had to submit a significant hardship application to CMS by Dec. 31, 2020. CMS makes other exceptions for small practices, practices located in rural areas; non-patient-facing individual MIPS eligible clinicians or groups; and individual MIPS eligible clinicians and groups that participate in a MIPS APM or a patient-centered medical home. To date, CMS has not imposed a time limitation for the number of years a clinician can apply for a significant hardship exception.
+
+### Extreme and Uncontrollable Circumstances
+
+For the 2021 performance period, there are no changes to this policy for individual clinicians, groups, and virtual groups. However, beginning with the 2020 performance period, APM entities may also apply for reweighting of all MIPS performance categories. APM entity groups will receive a score equal to the performance threshold even if data are submitted. As in previous years, however, individual clinicians, groups, and virtual groups that submit data override the approved reweighting on a category-by-category basis. For performance years 2021 and 2022, the minimum Quality performance score for an ACO affected by an extreme and uncontrollable circumstance during the performance year will be set equal to the 30th percentile MIPS Quality performance category score. CMS states in the 2021 QPP final rule, “If an ACO is unable to report quality data and meet the MIPS Quality data completeness and case minimum requirement due to an extreme and uncontrollable circumstance, we will apply the 30th percentile MIPS Quality performance category score.”
+
+Note: CMS states in the 2021 MPFS final rule that it anticipates the PHE for COVID-19 to continue into and through CY 2021. As such, the extreme and uncontrollable circumstances policy will be available for the 2021 performance period.
+
+Remember: if a clinician, group, or virtual group submits data for the 2021 performance period, the data submission overrides the application and the clinician, group, or virtual group will be scored on the data submitted.
+
+::: {.callout-note}
+## How are MIPS “ineligible” clinicians affected by MACRA?
+
+***Revenue***
+
+A clinician who is not eligible to participate in MIPS is not subject to MIPS payment adjustments — good or bad. However, clinicians who voluntarily report data will receive a feedback report from CMS, allowing them to see how their performance may affect future payments.
+
+***Marketing***
+
+CMS allows a 30-day “opt-out” period for low-volume eligible clinicians to voluntarily submit data and not have the information become public. Unfortunately, they will not know how they did and whether they should opt out for several months later, when CMS releases performance feedback.
+:::
+
+
+::: {.callout-note}
+## How are MIPS “eligible” clinicians affected by MACRA?
+
+***Revenue***
+
+Both tracks in the QPP have levels of financial risks and rewards.
+
+***Marketing***
+
+CMS will publish MIPS eligible clinicians’ performance scores on its Physician Compare website11. This free website is used by patients and consumer rating websites. Exceptional performers
+will benefit from this free advertising. The same cannot be said for underperformers. CMS will publish final scores a year after data is reported, giving clinicians time to preview their performance data and, if appropriate, request a targeted review before it is made public. Clinicians will be rated on a scale of 0 to 100 and how they compare to peers nationally. A 2014 JAMA study found that 65 percent of consumers are aware of online physician rating sites and 36 percent of consumers have used a ratings site at least once. High performance scores and ratings can become a strategic marketing advantage for providers over their competitors who have low or no scores.
+
+
+***Future Options to Join a Group***
+
+If a clinician’s MIPS performance feedback scores are low, their ability to join a new group or hospital may be compromised. Potential employers will not want to inherit a clinician’s low score and risk lowering their score.
+:::
+
+## Payment Adjustments and Bonus Options
+
+The timeline for QPP performance and payment adjustments spans three years. For example:
+
+```{r}
+dplyr::tibble(
+  "Performance Year" = c(2017:2023),
+  "Submission Year" = c(2018:2024),
+  "Payment Year" = c(2019:2025)) |> 
+  gt::gt() |> 
+  gt::opt_stylize(add_row_striping = FALSE) |> 
+  gt::cols_align("center")
+```
+
+Clinicians collect data during the performance year; submit the data to CMS between January 1 and March 31 the following year, receive performance feedback by July that year; and receive payment adjustments based on performance the following year. Scheduled MIPS payment adjustments and potential bonuses for Qualifying APM Participants (QP) and Partial Qualifying APM Participants (PQP) in an Advanced APM are shown in the table below.
+
+When a clinician has multiple final scores associated with a single TIN/NPI combination, CMS will use a virtual group final score first to determine the 2023 payment year MIPS payment adjustment and the highest available final score from the APM entity, group, or individual second. This is changed from 2022 payment year policy, in which the APM entity final score will be considered first.
+
+### Performance Threshold
+
+To receive a neutral payment adjustment to Medicare Part B claims in 2023, MIPS eligible clinicians will need to earn a final score of 60 points, the performance threshold for year 5. This is a change from the 45-point threshold in year 4. The additional performance threshold for exceptional performance is 85 points (up from 80 points in 2020). Note, however, that year 4 was the final year for additional positive adjustments for exceptional performance.
+
+### Budget Neutral
+
+MIPS is budget neutral, which means CMS takes the money it saves from providers who receive reductions to pay for provider who receive increases. The maximum upward adjustment is capped at three times the maximum negative adjustment.
+
+### Bonus Points
+
+CMS discontinued awarding measure bonus points to CMS Web Interface reporters for reporting high priority measures in performance year 2019. Beginning in 2019 and through the 2023 MIPS payment year, the total measure bonus points for high priority measures cannot exceed 10 percent of the total available measure achievement points. Beginning with payment year 2023, bonus points for the Query of Prescription Drug Monitoring Programs (PDMP) measure are increased from 5 points to 10 points, based on 2021 performance.
+
+### Complex Patient Bonus
+
+CMS will apply a complex patient bonus capped at 5 points to the final score for the 2021 MIPS performance period/2023 MIPS payment year. Complexity is measured through hierarchical condition category (HCC) risk scores and social risk as measured through the proportion of patients with dual eligible status.
+
+HCC risk scores are calculated annually, based on the following information from the calendar year:
+
+   * Patient’s age and gender;
+   * Patient’s eligibility for Medicaid, disabled, or lives in an institution; and
+   * Patient’s diagnoses.
+
+The formulas used to calculate the bonuses are:
+
+   * **MIPS eligible participants**: [the average HCC risk score assigned to beneficiaries seen by the MIPS eligible clinician or seen by clinicians in a group] + [the dual eligible ratio x 5].
+   
+   * **APM entities**: [the beneficiary weighted average HCC risk score for all MIPS eligible clinicians, and if technically feasible, TINs for models and virtual groups which rely on complete TIN participation within the APM entity or virtual group, respectively] + [the average dual eligible ratio for all MIPS eligible clinicians, and if technically feasible, TINs for models and virtual groups which rely on complete TIN participation, within the APM entity or virtual group, respectively, x 5].
+
+Note: The QPP is budget neutral so all figures are variable, depending on the number of providers sharing the $500 million MACRA provided for this purpose.
+
+## Small Practices
+
+Small practices face challenges in their ability to participate in MIPS. CMS encourages small practices to participate by subsidizing some of their infrastructure hurdles. CMS states in the 2018 QPP final rule, “The support of small, independent practices remains an important thematic objective for the implementation of the Quality Payment Program and is expected to be carried throughout future rulemaking.” CMS defines small practices for the purposes of MIPS as 15 or fewer clinicians. As in previous years, CMS continues to award 6 bonus points in the Quality performance category to MIPS eligible clinicians in small practices who submit data on at least one measure and 3 points for quality measures that don’t meet data completeness requirements. Additionally, clinicians in small practices may apply to have the Promoting Interoperability performance
+category reweighted to zero. Small practices also have reduced reporting requirements in the Improvement Activities category:
+
+   * Medium-weighted activities are worth 20 points; and
+   * High-weighted activities are worth 40 points
+
+CMS also offers free and customized resources available within local communities, including direct, one-on-one support from the Small, Underserved, and Rural Support Initiative, in addition to CMS’ other no-cost technical assistance. Beginning with the 2019 performance period (year 3), only small practices — whether participating individually or as a group — may submit quality measures using Medicare Part B claims as a submission type. Lastly, small practices may continue to participate in MIPS as a virtual group.
+
+## Virtual Groups
+
+Beginning with the 2019 performance period, clinicians may participate in MIPS as an individual, as a group, as an APM entity in a MIPS APM, or as a virtual group. A virtual group is a combination of two or more TINs assigned to one or more solo practitioners or one or more groups consisting of 10 or fewer eligible clinicians that elect to form a
+virtual group for a performance period for a year. If a group chooses to join a virtual group, all of the clinicians in that group are part of the virtual group. The group’s final score and resulting payment adjustment percentage applies to all clinicians in the virtual group. The virtual group eligibility determination period aligns with the first period of data analysis under the MIPS eligibility determination period. For year 5, the determination period is Oct. 1, 2019, to Sept. 30, 2020 (including a 30-day claims run out).
+
+### Eligibility
+
+A virtual group election is considered a low-volume threshold opt-in for any prospective member of the virtual group that exceeds at least one, but not all three, of the low-volume threshold criteria. Clinicians can only participate in one virtual group per performance period. There is no limit on the size of a virtual group12.
+Virtual groups are held to the same requirements for each performance category as standard groups, and are responsible for aggregating data for their measures and activities across the virtual group. TINs can inquire about their TIN size prior to making an election during a 3-month time frame, which begins Oct. 1 and ends Dec. 31 of the calendar year prior to the applicable performance period.
+
+### Election Process
+
+There is a two-stage election process for virtual groups:
+
+**Stage 1** (optional): If you’re a solo practitioner or part of a group with 10 or fewer eligible clinicians:
+
+   * Make any formal written agreements.
+   * Send in your formal election registration.
+   * Budget your resources for your virtual group.
+
+**Stage 2** (required): The virtual group must have a formal agreement between each solo practitioner and group that composes the virtual group prior to submitting an election to CMS. Each virtual group must name an official representative who is responsible for submitting the virtual group’s election. Elections must be submitted via e-mail to MIPS_VirtualGroups@cms.hhs.gov by December 31 of the preceding year you intend to operate as a virtual group. The data submission criteria applicable to groups are also generally applicable to virtual groups, except for data completeness and sampling requirements for the CMS Web Interface and CAHPS for MIPS survey:
+
+   * Data completeness for virtual groups applies cumulatively across all TINs in a virtual group. There may be a case when a virtual group has one TIN that falls below the 60 percent data completeness threshold, which is an acceptable case as long as the virtual group cumulatively exceeds such threshold.
+   * The CMS Web Interface and CAHPS for MIPS survey sampling requirements pertain to Medicare Part B patients with respect to all TINs in a virtual group, where the sampling methodology will be conducted for each TIN within the virtual group and then cumulatively aggregated across the virtual group. A virtual group would need to meet the beneficiary sampling threshold cumulatively as a virtual group13.
