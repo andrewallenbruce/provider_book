@@ -1,4 +1,4 @@
-# Claim Forms {.unnumbered}
+# Claim Forms
 
 Claim forms are used to report the procedures performed and the reason the procedures were performed to the insurance carrier to obtain payment for those services. There are two claim forms used; the **CMS-1500** (sometimes referred to as a **HCFA**) and the CMS-1450 (more commonly known as the **UB-04**). The CMS-1500 is used to . The UB-04 is used to report facility (hospital) services.
 
