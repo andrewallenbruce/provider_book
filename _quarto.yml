@@ -6,11 +6,15 @@ execute:
 
 book:
   title: "Provider: R for Healthcare Administrative Data Analysis"
-  reader-mode: false
-  author: "Andrew Bruce, RHIT, CPC, CPPM"
+  author: "Andrew Bruce"
+  navbar:
+    pinned: true
+  open-graph: true
+  twitter-card:
+    creator: "@aabrucehimni"
   page-footer:
     right: |
-      This book was built with <a href="https://quarto.org/">Quarto</a>.
+      Built with <a href="https://quarto.org/">Quarto</a>.
   site-url: https://andrewallenbruce.github.io/provider_book/
   repo-url: https://github.com/andrewallenbruce/provider_book
   repo-branch: main

@@ -1,15 +1,23 @@
 # Quality Payment Program {.unnumbered}
 
-In 2017, the Centers for Medicare & Medicaid Services (CMS) launched the Quality Payment Program (QPP), which aims to reward improved patient outcomes and drive fundamental movement toward a value-based system of care. The program offers 2 payment tracks: the Merit-based Incentive Payment System (MIPS) and Advanced Alternative Payment Models (APMs).  
+The Centers for Medicare & Medicaid Services (CMS) launched the Quality Payment Program (QPP) in 2017, the goal of which was to reward improved patient outcomes and drive fundamental movement toward a value-based system of care. 
 
-The **MIPS track** streamlined 3 legacy CMS programs (the Physician Quality Reporting System [PQRS], the Value-Based Payment Modifier, and the Medicare Electronic Health Record [EHR] Incentive [or Meaningful Use] Program) into a single program. Clinicians are evaluated and receive payment adjustments based on their overall performance in up to 4 performance categories:  
+The program offers 2 payment tracks: the Merit-based Incentive Payment System (MIPS) and Advanced Alternative Payment Models (APMs).  
 
-   • Quality  
-   • Cost  
-   • Improvement Activities  
-   • Promoting Interoperability  
+The **MIPS track** streamlined three legacy CMS programs: 
 
-Clinicians who were eligible for MIPS in the 2021 performance year will receive a payment adjustment during the 2023 payment year — positive, neutral, or negative — based on their performance in 2021.  
+   1. Physician Quality Reporting System (PQRS)
+   2. Value-Based Payment Modifier
+   3. Medicare Electronic Health Record (EHR) Incentive (or Meaningful Use) Program
+
+Clinicians are evaluated and receive payment adjustments based on their overall performance in up to four performance categories:  
+
+   1. Quality  
+   2. Cost  
+   3. Improvement Activities  
+   4. Promoting Interoperability  
+
+Clinicians who were eligible for MIPS in the 2021 performance year will receive a payment adjustment during the 2023 payment year — positive, neutral, or negative — based on their performance in 2021. The MIPS track pertains only to providers of professional services paid under Medicare Part B.
 
 The **Advanced APM track** provides an opportunity to reward clinicians for significant participation in taking on greater risk and accountability for patient outcomes. Eligible clinicians who participated in an Advanced APM and achieved Qualifying APM Participant (QP) status, based on the level of their participation in 2021 through the Medicare or the All-Payer Combination Option, will be eligible to receive a 5% APM Incentive Payment in 2023. 
 
@@ -17,234 +25,35 @@ Eligible clinicians with QP status are also excluded from MIPS. If an eligible c
 
 ## MIPS Eligibility and Engagement
 
-Clinicians are included and required to participate in MIPS if they meet all 3 of the following requirements: (1) are a MIPS eligible clinician type and enrolled as a Medicare provider before January 1, 2021; (2) exceed the low-volume threshold, and (3) aren’t otherwise excluded (for example, by achieving QP status). We evaluate a clinician’s eligibility for MIPS based on their National Provider Identifier (NPI) and associated Taxpayer Identification Number (TIN).
+Clinicians are included and required to participate in MIPS if they meet all 3 of the following requirements: 
 
-MIPS eligible clinicians are both physicians and non-physician clinicians who are eligible to participate in MIPS. Through rulemaking, CMS defines the MIPS eligible clinician types for a specific performance year. MIPS eligible clinician types in the CY 2021 performance year included the following physicians and non-physician clinicians:
-
-   * Physicians (including doctors of medicine, osteopathy, dental surgery, dental medicine, podiatric medicine, and optometry) 
-   * Osteopathic practitioners 
-   * Chiropractors 
-   * Physician assistants 
-   * Nurse practitioners 
-   * Clinical nurse specialists 
-   * Certified registered nurse anesthetists 
-   * Physical therapists 
-   * Occupational therapists 
-   * Clinical psychologists 
-   * Qualified speech-language pathologists 
-   * Qualified audiologists 
-   * Registered dietitians or nutrition professionals 
+   1. A MIPS eligible clinician type enrolled as a Medicare provider
+   2. Exceed the low-volume threshold 
+   3. Are not otherwise excluded (e.g., by achieving QP status)
 
 In 2021, MIPS eligible clinicians required to participate in MIPS could report data as an individual, a group, a virtual group, or an APM Entity:
 
-   1. **Individual participation**: An individual is defined as a single MIPS eligible clinician, identified by a TIN/NPI combination. When you participate as an individual, you collect and report measures and activities based on your individual performance. We assess your performance across all performance categories at the individual level. 
-   2. **Group participation**: A group is defined as a single TIN with 2 or more clinicians as identified by their NPI who have assigned their Medicare billing rights to the TIN, provided that at least 1 clinician within the group must be MIPS eligible in order for the group to be MIPS eligible. When you participate as a group, the group submits data that’s been aggregated to reflect performance for all the clinicians billing under the TIN as appropriate for the measures and activities selected. We assess your performance across all performance categories at the group level.
-   3. **Virtual group participation**: A virtual group is a combination of 2 or more TINs assigned to one or more solo practitioners or to one or more groups consisting of 10 or fewer MIPS eligible clinicians, or both, that elect to form a virtual group for a performance year. When you participate as a virtual group, the group submits data that’s been aggregated to reflect performance for all the clinicians (across multiple TINs) in the virtual group as appropriate for the measures and activities selected. We assess your performance across all performance categories at the virtual group level.
-   4. **APM Entity participation**: An APM Entity is defined as an entity that participates in an Alternative Payment Model or other payer arrangement through a direct agreement with CMS or other payer or through federal or state law or regulation. APM Entities that participate in a MIPS APM can report MIPS data on behalf of the MIPS eligible clinicians in the APM Entity.2 When you participate as an APM Entity, the APM Entity submits quality and improvement activities data that has been aggregated to reflect performance for all the clinicians (sometimes across multiple TINs) in the Entity. Data for the MIPS Promoting Interoperability performance category is submitted at the group and individual level which CMS then aggregates to create an APM Entity score.
+   1. **Individual**: An individual is defined as a single MIPS eligible clinician, identified by a TIN/NPI combination. When you participate as an individual, you collect and report measures and activities based on your individual performance. We assess your performance across all performance categories at the individual level. 
+   2. **Group**: A group is defined as a single TIN with 2 or more clinicians as identified by their NPI who have assigned their Medicare billing rights to the TIN, provided that at least 1 clinician within the group must be MIPS eligible in order for the group to be MIPS eligible. When you participate as a group, the group submits data that’s been aggregated to reflect performance for all the clinicians billing under the TIN as appropriate for the measures and activities selected. We assess your performance across all performance categories at the group level.
+   3. **Virtual Group**: A virtual group is a combination of 2 or more TINs assigned to one or more solo practitioners or to one or more groups consisting of 10 or fewer MIPS eligible clinicians, or both, that elect to form a virtual group for a performance year. When you participate as a virtual group, the group submits data that’s been aggregated to reflect performance for all the clinicians (across multiple TINs) in the virtual group as appropriate for the measures and activities selected. We assess your performance across all performance categories at the virtual group level.
+   4. **APM Entity**: An APM Entity is defined as an entity that participates in an Alternative Payment Model or other payer arrangement through a direct agreement with CMS or other payer or through federal or state law or regulation. APM Entities that participate in a MIPS APM can report MIPS data on behalf of the MIPS eligible clinicians in the APM Entity.2 When you participate as an APM Entity, the APM Entity submits quality and improvement activities data that has been aggregated to reflect performance for all the clinicians (sometimes across multiple TINs) in the Entity. Data for the MIPS Promoting Interoperability performance category is submitted at the group and individual level which CMS then aggregates to create an APM Entity score.
 
 The **low-volume threshold** is a critical step in determining whether a clinician is included in MIPS for a specific performance year. The low-volume threshold evaluates whether an otherwise MIPS eligible clinician saw an adequate number of eligible patients and provided enough services to meaningfully participate in MIPS. To make this determination, we review Medicare Part B claims for this information for two 12-month segments — referred to as the MIPS Determination Period — to see if a clinician exceeds the low-volume threshold criteria. The MIPS Determination Period for the CY 2021 performance year was: 
 
 
-```{r}
-library(provider)
-library(dplyr)
+# The Permanent Doc Fix
 
-abbott_qpp <- 2017:2021 |> 
-  furrr::future_map(\(x) quality_payment(year = x, 
-                                         npi = 1730455775)) |> 
-  purrr::list_rbind()
-```
+The Medicare Access and CHIP Reauthorization Act of 2015 (MACRA) is a law that reformed the Medicare payment system. MACRA repealed the Sustainable Growth Rate (SGR) formula used to update the Medicare Physician Fee Schedule (MPFS) and thereby determine physician reimbursement. The SGR was replaced with a “value-based” payment system that incorporates quality measurement into payments with the goal of creating an equitable payment system for physicians. MACRA also reauthorized the Children’s Health Insurance Program (CHIP).
 
-```{r}
-abbott_qpp |> 
-  select(year, 
-         contains("quality_measure")) |> 
-  tidyr::pivot_longer(!year, 
-                      names_to = "type", 
-                      values_to = "val") |> 
-  tidyr::separate_wider_delim(type, "_", 
-                              names = c("q", "m", "type", "qm_no")) |> 
-  tidyr::unite("name", 
-               c("q", "m"), 
-               remove = TRUE, 
-               sep = " ") |> 
-  tidyr::pivot_wider(names_from = type, 
-                     values_from = val,
-                     values_fn = list) |> 
-  tidyr::unnest(cols = c(id, score)) |> 
-  filter(!is.na(id))
-```
+On April 16, 2015, President Obama signed into law the Medicare Access and CHIP Reauthorization Act of 2015 — the largest change to the American healthcare system since the Affordable Care Act of 2010. Overwhelmingly endorsed by Democrats and Republicans in an uncommon moment of bipartisanship in Congress, MACRA ended the way Medicare Part B providers were disadvantageously reimbursed through the SGR.
 
-```{r}
-abbott_qpp |> 
-  select(year, 
-         contains("quality_measure")) |> 
-  tidyr::pivot_longer(!year, 
-                      names_to = "type", 
-                      values_to = "val") |> 
-  tidyr::separate_wider_delim(type, "_", 
-                              names = c("q", "m", "type", "qm_no")) |> 
-  tidyr::unite("name", 
-               c("q", "m"), 
-               remove = TRUE, 
-               sep = " ") |> 
-  tidyr::pivot_wider(names_from = type, 
-                     values_from = val,
-                     values_fn = list) |> 
-  tidyr::unnest(cols = c(id, score)) |> 
-  filter(!is.na(id))
-```
+MACRA is known as the Permanent Doc Fix because it revised the flawed 1997 Balanced Budget Act,which resulted in exorbitant reimbursement reductions that incited physicians to threaten to leave the Medicare program.
 
+From 2002 to the enactment of MACRA in 2015, Congress voted 17 times to delay the implementation of the SGR to prevent SGR-calculated cuts from taking place. If not for the enactment of MACRA, the Medicare program—as well as persons who rely on it to receive medical care—would have been at risk.
 
-```{r}
-abbott_qpp |> 
-  select(year, 
-         final_score,
-         practice_size, 
-         part_type, 
-         beneficiaries, 
-         allowed_charges,
-         services, 
-         pmt_adj_pct, 
-         complex_patient_bonus,
-         quality_category_score,
-         quality_improvement_bonus,
-         pi_category_score,
-         ia_score,
-         cost_score) |> 
-  provider:::gt_prov()
-```
+By law, MACRA required the Centers for Medicare & Medicaid Services (CMS) to establish value-based healthcare business models that link an ever-increasing portion of physician payments to service-value rather than service-volume. These incentive-based business models, collectively referred to as the Quality Payment Program (QPP), provide two participation tracks for eligible clinicians — the Merit-based Incentive Payment System (MIPS) and Alternative Payment Models (APMs)—both of which involve levels of financial rewards and risks.
 
-
-
-```{r}
-hussain_qpp <- 2017:2021 |> 
-  furrr::future_map(\(x) quality_payment(
-    year = x, 
-    npi = 1043477615)) |> 
-  purrr::list_rbind()
-```
-
-
-```{r}
-hussain_qpp |> 
-  select(year, 
-         final_score,
-         practice_size, 
-         part_type, 
-         beneficiaries, 
-         allowed_charges,
-         services, 
-         pmt_adj_pct, 
-         complex_patient_bonus,
-         quality_category_score,
-         quality_improvement_bonus,
-         pi_category_score,
-         ia_score,
-         cost_score) |> 
-  provider:::gt_prov()
-```
-
-
-```{r}
-hussain_qpp |> 
-  select(year, 
-         contains("quality_measure")) |> 
-  tidyr::pivot_longer(!year, 
-                      names_to = "type", 
-                      values_to = "val") |> 
-  tidyr::separate_wider_delim(type, "_", 
-                              names = c("q", "m", "type", "qm_no")) |> 
-  tidyr::unite("name", 
-               c("q", "m"), 
-               remove = TRUE, 
-               sep = " ") |> 
-  tidyr::pivot_wider(names_from = type, 
-                     values_from = val,
-                     values_fn = list) |> 
-  tidyr::unnest(cols = c(id, score)) |> 
-  filter(!is.na(id))
-```
-
-
-```{r}
-qpp_ga <- 2017:2021 |> 
-  furrr::future_map(\(x) quality_payment(year = x, 
-                                         state = "GA", 
-                                         specialty = "Internal Medicine", 
-                                         part_type = "Individual")) |> 
-  purrr::list_rbind()
-```
-
-
-```{r}
-qpp_ga |> 
-  select(year, 
-         npi,
-         contains("quality_measure")) |> 
-  tidyr::pivot_longer(!c(year, npi), 
-                      names_to = "type", 
-                      values_to = "val") |> 
-  tidyr::separate_wider_delim(type, "_", 
-                              names = c("q", "m", "type", "qm_no")) |> 
-  tidyr::unite("name", 
-               c("q", "m"), 
-               remove = TRUE, 
-               sep = " ") |> 
-  tidyr::pivot_wider(names_from = type, 
-                     values_from = val,
-                     values_fn = list) |> 
-  tidyr::unnest(cols = c(id, score)) |> 
-  filter(!is.na(id))
-```
-
-
-```{r}
-qpp_ga |> 
-  select(year, 
-         npi,
-         contains("pi_measure")) |> 
-  tidyr::pivot_longer(
-    !c(year, npi), 
-    names_to = "type", 
-    values_to = "val") |> 
-  tidyr::separate_wider_delim(
-    type, "_", 
-    names = c("q", "m", "type", "qm_no")) |> 
-  tidyr::unite("name", 
-               c("q", "m"), 
-               remove = TRUE, 
-               sep = " ") |> 
-  tidyr::pivot_wider(names_from = type, 
-                     values_from = val,
-                     values_fn = list) |> 
-  tidyr::unnest(cols = c(id, score)) |> 
-  filter(!is.na(id))
-```
-
-```{r}
-qpp_ga |> 
-  select(year, 
-         npi,
-         final_score,
-         #practice_size, 
-         #part_type, 
-         #beneficiaries, 
-         #allowed_charges,
-         #services, 
-         pmt_adj_pct, 
-         complex_patient_bonus,
-         quality_category_score,
-         quality_improvement_bonus,
-         pi_category_score,
-         ia_score,
-         cost_score) |> 
-  group_by(npi) |> 
-  provider:::gt_prov()
-```
-
-
-## History
+Unlike previous quality initiatives, participation in the QPP does not require providers to enroll. Eligible clinicians need only choose which track they prefer—MIPS or Advanced APMs—based on their practice size, specialty, location, and patient population.
 
 The Medicare Access and CHIP Reauthorization Act of 2015 (MACRA): 
 
@@ -513,4 +322,277 @@ There is a two-stage election process for virtual groups:
 **Stage 2** (required): The virtual group must have a formal agreement between each solo practitioner and group that composes the virtual group prior to submitting an election to CMS. Each virtual group must name an official representative who is responsible for submitting the virtual group’s election. Elections must be submitted via e-mail to MIPS_VirtualGroups@cms.hhs.gov by December 31 of the preceding year you intend to operate as a virtual group. The data submission criteria applicable to groups are also generally applicable to virtual groups, except for data completeness and sampling requirements for the CMS Web Interface and CAHPS for MIPS survey:
 
    * Data completeness for virtual groups applies cumulatively across all TINs in a virtual group. There may be a case when a virtual group has one TIN that falls below the 60 percent data completeness threshold, which is an acceptable case as long as the virtual group cumulatively exceeds such threshold.
-   * The CMS Web Interface and CAHPS for MIPS survey sampling requirements pertain to Medicare Part B patients with respect to all TINs in a virtual group, where the sampling methodology will be conducted for each TIN within the virtual group and then cumulatively aggregated across the virtual group. A virtual group would need to meet the beneficiary sampling threshold cumulatively as a virtual group13.
+   * The CMS Web Interface and CAHPS for MIPS survey sampling requirements pertain to Medicare Part B patients with respect to all TINs in a virtual group, where the sampling methodology will be conducted for each TIN within the virtual group and then cumulatively aggregated across the virtual group. A virtual group would need to meet the beneficiary sampling threshold cumulatively as a virtual group.
+
+
+# Quality Payment API
+
+```{r}
+#| echo: false
+qpp_datadict <- dplyr::tibble(
+  Year = "Performance Year",
+  NPI = "National Provider Identifier assigned to the clinician. Multiple rows for the same NPI indicate multiple TIN/NPI combinations.",
+  State = "State or US territory location of the TIN associated with the clinician.",
+  "Practice Size" = "Count of clinicians associated with TIN from the second segment of the MIPS eligibility determination period.",
+  Specialty = "Identifier corresponding to the type of service that the clinician submitted most on their Medicare Part B claims for this TIN/NPI combination.",
+  
+  "Years in Medicare" = "The number of years since the first date an enrollment was approved for this NPI across all enrollments in PECOS.",
+  "Participation Type" = "Indicates the level at which performance data was collected, submitted or reported for the final score attributed to the clinician.",
+  
+  Beneficiaries = "Number of Medicare patients who received covered professional services during one segment of the MIPS eligibility determination period attributed to the participation type associated with the clinician’s final score.",
+  Charges = "Allowed charges under the Physician Fee Schedule on Medicare Part B claims with a service date during one segment of the MIPS eligibility determination period attributed to the Participation Type associated with the clinician’s final score.",
+  Services = "Number of covered professional services provided to Medicare Part B patients with a service date during one segment of the MIPS eligibility determination period attributed to the Participation Type associated with the clinician’s final score.",
+  
+  ## SCORES
+  "Final Score" = "The MIPS final score attributed to the clinician (the highest final score that could be attributed to the clinician’s TIN/NPI combination). ",
+  "Payment Adjustment" = "The total payment adjustment attributed to the clinician for the 2023 payment year. Payment adjustments are determined by comparing the final score to the performance thresholds, and then scaled to ensure budget neutrality.",
+  "Complex Patient Bonus" = "The complex patient bonus associated with the final score attributed to the clinician.",
+  "Quality Score" = "This is the unweighted score received for the quality score that is used for the overall score.",
+  "Quality Bonus" = "The bonus points received for the quality category (small practice bonus and quality improvement, if applicable).",
+  "Promoting Interoperability Score" = "This is the unweighted score received by the participant for the Promoting Interoperability performance category, the score that is used for the final score. MIPS APM participants receive their APM Entity roll-up score unless this category was reported by the APM Entity.",
+  "Improvement Activities Score" = "The score received for the improvement activities performance category based on all the activities picked for the category that contributed to the final score.",
+  "Cost Score" = "The unweighted score received for the cost performance category based on all the cost measures used for final scoring. Will display as “0” for 2021 as cost was reweighted in the 2021 performance year.",
+
+  ## BOOLEANS
+  Engaged = "Indicates if the clinician reported a minimum of one measure or activity as an individual or group, OR participated in a MIPS APM.",
+  "Opted into MIPS" = "Indicates if an Opt-In Eligible clinician or group elected to participate in MIPS and receive a payment adjustment. An Opt-In Eligible clinician or group is one that is otherwise eligible for MIPS and exceeds 1 or 2, but not all 3 low-volume threshold criteria",
+  "Small Practitioner" = "Indicates if the clinician or group had the small practice special (15 or fewer clinicians billed under the TIN) based on either segment of the MIPS eligibility determination period. Note: This number can contradict the Practice Size column which is always based on the 2nd segment.",
+  "Rural Clinician" = "Indicates if the clinician or group had the rural special status (practiced in a ZIP code designated as rural by the Federal Office of Rural Health Policy (FORHP) using the most recent FORHP Eligible ZIP code file available).",
+  "HPSA Clinician" = "Indicates if the clinician or group had the HPSA special status (practiced in a Health Professional Shortage Area (HPSA).",
+  "Ambulatory Surgical Center" = "Indicates if the clinician or group had the ambulatory surgical center-based special status (determined by the volume of their covered professional services furnished in an ambulatory surgical center.)",
+  "Hospital-Based Clinician" = "Indicates if the clinician or group had the hospital-based special status (determined by the volume of their covered professional services furnished in a hospital setting).",
+  "Non-Patient Facing" = "Indicates if the clinician or group has the non-patient facing special status (determined by volume of Medicare Part B patient-facing encounters, including telehealth services).",
+  "Facility-Based" = "Indicates if the clinician or group has the facility-based special status (based on volume of services furnished in a facility eligible for the Hospital Value-based Purchasing program).",
+  "Extreme Hardship" = "Indicates if the clinician, group or APM Entity was affected by an extreme and uncontrollable circumstance (EUC) (such as FEMA-designated major disaster) and qualified for performance category reweighting because of the MIPS automatic EUC policy or MIPS EUC exception application.",
+  "Extreme Hardship Quality" = "Indicates if the clinician, group or APM Entity was approved for reweighting of the quality performance category due to extreme and uncontrollable circumstances.",
+  "Extreme Hardship PI" = "Indicates if the clinician, group or APM Entity was approved for reweighting of the Promoting Interoperability performance category due to extreme and uncontrollable circumstances.",
+  "PI Hardship" = "Indicates if the clinician or group was approved for an exception from the Promoting Interoperability performance category due to participation in a small practice, decertified Electronic Health Record (EHR) technology, insufficient Internet connectivity, or lack of control over the availability of certified EHR technology (CEHRT).",
+  "PI Reweighting" = "Indicates if the clinician or group qualified for an automatic reweighting from the Promoting Interoperability performance category due to special status or clinician specialty.",
+  "PI Bonus" = "The total bonus points received by the clinician, group or APM Entity for the Promoting Interoperability performance category.",
+  "Extreme Hardship IA" = "Indicates if the clinician, group or APM Entity was approved for reweighting of the improvement activities performance category due to extreme and uncontrollable circumstances.",
+  "IA Study" = "This data element will show as FALSE for everyone because this study concluded after the 2019 performance year.",
+  "Extreme Hardship Cost" = "Indicates if the clinician or group was approved for reweighting of the cost performance category due to extreme and uncontrollable circumstances. Not applicable for 2021; this category was reweighted for all individuals and groups.",
+  
+  ## INDIVIDUAL MEASURE SCORES
+  "Quality Measure ID" = "MIPS Quality ID for one of 10 possible quality measures that contributed to the final score.",
+  "Quality Measure Score" = "Score (plus bonus points) achieved for corresponding MIPS Quality ID that contributed to the final score.",
+  "PI Measure ID" = "MIPS Promoting Interoperability ID for one of 11 possible Promoting Interoperability measures that contributed to the final score.",
+  "PI Measure Score" = "Measure score achieved for the corresponding MIPS Promoting Interoperability ID that contributed to the final score.",
+  "IA Measure ID" = "MIPS Improvement Activity ID for one of 4 possible improvement activities that contributed to the final score.",
+  "IA Measure Score" = "Activity score achieved for the corresponding MIPS Improvement Activity ID that contributed to the final score.",
+  "Cost Measure ID" = "MIPS Cost ID for one of 2 possible cost measures that contributed to the final score. Not applicable for 2021; this category was reweighted for all individuals and groups.",
+  "Cost Measure Score" = "Cost score achieved for the corresponding MIPS Cost ID that contributed to the final score. Not applicable for 2021; this category was reweighted for all individuals and groups.",
+  
+  "PI CEHRT ID" = "This is a unique identifier generated by the Office of the National Coordinator for Health Information Technology (ONC) and identifies a specific bundle of software or EHR. The CEHRT ID is a 15-character alpha-numeric string which can be found on the CHPL website. This is the CEHRT ID included in the data that contributed to the clinician’s final score.") |> 
+  tidyr::pivot_longer(
+    cols = dplyr::everything(),
+    names_to = "Field", 
+    values_to = "Description") |> 
+  dplyr::mutate(col = dplyr::row_number(), .before = Field)
+
+qpp_datadict |> 
+  gt::gt(rowname_col = "col") |> 
+  gt::opt_stylize(color = "red") |> 
+  gt::tab_source_note(source_note = gt::md("If **Participation Type** = `Group`, Beneficiaries are attributed to the TIN, not the Individual Clinician. If **Participation Type** = `APM Entity`, fields related to the Low-Volume Threshold and Special Status (columns 9 – 19) are attributed to the Clinician’s Group (TIN), not the APM Entity. Beginning in 2021, CMS won’t evaluate APM Entities for the Low-Volume Threshold."))
+```
+
+
+
+```{r}
+library(provider)
+library(dplyr)
+
+abbott_qpp <- 2017:2021 |> 
+  furrr::future_map(\(x) quality_payment(year = x, 
+                                         npi = 1730455775)) |> 
+  purrr::list_rbind()
+```
+
+```{r}
+abbott_qpp |> 
+  select(year, 
+         contains("quality_measure")) |> 
+  tidyr::pivot_longer(!year, 
+                      names_to = "type", 
+                      values_to = "val") |> 
+  tidyr::separate_wider_delim(type, "_", 
+                              names = c("q", "m", "type", "qm_no")) |> 
+  tidyr::unite("name", 
+               c("q", "m"), 
+               remove = TRUE, 
+               sep = " ") |> 
+  tidyr::pivot_wider(names_from = type, 
+                     values_from = val,
+                     values_fn = list) |> 
+  tidyr::unnest(cols = c(id, score)) |> 
+  filter(!is.na(id))
+```
+
+```{r}
+abbott_qpp |> 
+  select(year, 
+         contains("quality_measure")) |> 
+  tidyr::pivot_longer(!year, 
+                      names_to = "type", 
+                      values_to = "val") |> 
+  tidyr::separate_wider_delim(type, "_", 
+                              names = c("q", "m", "type", "qm_no")) |> 
+  tidyr::unite("name", 
+               c("q", "m"), 
+               remove = TRUE, 
+               sep = " ") |> 
+  tidyr::pivot_wider(names_from = type, 
+                     values_from = val,
+                     values_fn = list) |> 
+  tidyr::unnest(cols = c(id, score)) |> 
+  filter(!is.na(id))
+```
+
+
+```{r}
+abbott_qpp |> 
+  select(year, 
+         final_score,
+         practice_size, 
+         part_type, 
+         beneficiaries, 
+         allowed_charges,
+         services, 
+         pmt_adj_pct, 
+         complex_patient_bonus,
+         quality_category_score,
+         quality_improvement_bonus,
+         pi_category_score,
+         ia_score,
+         cost_score) |> 
+  provider:::gt_prov()
+```
+
+
+
+```{r}
+hussain_qpp <- 2017:2021 |> 
+  furrr::future_map(\(x) quality_payment(
+    year = x, 
+    npi = 1043477615)) |> 
+  purrr::list_rbind()
+```
+
+
+```{r}
+hussain_qpp |> 
+  select(year, 
+         final_score,
+         practice_size, 
+         part_type, 
+         beneficiaries, 
+         allowed_charges,
+         services, 
+         pmt_adj_pct, 
+         complex_patient_bonus,
+         quality_category_score,
+         quality_improvement_bonus,
+         pi_category_score,
+         ia_score,
+         cost_score) |> 
+  provider:::gt_prov()
+```
+
+
+```{r}
+hussain_qpp |> 
+  select(year, 
+         contains("quality_measure")) |> 
+  tidyr::pivot_longer(!year, 
+                      names_to = "type", 
+                      values_to = "val") |> 
+  tidyr::separate_wider_delim(type, "_", 
+                              names = c("q", "m", "type", "qm_no")) |> 
+  tidyr::unite("name", 
+               c("q", "m"), 
+               remove = TRUE, 
+               sep = " ") |> 
+  tidyr::pivot_wider(names_from = type, 
+                     values_from = val,
+                     values_fn = list) |> 
+  tidyr::unnest(cols = c(id, score)) |> 
+  filter(!is.na(id))
+```
+
+
+```{r}
+qpp_ga <- 2017:2021 |> 
+  furrr::future_map(\(x) quality_payment(year = x, 
+                                         state = "GA", 
+                                         specialty = "Internal Medicine", 
+                                         part_type = "Individual")) |> 
+  purrr::list_rbind()
+```
+
+
+```{r}
+qpp_ga |> 
+  select(year, 
+         npi,
+         contains("quality_measure")) |> 
+  tidyr::pivot_longer(!c(year, npi), 
+                      names_to = "type", 
+                      values_to = "val") |> 
+  tidyr::separate_wider_delim(type, "_", 
+                              names = c("q", "m", "type", "qm_no")) |> 
+  tidyr::unite("name", 
+               c("q", "m"), 
+               remove = TRUE, 
+               sep = " ") |> 
+  tidyr::pivot_wider(names_from = type, 
+                     values_from = val,
+                     values_fn = list) |> 
+  tidyr::unnest(cols = c(id, score)) |> 
+  filter(!is.na(id))
+```
+
+
+```{r}
+qpp_ga |> 
+  select(year, 
+         npi,
+         contains("pi_measure")) |> 
+  tidyr::pivot_longer(
+    !c(year, npi), 
+    names_to = "type", 
+    values_to = "val") |> 
+  tidyr::separate_wider_delim(
+    type, "_", 
+    names = c("q", "m", "type", "qm_no")) |> 
+  tidyr::unite("name", 
+               c("q", "m"), 
+               remove = TRUE, 
+               sep = " ") |> 
+  tidyr::pivot_wider(names_from = type, 
+                     values_from = val,
+                     values_fn = list) |> 
+  tidyr::unnest(cols = c(id, score)) |> 
+  filter(!is.na(id))
+```
+
+```{r}
+qpp_ga |> 
+  select(year, 
+         npi,
+         final_score,
+         #practice_size, 
+         #part_type, 
+         #beneficiaries, 
+         #allowed_charges,
+         #services, 
+         pmt_adj_pct, 
+         complex_patient_bonus,
+         quality_category_score,
+         quality_improvement_bonus,
+         pi_category_score,
+         ia_score,
+         cost_score) |> 
+  group_by(npi) |> 
+  provider:::gt_prov()
+```
+
