@@ -1,4 +1,4 @@
-# Taxonomy {.unnumbered}
+# Taxonomy
 
 The Health Care Provider Taxonomy code set is an external, non-medical data code set designed for use in an electronic environment, specifically within the ASC X12N Health Care transactions. This includes the transactions mandated under HIPAA.
 

@@ -27,6 +27,7 @@ book:
         - npi.qmd
         - taxonomy.qmd
         - enroll_id.qmd
+        - pecos.qmd
     - part: "Data Sources"
       chapters: 
         - nppes.qmd

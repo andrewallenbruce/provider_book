@@ -1,4 +1,4 @@
-# Quality Payment Program {.unnumbered}
+# Quality Payment Program
 
 The Centers for Medicare & Medicaid Services (CMS) launched the Quality Payment Program (QPP) in 2017, the goal of which was to reward improved patient outcomes and drive fundamental movement toward a value-based system of care. 
 
@@ -38,8 +38,20 @@ In 2021, MIPS eligible clinicians required to participate in MIPS could report d
    3. **Virtual Group**: A virtual group is a combination of 2 or more TINs assigned to one or more solo practitioners or to one or more groups consisting of 10 or fewer MIPS eligible clinicians, or both, that elect to form a virtual group for a performance year. When you participate as a virtual group, the group submits data that’s been aggregated to reflect performance for all the clinicians (across multiple TINs) in the virtual group as appropriate for the measures and activities selected. We assess your performance across all performance categories at the virtual group level.
    4. **APM Entity**: An APM Entity is defined as an entity that participates in an Alternative Payment Model or other payer arrangement through a direct agreement with CMS or other payer or through federal or state law or regulation. APM Entities that participate in a MIPS APM can report MIPS data on behalf of the MIPS eligible clinicians in the APM Entity.2 When you participate as an APM Entity, the APM Entity submits quality and improvement activities data that has been aggregated to reflect performance for all the clinicians (sometimes across multiple TINs) in the Entity. Data for the MIPS Promoting Interoperability performance category is submitted at the group and individual level which CMS then aggregates to create an APM Entity score.
 
-The **low-volume threshold** is a critical step in determining whether a clinician is included in MIPS for a specific performance year. The low-volume threshold evaluates whether an otherwise MIPS eligible clinician saw an adequate number of eligible patients and provided enough services to meaningfully participate in MIPS. To make this determination, we review Medicare Part B claims for this information for two 12-month segments — referred to as the MIPS Determination Period — to see if a clinician exceeds the low-volume threshold criteria. The MIPS Determination Period for the CY 2021 performance year was: 
 
+::: {.callout-caution appearance="simple"}
+## Low-Volume Threshold
+
+The **low-volume threshold** is a critical step in determining whether a clinician is included in MIPS for a specific performance year. The low-volume threshold evaluates whether an otherwise MIPS eligible clinician saw an adequate number of eligible patients and provided enough services to meaningfully participate in MIPS. To make this determination, Medicare Part B claims are reviewed for this information for two 12-month segments (referred to as the *MIPS Determination Period*) to see if a clinician exceeds the low-volume threshold criteria.
+
+For the 2023 performance year, the three criteria of the low-volume threshold that establish MIPS eligibility of approved clinician types are those who:
+
+   * Bill Medicare for $90,000 or more in Medicare Part B allowed charges
+   * Provide care for 200 or more Medicare Part B beneficiaries
+   * Provide 200 or more Medicare Part B covered professional services under the MPFS.
+
+Groups or virtual groups with one or more MIPS eligible clinicians are also eligible. Additionally, clinicians who meet or exceed one or two of the low-volume threshold criteria can opt in to participate in MIPS.
+:::
 
 # The Permanent Doc Fix
 
@@ -329,7 +341,7 @@ There is a two-stage election process for virtual groups:
 
 ```{r}
 #| echo: false
-qpp_datadict <- dplyr::tibble(
+dplyr::tibble(
   Year = "Performance Year",
   NPI = "National Provider Identifier assigned to the clinician. Multiple rows for the same NPI indicate multiple TIN/NPI combinations.",
   State = "State or US territory location of the TIN associated with the clinician.",
@@ -388,85 +400,94 @@ qpp_datadict <- dplyr::tibble(
     cols = dplyr::everything(),
     names_to = "Field", 
     values_to = "Description") |> 
-  dplyr::mutate(col = dplyr::row_number(), .before = Field)
-
-qpp_datadict |> 
+  dplyr::mutate(col = dplyr::row_number(), .before = Field) |> 
   gt::gt(rowname_col = "col") |> 
+  gt::tab_header(title = gt::md("**Quality Payment API** Data Dictionary")) |> 
+  gt::opt_align_table_header("left") |> 
   gt::opt_stylize(color = "red") |> 
   gt::tab_source_note(source_note = gt::md("If **Participation Type** = `Group`, Beneficiaries are attributed to the TIN, not the Individual Clinician. If **Participation Type** = `APM Entity`, fields related to the Low-Volume Threshold and Special Status (columns 9 – 19) are attributed to the Clinician’s Group (TIN), not the APM Entity. Beginning in 2021, CMS won’t evaluate APM Entities for the Low-Volume Threshold."))
 ```
 
+<br>
 
 
 ```{r}
-library(provider)
-library(dplyr)
-
-abbott_qpp <- 2017:2021 |> 
-  furrr::future_map(\(x) quality_payment(year = x, 
-                                         npi = 1730455775)) |> 
-  purrr::list_rbind()
+library(provider)               # <1>
+library(tidyverse)              # <1>
+abbott_qpp <- 2017:2021 |>      # <2>
+  map(\(x) quality_payment(     # <2>
+    year = x,                   # <2> 
+    npi = 1730455775)) |>       # <2> 
+  list_rbind()                  # <3>
 ```
+
+1. Load `provider` and the `tidyverse`
+2. Query the API for each year that's available with `map`
+3. Bind the results together by row
+
+<br>
 
 ```{r}
 abbott_qpp |> 
-  select(year, 
-         contains("quality_measure")) |> 
-  tidyr::pivot_longer(!year, 
-                      names_to = "type", 
-                      values_to = "val") |> 
-  tidyr::separate_wider_delim(type, "_", 
-                              names = c("q", "m", "type", "qm_no")) |> 
-  tidyr::unite("name", 
-               c("q", "m"), 
-               remove = TRUE, 
-               sep = " ") |> 
-  tidyr::pivot_wider(names_from = type, 
-                     values_from = val,
-                     values_fn = list) |> 
-  tidyr::unnest(cols = c(id, score)) |> 
-  filter(!is.na(id))
-```
-
-```{r}
-abbott_qpp |> 
-  select(year, 
-         contains("quality_measure")) |> 
-  tidyr::pivot_longer(!year, 
-                      names_to = "type", 
-                      values_to = "val") |> 
-  tidyr::separate_wider_delim(type, "_", 
-                              names = c("q", "m", "type", "qm_no")) |> 
-  tidyr::unite("name", 
-               c("q", "m"), 
-               remove = TRUE, 
-               sep = " ") |> 
-  tidyr::pivot_wider(names_from = type, 
-                     values_from = val,
-                     values_fn = list) |> 
-  tidyr::unnest(cols = c(id, score)) |> 
-  filter(!is.na(id))
-```
-
-
-```{r}
-abbott_qpp |> 
-  select(year, 
-         final_score,
-         practice_size, 
-         part_type, 
+  select(year,
+         npi,
+         part_type,
+         specialty,
          beneficiaries, 
          allowed_charges,
          services, 
-         pmt_adj_pct, 
-         complex_patient_bonus,
-         quality_category_score,
-         quality_improvement_bonus,
-         pi_category_score,
-         ia_score,
-         cost_score) |> 
-  provider:::gt_prov()
+         pmt_adj_pct) |> 
+  gt::gt(rowname_col = "year") |> 
+  gt::fmt_number(
+    columns = c(beneficiaries, 
+                allowed_charges,
+                services), decimals = 0) |> 
+  gt::cols_label(part_type = "PARTICIPATION",
+                 allowed_charges = "CHARGES", 
+                 pmt_adj_pct = "PAYMENT ADJUSTMENT") |> 
+  gt::opt_stylize(color = "red") |> 
+  gt::text_transform(fn = toupper, 
+                     locations = gt::cells_column_labels())
 ```
+
+<br>
+
+```{r}
+abbott_qpp |> 
+  select(year, 
+         Final = final_score,
+         Quality = quality_category_score,
+         "Performance Improvement" = pi_category_score,
+         "Improvement Activities" = ia_score,
+         Cost = cost_score,
+         complex_patient_bonus,
+         quality_improvement_bonus)
+```
+
+<br>
+
+```{r}
+abbott_qpp |> 
+  select(year, 
+         contains("quality_measure")) |> 
+  tidyr::pivot_longer(!year, 
+                      names_to = "type", 
+                      values_to = "val") |> 
+  tidyr::separate_wider_delim(type, "_", 
+                              names = c("q", "m", "type", "qm_no")) |> 
+  tidyr::unite("name", 
+               c("q", "m"), 
+               remove = TRUE, 
+               sep = " ") |> 
+  tidyr::pivot_wider(names_from = type, 
+                     values_from = val,
+                     values_fn = list) |> 
+  tidyr::unnest(cols = c(id, score)) |> 
+  filter(!is.na(id))
+```
+
+
+<br>
 
 
 

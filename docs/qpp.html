@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Provider: R for Healthcare Administrative Data Analysis - Quality Payment Program</title>
+<title>Provider: R for Healthcare Administrative Data Analysis - 6&nbsp; Quality Payment Program</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,10 +98,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<meta property="og:title" content="Provider: R for Healthcare Administrative Data Analysis - Quality Payment Program">
+<meta property="og:title" content="Provider: R for Healthcare Administrative Data Analysis - 6&nbsp; Quality Payment Program">
 <meta property="og:description" content="">
 <meta property="og:site-name" content="Provider: R for Healthcare Administrative Data Analysis">
-<meta name="twitter:title" content="Provider: R for Healthcare Administrative Data Analysis - Quality Payment Program">
+<meta name="twitter:title" content="Provider: R for Healthcare Administrative Data Analysis - 6&nbsp; Quality Payment Program">
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@aabrucehimni">
 <meta name="twitter:card" content="summary">
@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nppes.html">Data Sources</a></li><li class="breadcrumb-item"><a href="./qpp.html">Quality Payment Program</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nppes.html">Data Sources</a></li><li class="breadcrumb-item"><a href="./qpp.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quality Payment Program</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -180,13 +180,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./taxonomy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Taxonomy</span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Taxonomy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./enroll_id.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Enrollment ID</span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Enrollment ID</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pecos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">PECOS PAC ID</span></span></a>
   </div>
 </li>
       </ul>
@@ -203,13 +209,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./nppes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">NPPES</span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">NPI Registry</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./qpp.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Quality Payment Program</span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quality Payment Program</span></span></a>
   </div>
 </li>
       </ul>
@@ -241,37 +247,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#mips-eligibility-and-engagement" id="toc-mips-eligibility-and-engagement" class="nav-link active" data-scroll-target="#mips-eligibility-and-engagement">MIPS Eligibility and Engagement</a></li>
-  <li><a href="#the-permanent-doc-fix" id="toc-the-permanent-doc-fix" class="nav-link" data-scroll-target="#the-permanent-doc-fix">The Permanent Doc Fix</a>
+  <li><a href="#mips-eligibility-and-engagement" id="toc-mips-eligibility-and-engagement" class="nav-link active" data-scroll-target="#mips-eligibility-and-engagement"><span class="header-section-number">6.1</span> MIPS Eligibility and Engagement</a></li>
+  <li><a href="#the-permanent-doc-fix" id="toc-the-permanent-doc-fix" class="nav-link" data-scroll-target="#the-permanent-doc-fix"><span class="header-section-number">7</span> The Permanent Doc Fix</a>
   <ul class="collapse">
-  <li><a href="#qpp-overview" id="toc-qpp-overview" class="nav-link" data-scroll-target="#qpp-overview">QPP Overview</a>
+  <li><a href="#qpp-overview" id="toc-qpp-overview" class="nav-link" data-scroll-target="#qpp-overview"><span class="header-section-number">7.1</span> QPP Overview</a>
   <ul class="collapse">
-  <li><a href="#qpp-year-1" id="toc-qpp-year-1" class="nav-link" data-scroll-target="#qpp-year-1">QPP Year 1</a></li>
-  <li><a href="#qpp-year-2" id="toc-qpp-year-2" class="nav-link" data-scroll-target="#qpp-year-2">QPP Year 2</a></li>
-  <li><a href="#qpp-year-3" id="toc-qpp-year-3" class="nav-link" data-scroll-target="#qpp-year-3">QPP Year 3</a></li>
-  <li><a href="#qpp-year-4" id="toc-qpp-year-4" class="nav-link" data-scroll-target="#qpp-year-4">QPP Year 4</a></li>
+  <li><a href="#qpp-year-1" id="toc-qpp-year-1" class="nav-link" data-scroll-target="#qpp-year-1"><span class="header-section-number">7.1.1</span> QPP Year 1</a></li>
+  <li><a href="#qpp-year-2" id="toc-qpp-year-2" class="nav-link" data-scroll-target="#qpp-year-2"><span class="header-section-number">7.1.2</span> QPP Year 2</a></li>
+  <li><a href="#qpp-year-3" id="toc-qpp-year-3" class="nav-link" data-scroll-target="#qpp-year-3"><span class="header-section-number">7.1.3</span> QPP Year 3</a></li>
+  <li><a href="#qpp-year-4" id="toc-qpp-year-4" class="nav-link" data-scroll-target="#qpp-year-4"><span class="header-section-number">7.1.4</span> QPP Year 4</a></li>
   </ul></li>
-  <li><a href="#eligibility-and-exceptions" id="toc-eligibility-and-exceptions" class="nav-link" data-scroll-target="#eligibility-and-exceptions">Eligibility and Exceptions</a>
+  <li><a href="#eligibility-and-exceptions" id="toc-eligibility-and-exceptions" class="nav-link" data-scroll-target="#eligibility-and-exceptions"><span class="header-section-number">7.2</span> Eligibility and Exceptions</a>
   <ul class="collapse">
-  <li><a href="#low-volume-threshold" id="toc-low-volume-threshold" class="nav-link" data-scroll-target="#low-volume-threshold">2021 Low Volume Threshold</a></li>
-  <li><a href="#significant-hardships" id="toc-significant-hardships" class="nav-link" data-scroll-target="#significant-hardships">Significant Hardships</a></li>
-  <li><a href="#extreme-and-uncontrollable-circumstances" id="toc-extreme-and-uncontrollable-circumstances" class="nav-link" data-scroll-target="#extreme-and-uncontrollable-circumstances">Extreme and Uncontrollable Circumstances</a></li>
+  <li><a href="#low-volume-threshold-1" id="toc-low-volume-threshold-1" class="nav-link" data-scroll-target="#low-volume-threshold-1"><span class="header-section-number">7.2.1</span> 2021 Low Volume Threshold</a></li>
+  <li><a href="#significant-hardships" id="toc-significant-hardships" class="nav-link" data-scroll-target="#significant-hardships"><span class="header-section-number">7.2.2</span> Significant Hardships</a></li>
+  <li><a href="#extreme-and-uncontrollable-circumstances" id="toc-extreme-and-uncontrollable-circumstances" class="nav-link" data-scroll-target="#extreme-and-uncontrollable-circumstances"><span class="header-section-number">7.2.3</span> Extreme and Uncontrollable Circumstances</a></li>
   </ul></li>
-  <li><a href="#payment-adjustments-and-bonus-options" id="toc-payment-adjustments-and-bonus-options" class="nav-link" data-scroll-target="#payment-adjustments-and-bonus-options">Payment Adjustments and Bonus Options</a>
+  <li><a href="#payment-adjustments-and-bonus-options" id="toc-payment-adjustments-and-bonus-options" class="nav-link" data-scroll-target="#payment-adjustments-and-bonus-options"><span class="header-section-number">7.3</span> Payment Adjustments and Bonus Options</a>
   <ul class="collapse">
-  <li><a href="#performance-threshold" id="toc-performance-threshold" class="nav-link" data-scroll-target="#performance-threshold">Performance Threshold</a></li>
-  <li><a href="#budget-neutral" id="toc-budget-neutral" class="nav-link" data-scroll-target="#budget-neutral">Budget Neutral</a></li>
-  <li><a href="#bonus-points" id="toc-bonus-points" class="nav-link" data-scroll-target="#bonus-points">Bonus Points</a></li>
-  <li><a href="#complex-patient-bonus" id="toc-complex-patient-bonus" class="nav-link" data-scroll-target="#complex-patient-bonus">Complex Patient Bonus</a></li>
+  <li><a href="#performance-threshold" id="toc-performance-threshold" class="nav-link" data-scroll-target="#performance-threshold"><span class="header-section-number">7.3.1</span> Performance Threshold</a></li>
+  <li><a href="#budget-neutral" id="toc-budget-neutral" class="nav-link" data-scroll-target="#budget-neutral"><span class="header-section-number">7.3.2</span> Budget Neutral</a></li>
+  <li><a href="#bonus-points" id="toc-bonus-points" class="nav-link" data-scroll-target="#bonus-points"><span class="header-section-number">7.3.3</span> Bonus Points</a></li>
+  <li><a href="#complex-patient-bonus" id="toc-complex-patient-bonus" class="nav-link" data-scroll-target="#complex-patient-bonus"><span class="header-section-number">7.3.4</span> Complex Patient Bonus</a></li>
   </ul></li>
-  <li><a href="#small-practices" id="toc-small-practices" class="nav-link" data-scroll-target="#small-practices">Small Practices</a></li>
-  <li><a href="#virtual-groups" id="toc-virtual-groups" class="nav-link" data-scroll-target="#virtual-groups">Virtual Groups</a>
+  <li><a href="#small-practices" id="toc-small-practices" class="nav-link" data-scroll-target="#small-practices"><span class="header-section-number">7.4</span> Small Practices</a></li>
+  <li><a href="#virtual-groups" id="toc-virtual-groups" class="nav-link" data-scroll-target="#virtual-groups"><span class="header-section-number">7.5</span> Virtual Groups</a>
   <ul class="collapse">
-  <li><a href="#eligibility" id="toc-eligibility" class="nav-link" data-scroll-target="#eligibility">Eligibility</a></li>
-  <li><a href="#election-process" id="toc-election-process" class="nav-link" data-scroll-target="#election-process">Election Process</a></li>
+  <li><a href="#eligibility" id="toc-eligibility" class="nav-link" data-scroll-target="#eligibility"><span class="header-section-number">7.5.1</span> Eligibility</a></li>
+  <li><a href="#election-process" id="toc-election-process" class="nav-link" data-scroll-target="#election-process"><span class="header-section-number">7.5.2</span> Election Process</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#quality-payment-api" id="toc-quality-payment-api" class="nav-link" data-scroll-target="#quality-payment-api">Quality Payment API</a></li>
+  <li><a href="#quality-payment-api" id="toc-quality-payment-api" class="nav-link" data-scroll-target="#quality-payment-api"><span class="header-section-number">8</span> Quality Payment API</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/andrewallenbruce/provider_book/edit/main/qpp.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/andrewallenbruce/provider_book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -280,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Quality Payment Program</h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quality Payment Program</span></h1>
 </div>
 
 
@@ -316,8 +322,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Clinicians who were eligible for MIPS in the 2021 performance year will receive a payment adjustment during the 2023 payment year — positive, neutral, or negative — based on their performance in 2021. The MIPS track pertains only to providers of professional services paid under Medicare Part B.</p>
 <p>The <strong>Advanced APM track</strong> provides an opportunity to reward clinicians for significant participation in taking on greater risk and accountability for patient outcomes. Eligible clinicians who participated in an Advanced APM and achieved Qualifying APM Participant (QP) status, based on the level of their participation in 2021 through the Medicare or the All-Payer Combination Option, will be eligible to receive a 5% APM Incentive Payment in 2023.</p>
 <p>Eligible clinicians with QP status are also excluded from MIPS. If an eligible clinician participating in an Advanced APM doesn’t achieve QP status for the year, they’ll need to participate in MIPS, unless they’re otherwise excluded.</p>
-<section id="mips-eligibility-and-engagement" class="level2">
-<h2 class="anchored" data-anchor-id="mips-eligibility-and-engagement">MIPS Eligibility and Engagement</h2>
+<section id="mips-eligibility-and-engagement" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="mips-eligibility-and-engagement"><span class="header-section-number">6.1</span> MIPS Eligibility and Engagement</h2>
 <p>Clinicians are included and required to participate in MIPS if they meet all 3 of the following requirements:</p>
 <ol type="1">
 <li>A MIPS eligible clinician type enrolled as a Medicare provider</li>
@@ -331,10 +337,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Virtual Group</strong>: A virtual group is a combination of 2 or more TINs assigned to one or more solo practitioners or to one or more groups consisting of 10 or fewer MIPS eligible clinicians, or both, that elect to form a virtual group for a performance year. When you participate as a virtual group, the group submits data that’s been aggregated to reflect performance for all the clinicians (across multiple TINs) in the virtual group as appropriate for the measures and activities selected. We assess your performance across all performance categories at the virtual group level.</li>
 <li><strong>APM Entity</strong>: An APM Entity is defined as an entity that participates in an Alternative Payment Model or other payer arrangement through a direct agreement with CMS or other payer or through federal or state law or regulation. APM Entities that participate in a MIPS APM can report MIPS data on behalf of the MIPS eligible clinicians in the APM Entity.2 When you participate as an APM Entity, the APM Entity submits quality and improvement activities data that has been aggregated to reflect performance for all the clinicians (sometimes across multiple TINs) in the Entity. Data for the MIPS Promoting Interoperability performance category is submitted at the group and individual level which CMS then aggregates to create an APM Entity score.</li>
 </ol>
-<p>The <strong>low-volume threshold</strong> is a critical step in determining whether a clinician is included in MIPS for a specific performance year. The low-volume threshold evaluates whether an otherwise MIPS eligible clinician saw an adequate number of eligible patients and provided enough services to meaningfully participate in MIPS. To make this determination, we review Medicare Part B claims for this information for two 12-month segments — referred to as the MIPS Determination Period — to see if a clinician exceeds the low-volume threshold criteria. The MIPS Determination Period for the CY 2021 performance year was:</p>
+<div class="callout callout-style-simple callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Low-Volume Threshold
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>low-volume threshold</strong> is a critical step in determining whether a clinician is included in MIPS for a specific performance year. The low-volume threshold evaluates whether an otherwise MIPS eligible clinician saw an adequate number of eligible patients and provided enough services to meaningfully participate in MIPS. To make this determination, Medicare Part B claims are reviewed for this information for two 12-month segments (referred to as the <em>MIPS Determination Period</em>) to see if a clinician exceeds the low-volume threshold criteria.</p>
+<p>For the 2023 performance year, the three criteria of the low-volume threshold that establish MIPS eligibility of approved clinician types are those who:</p>
+<ul>
+<li>Bill Medicare for $90,000 or more in Medicare Part B allowed charges</li>
+<li>Provide care for 200 or more Medicare Part B beneficiaries</li>
+<li>Provide 200 or more Medicare Part B covered professional services under the MPFS.</li>
+</ul>
+<p>Groups or virtual groups with one or more MIPS eligible clinicians are also eligible. Additionally, clinicians who meet or exceed one or two of the low-volume threshold criteria can opt in to participate in MIPS.</p>
+</div>
+</div>
 </section>
-<section id="the-permanent-doc-fix" class="level1">
-<h1>The Permanent Doc Fix</h1>
+<section id="the-permanent-doc-fix" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> The Permanent Doc Fix</h1>
 <p>The Medicare Access and CHIP Reauthorization Act of 2015 (MACRA) is a law that reformed the Medicare payment system. MACRA repealed the Sustainable Growth Rate (SGR) formula used to update the Medicare Physician Fee Schedule (MPFS) and thereby determine physician reimbursement. The SGR was replaced with a “value-based” payment system that incorporates quality measurement into payments with the goal of creating an equitable payment system for physicians. MACRA also reauthorized the Children’s Health Insurance Program (CHIP).</p>
 <p>On April 16, 2015, President Obama signed into law the Medicare Access and CHIP Reauthorization Act of 2015 — the largest change to the American healthcare system since the Affordable Care Act of 2010. Overwhelmingly endorsed by Democrats and Republicans in an uncommon moment of bipartisanship in Congress, MACRA ended the way Medicare Part B providers were disadvantageously reimbursed through the SGR.</p>
 <p>MACRA is known as the Permanent Doc Fix because it revised the flawed 1997 Balanced Budget Act,which resulted in exorbitant reimbursement reductions that incited physicians to threaten to leave the Medicare program.</p>
@@ -349,8 +374,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>Together, these policies are referred to as the Quality Payment Program (QPP). The SGR was enacted under the Balanced Budget Act of 1997 to control Medicare spending. The flaw in the system was that physicians’ payment rates under the rule dropped so low that the SGR had to be suspended or adjusted by Congress every year to prevent physicians from opting out of Medicare. MACRA provided automatic, annual update to the single conversion factor of 0.5 percent for all physicians and other qualified healthcare professionals through 2019. Medicare Part B payment rates will stay frozen at 2019 levels through 2025. Beginning in 2019, eligible clinicians (defined later) will either receive negative, neutral, or positive adjustments to their Medicare Part B payments based on their performance in the Merit-Based Incentive Payment System (MIPS) or a MIPS Alternative Payment Model (APM), or earn a lump sum bonus for participation in an Advanced Alternative Payment Model (APM). Under MACRA, Medicare’s costly and complex quality initiatives — the Physician Quality Reporting System (PQRS), the Value‐Based Modifier Program (VM), and the Medicare Electronic Health Record (EHR) Incentive Program, also known as Meaningful Use — ended on Dec.&nbsp;31, 2018. Components of the PQRS, VM, and Meaningful Use programs live on in MIPS, however.</p>
 <p>The overarching goal of the QPP is to implement a patient-centered healthcare system that delivers better care, smarter spending, and healthier people. In theory, increasing the health of our population will reduce medical costs and preserve Medicare’s main trust fund, which is on track to run dry by 2026.</p>
-<section id="qpp-overview" class="level2">
-<h2 class="anchored" data-anchor-id="qpp-overview">QPP Overview</h2>
+<section id="qpp-overview" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="qpp-overview"><span class="header-section-number">7.1</span> QPP Overview</h2>
 <p>The bedrock of the QPP is “high-value, patient-centered care, informed by useful feedback, in a continuous cycle of improvement.” Quality care is tied to medical coding and medical coding is tied to reimbursement. The days of siloed expertise is a thing of the past and we must understand how each area of revenue cycle management (RCM) affects the next. Coders have a unique ability to understand how RCM works for both the physician and payer. To have a coder on the team who also understands the QPP is essential for clinicians who wish to receive full credit for the quality care they provide to patients.</p>
 <p>The QPP is comprised of two payment methodologies:</p>
 <ul>
@@ -358,8 +383,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Advanced Alternative Payment Models (APMs)</li>
 </ul>
 <p>Although there are two separate pathways within the QPP, both Advanced APMs and MIPS contribute toward the goal of seamless integration of the QPP into clinical practice workflows: Advanced APMs promote seamless integration by way of payment methodology and design that incentivize care coordination; and MIPS builds on the capacity of eligible clinicians to participate in APMs in later years of the QPP.</p>
-<section id="qpp-year-1" class="level3">
-<h3 class="anchored" data-anchor-id="qpp-year-1">QPP Year 1</h3>
+<section id="qpp-year-1" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="qpp-year-1"><span class="header-section-number">7.1.1</span> QPP Year 1</h3>
 <p>CMS published a final rule in 2016 to establish special policies for year 1 (performance year 2017/payment year 2019) of the QPP. The Merit-Based Incentive Payment System (MIPS) and Alternative Payment Model (APM) Incentive under the Physician Fee Schedule, and Criteria for Physician-Focused Payment Models final rule, or 2017 QPP final rule, established:</p>
 <ul>
 <li>Incentives for participation in Advanced APMs</li>
@@ -368,8 +393,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Policies to phase in the implementation of MIPS</li>
 </ul>
 </section>
-<section id="qpp-year-2" class="level3">
-<h3 class="anchored" data-anchor-id="qpp-year-2">QPP Year 2</h3>
+<section id="qpp-year-2" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="qpp-year-2"><span class="header-section-number">7.1.2</span> QPP Year 2</h3>
 <p>The 2018 QPP final rule further implemented policies established in the 2017 QPP final rule, and addressed elements of MACRA that were not included in the first year of the program, including:</p>
 <ul>
 <li>Virtual groups</li>
@@ -391,8 +416,8 @@ Automatic Extreme and Uncontrollable Circumstances
 </div>
 </div>
 </section>
-<section id="qpp-year-3" class="level3">
-<h3 class="anchored" data-anchor-id="qpp-year-3">QPP Year 3</h3>
+<section id="qpp-year-3" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="qpp-year-3"><span class="header-section-number">7.1.3</span> QPP Year 3</h3>
 <p>A third final rule, published in the Nov.&nbsp;23, 2018, Federal Register, further implemented MACRA mandates and revised several previously finalized policies for year 3 (performance year 2019/payment year 2021) of the QPP.</p>
 <p>Notable changes included:</p>
 <ul>
@@ -405,8 +430,8 @@ Automatic Extreme and Uncontrollable Circumstances
 <p>Also, for the 2019 performance period, CMS reports that 195,564 eligible clinicians earned Qualifying APM Participant (QP) status, while another 27,995 eligible clinicians earned partial QP status.</p>
 <p>Due to the public health emergency (PHE) for the COVID-19 pandemic, CMS reports that 65,237 (approximately 6.83 percent of 954,614) MIPS eligible clinicians received reweighting of one or more MIPS performance categories for year 3 under the MIPS Extreme and Uncontrollable Circumstances policy.</p>
 </section>
-<section id="qpp-year-4" class="level3">
-<h3 class="anchored" data-anchor-id="qpp-year-4">QPP Year 4</h3>
+<section id="qpp-year-4" class="level3" data-number="7.1.4">
+<h3 data-number="7.1.4" class="anchored" data-anchor-id="qpp-year-4"><span class="header-section-number">7.1.4</span> QPP Year 4</h3>
 <p>The 2020 QPP final rule continued to phase in previously finalized policies for year 4 (performance year 2020/payment year 2022) and introduced a radical change to how clinicians will select measures in the future. Notable changes to the QPP for year 4 include:</p>
 <ul>
 <li>Weight changes to the Quality and Cost performance categories</li>
@@ -424,8 +449,8 @@ Automatic Extreme and Uncontrollable Circumstances
 <p>In separate rulemaking, CMS also added a new COVID-19 Clinical Trials improvement activity to the CY 2020 Improvement Activities inventory for use beginning with the 2020 performance period.</p>
 </section>
 </section>
-<section id="eligibility-and-exceptions" class="level2">
-<h2 class="anchored" data-anchor-id="eligibility-and-exceptions">Eligibility and Exceptions</h2>
+<section id="eligibility-and-exceptions" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="eligibility-and-exceptions"><span class="header-section-number">7.2</span> Eligibility and Exceptions</h2>
 <p>Not every healthcare provider is required to participate in the Quality Payment Program (QPP). First and foremost, payment adjustments only apply to professional services paid under Medicare Part B, so providers who don’t accept Medicare Part B are excluded.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -464,8 +489,8 @@ MIPS Eligible Clinicians in 2021
 </div>
 </div>
 <p>All MIPS eligible clinicians, including those in a MIPS APM, may participate in MIPS as an individual, group, virtual group, or (new for 2021) an APM entity.</p>
-<section id="low-volume-threshold" class="level3">
-<h3 class="anchored" data-anchor-id="low-volume-threshold">2021 Low Volume Threshold</h3>
+<section id="low-volume-threshold-1" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="low-volume-threshold-1"><span class="header-section-number">7.2.1</span> 2021 Low Volume Threshold</h3>
 <p>The above-listed clinician types are automatically considered eligible clinicians if they meet or exceed the low-volume threshold. Beginning with performance year 2019, a MIPS eligible clinician:</p>
 <ul>
 <li>Earns more than $90,000 in Medicare Part B allowed charges; and</li>
@@ -482,13 +507,13 @@ MIPS Eligible Clinicians in 2021
 <li>The clinician is a Qualifying APM Participant (QP) or Partial QP (PQP) in an Advanced APM.</li>
 </ul>
 </section>
-<section id="significant-hardships" class="level3">
-<h3 class="anchored" data-anchor-id="significant-hardships">Significant Hardships</h3>
+<section id="significant-hardships" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="significant-hardships"><span class="header-section-number">7.2.2</span> Significant Hardships</h3>
 <p>There are automatic exclusions (based on the low volume threshold) from MIPS and then there are exceptions, which may or may not require application. For example, MIPS eligible clinicians without access to certified electronic health record technology (CEHRT) due to a significant hardship, such as decertification of their electronic health record (EHR), can apply to have the Promoting Interoperability (formerly Advancing Care Information) category reweighted to zero (the weight is then transferred to the Quality performance category).</p>
 <p>For performance year 2018, CMS added a significant hardship exception from the Promoting Interoperability performance category for MIPS eligible clinicians in small practices. To apply for a significant hardship for performance year 2021, clinicians had to submit a significant hardship application to CMS by Dec.&nbsp;31, 2020. CMS makes other exceptions for small practices, practices located in rural areas; non-patient-facing individual MIPS eligible clinicians or groups; and individual MIPS eligible clinicians and groups that participate in a MIPS APM or a patient-centered medical home. To date, CMS has not imposed a time limitation for the number of years a clinician can apply for a significant hardship exception.</p>
 </section>
-<section id="extreme-and-uncontrollable-circumstances" class="level3">
-<h3 class="anchored" data-anchor-id="extreme-and-uncontrollable-circumstances">Extreme and Uncontrollable Circumstances</h3>
+<section id="extreme-and-uncontrollable-circumstances" class="level3" data-number="7.2.3">
+<h3 data-number="7.2.3" class="anchored" data-anchor-id="extreme-and-uncontrollable-circumstances"><span class="header-section-number">7.2.3</span> Extreme and Uncontrollable Circumstances</h3>
 <p>For the 2021 performance period, there are no changes to this policy for individual clinicians, groups, and virtual groups. However, beginning with the 2020 performance period, APM entities may also apply for reweighting of all MIPS performance categories. APM entity groups will receive a score equal to the performance threshold even if data are submitted. As in previous years, however, individual clinicians, groups, and virtual groups that submit data override the approved reweighting on a category-by-category basis. For performance years 2021 and 2022, the minimum Quality performance score for an ACO affected by an extreme and uncontrollable circumstance during the performance year will be set equal to the 30th percentile MIPS Quality performance category score. CMS states in the 2021 QPP final rule, “If an ACO is unable to report quality data and meet the MIPS Quality data completeness and case minimum requirement due to an extreme and uncontrollable circumstance, we will apply the 30th percentile MIPS Quality performance category score.”</p>
 <p>Note: CMS states in the 2021 MPFS final rule that it anticipates the PHE for COVID-19 to continue into and through CY 2021. As such, the extreme and uncontrollable circumstances policy will be available for the 2021 performance period.</p>
 <p>Remember: if a clinician, group, or virtual group submits data for the 2021 performance period, the data submission overrides the application and the clinician, group, or virtual group will be scored on the data submitted.</p>
@@ -528,8 +553,8 @@ How are MIPS “eligible” clinicians affected by MACRA?
 </div>
 </section>
 </section>
-<section id="payment-adjustments-and-bonus-options" class="level2">
-<h2 class="anchored" data-anchor-id="payment-adjustments-and-bonus-options">Payment Adjustments and Bonus Options</h2>
+<section id="payment-adjustments-and-bonus-options" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="payment-adjustments-and-bonus-options"><span class="header-section-number">7.3</span> Payment Adjustments and Bonus Options</h2>
 <p>The timeline for QPP performance and payment adjustments spans three years. For example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">tibble</span>(</span>
@@ -541,23 +566,23 @@ How are MIPS “eligible” clinicians affected by MACRA?
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">cols_align</span>(<span class="st">"center"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="nkwybryuxx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nkwybryuxx table {
+<div id="gelzmcgqnl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gelzmcgqnl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nkwybryuxx thead, #nkwybryuxx tbody, #nkwybryuxx tfoot, #nkwybryuxx tr, #nkwybryuxx td, #nkwybryuxx th {
+#gelzmcgqnl thead, #gelzmcgqnl tbody, #gelzmcgqnl tfoot, #gelzmcgqnl tr, #gelzmcgqnl td, #gelzmcgqnl th {
   border-style: none;
 }
 
-#nkwybryuxx p {
+#gelzmcgqnl p {
   margin: 0;
   padding: 0;
 }
 
-#nkwybryuxx .gt_table {
+#gelzmcgqnl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -583,12 +608,12 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-left-color: #D3D3D3;
 }
 
-#nkwybryuxx .gt_caption {
+#gelzmcgqnl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nkwybryuxx .gt_title {
+#gelzmcgqnl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -600,7 +625,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-bottom-width: 0;
 }
 
-#nkwybryuxx .gt_subtitle {
+#gelzmcgqnl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -612,7 +637,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-top-width: 0;
 }
 
-#nkwybryuxx .gt_heading {
+#gelzmcgqnl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -624,13 +649,13 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-right-color: #D3D3D3;
 }
 
-#nkwybryuxx .gt_bottom_border {
+#gelzmcgqnl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #0076BA;
 }
 
-#nkwybryuxx .gt_col_headings {
+#gelzmcgqnl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #0076BA;
@@ -645,7 +670,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-right-color: #D3D3D3;
 }
 
-#nkwybryuxx .gt_col_heading {
+#gelzmcgqnl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -665,7 +690,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   overflow-x: hidden;
 }
 
-#nkwybryuxx .gt_column_spanner_outer {
+#gelzmcgqnl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -677,15 +702,15 @@ How are MIPS “eligible” clinicians affected by MACRA?
   padding-right: 4px;
 }
 
-#nkwybryuxx .gt_column_spanner_outer:first-child {
+#gelzmcgqnl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nkwybryuxx .gt_column_spanner_outer:last-child {
+#gelzmcgqnl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nkwybryuxx .gt_column_spanner {
+#gelzmcgqnl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #0076BA;
@@ -697,11 +722,11 @@ How are MIPS “eligible” clinicians affected by MACRA?
   width: 100%;
 }
 
-#nkwybryuxx .gt_spanner_row {
+#gelzmcgqnl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nkwybryuxx .gt_group_heading {
+#gelzmcgqnl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -727,7 +752,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   text-align: left;
 }
 
-#nkwybryuxx .gt_empty_group_heading {
+#gelzmcgqnl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -742,15 +767,15 @@ How are MIPS “eligible” clinicians affected by MACRA?
   vertical-align: middle;
 }
 
-#nkwybryuxx .gt_from_md > :first-child {
+#gelzmcgqnl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nkwybryuxx .gt_from_md > :last-child {
+#gelzmcgqnl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nkwybryuxx .gt_row {
+#gelzmcgqnl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -769,7 +794,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   overflow-x: hidden;
 }
 
-#nkwybryuxx .gt_stub {
+#gelzmcgqnl .gt_stub {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -782,7 +807,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   padding-right: 5px;
 }
 
-#nkwybryuxx .gt_stub_row_group {
+#gelzmcgqnl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -796,15 +821,15 @@ How are MIPS “eligible” clinicians affected by MACRA?
   vertical-align: top;
 }
 
-#nkwybryuxx .gt_row_group_first td {
+#gelzmcgqnl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nkwybryuxx .gt_row_group_first th {
+#gelzmcgqnl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nkwybryuxx .gt_summary_row {
+#gelzmcgqnl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -814,16 +839,16 @@ How are MIPS “eligible” clinicians affected by MACRA?
   padding-right: 5px;
 }
 
-#nkwybryuxx .gt_first_summary_row {
+#gelzmcgqnl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #0076BA;
 }
 
-#nkwybryuxx .gt_first_summary_row.thick {
+#gelzmcgqnl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nkwybryuxx .gt_last_summary_row {
+#gelzmcgqnl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -833,7 +858,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-bottom-color: #0076BA;
 }
 
-#nkwybryuxx .gt_grand_summary_row {
+#gelzmcgqnl .gt_grand_summary_row {
   color: #333333;
   background-color: #89D3FE;
   text-transform: inherit;
@@ -843,7 +868,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   padding-right: 5px;
 }
 
-#nkwybryuxx .gt_first_grand_summary_row {
+#gelzmcgqnl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -853,7 +878,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-top-color: #0076BA;
 }
 
-#nkwybryuxx .gt_last_grand_summary_row_top {
+#gelzmcgqnl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -863,11 +888,11 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-bottom-color: #0076BA;
 }
 
-#nkwybryuxx .gt_striped {
+#gelzmcgqnl .gt_striped {
   background-color: #F4F4F4;
 }
 
-#nkwybryuxx .gt_table_body {
+#gelzmcgqnl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #0076BA;
@@ -876,7 +901,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-bottom-color: #0076BA;
 }
 
-#nkwybryuxx .gt_footnotes {
+#gelzmcgqnl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -890,7 +915,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-right-color: #D3D3D3;
 }
 
-#nkwybryuxx .gt_footnote {
+#gelzmcgqnl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -899,7 +924,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   padding-right: 5px;
 }
 
-#nkwybryuxx .gt_sourcenotes {
+#gelzmcgqnl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -913,7 +938,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-right-color: #D3D3D3;
 }
 
-#nkwybryuxx .gt_sourcenote {
+#gelzmcgqnl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -921,63 +946,63 @@ How are MIPS “eligible” clinicians affected by MACRA?
   padding-right: 5px;
 }
 
-#nkwybryuxx .gt_left {
+#gelzmcgqnl .gt_left {
   text-align: left;
 }
 
-#nkwybryuxx .gt_center {
+#gelzmcgqnl .gt_center {
   text-align: center;
 }
 
-#nkwybryuxx .gt_right {
+#gelzmcgqnl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nkwybryuxx .gt_font_normal {
+#gelzmcgqnl .gt_font_normal {
   font-weight: normal;
 }
 
-#nkwybryuxx .gt_font_bold {
+#gelzmcgqnl .gt_font_bold {
   font-weight: bold;
 }
 
-#nkwybryuxx .gt_font_italic {
+#gelzmcgqnl .gt_font_italic {
   font-style: italic;
 }
 
-#nkwybryuxx .gt_super {
+#gelzmcgqnl .gt_super {
   font-size: 65%;
 }
 
-#nkwybryuxx .gt_footnote_marks {
+#gelzmcgqnl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nkwybryuxx .gt_asterisk {
+#gelzmcgqnl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nkwybryuxx .gt_indent_1 {
+#gelzmcgqnl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nkwybryuxx .gt_indent_2 {
+#gelzmcgqnl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nkwybryuxx .gt_indent_3 {
+#gelzmcgqnl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nkwybryuxx .gt_indent_4 {
+#gelzmcgqnl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nkwybryuxx .gt_indent_5 {
+#gelzmcgqnl .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1021,20 +1046,20 @@ How are MIPS “eligible” clinicians affected by MACRA?
 </div>
 <p>Clinicians collect data during the performance year; submit the data to CMS between January 1 and March 31 the following year, receive performance feedback by July that year; and receive payment adjustments based on performance the following year. Scheduled MIPS payment adjustments and potential bonuses for Qualifying APM Participants (QP) and Partial Qualifying APM Participants (PQP) in an Advanced APM are shown in the table below.</p>
 <p>When a clinician has multiple final scores associated with a single TIN/NPI combination, CMS will use a virtual group final score first to determine the 2023 payment year MIPS payment adjustment and the highest available final score from the APM entity, group, or individual second. This is changed from 2022 payment year policy, in which the APM entity final score will be considered first.</p>
-<section id="performance-threshold" class="level3">
-<h3 class="anchored" data-anchor-id="performance-threshold">Performance Threshold</h3>
+<section id="performance-threshold" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="performance-threshold"><span class="header-section-number">7.3.1</span> Performance Threshold</h3>
 <p>To receive a neutral payment adjustment to Medicare Part B claims in 2023, MIPS eligible clinicians will need to earn a final score of 60 points, the performance threshold for year 5. This is a change from the 45-point threshold in year 4. The additional performance threshold for exceptional performance is 85 points (up from 80 points in 2020). Note, however, that year 4 was the final year for additional positive adjustments for exceptional performance.</p>
 </section>
-<section id="budget-neutral" class="level3">
-<h3 class="anchored" data-anchor-id="budget-neutral">Budget Neutral</h3>
+<section id="budget-neutral" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="budget-neutral"><span class="header-section-number">7.3.2</span> Budget Neutral</h3>
 <p>MIPS is budget neutral, which means CMS takes the money it saves from providers who receive reductions to pay for provider who receive increases. The maximum upward adjustment is capped at three times the maximum negative adjustment.</p>
 </section>
-<section id="bonus-points" class="level3">
-<h3 class="anchored" data-anchor-id="bonus-points">Bonus Points</h3>
+<section id="bonus-points" class="level3" data-number="7.3.3">
+<h3 data-number="7.3.3" class="anchored" data-anchor-id="bonus-points"><span class="header-section-number">7.3.3</span> Bonus Points</h3>
 <p>CMS discontinued awarding measure bonus points to CMS Web Interface reporters for reporting high priority measures in performance year 2019. Beginning in 2019 and through the 2023 MIPS payment year, the total measure bonus points for high priority measures cannot exceed 10 percent of the total available measure achievement points. Beginning with payment year 2023, bonus points for the Query of Prescription Drug Monitoring Programs (PDMP) measure are increased from 5 points to 10 points, based on 2021 performance.</p>
 </section>
-<section id="complex-patient-bonus" class="level3">
-<h3 class="anchored" data-anchor-id="complex-patient-bonus">Complex Patient Bonus</h3>
+<section id="complex-patient-bonus" class="level3" data-number="7.3.4">
+<h3 data-number="7.3.4" class="anchored" data-anchor-id="complex-patient-bonus"><span class="header-section-number">7.3.4</span> Complex Patient Bonus</h3>
 <p>CMS will apply a complex patient bonus capped at 5 points to the final score for the 2021 MIPS performance period/2023 MIPS payment year. Complexity is measured through hierarchical condition category (HCC) risk scores and social risk as measured through the proportion of patients with dual eligible status.</p>
 <p>HCC risk scores are calculated annually, based on the following information from the calendar year:</p>
 <ul>
@@ -1050,8 +1075,8 @@ How are MIPS “eligible” clinicians affected by MACRA?
 <p>Note: The QPP is budget neutral so all figures are variable, depending on the number of providers sharing the $500 million MACRA provided for this purpose.</p>
 </section>
 </section>
-<section id="small-practices" class="level2">
-<h2 class="anchored" data-anchor-id="small-practices">Small Practices</h2>
+<section id="small-practices" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="small-practices"><span class="header-section-number">7.4</span> Small Practices</h2>
 <p>Small practices face challenges in their ability to participate in MIPS. CMS encourages small practices to participate by subsidizing some of their infrastructure hurdles. CMS states in the 2018 QPP final rule, “The support of small, independent practices remains an important thematic objective for the implementation of the Quality Payment Program and is expected to be carried throughout future rulemaking.” CMS defines small practices for the purposes of MIPS as 15 or fewer clinicians. As in previous years, CMS continues to award 6 bonus points in the Quality performance category to MIPS eligible clinicians in small practices who submit data on at least one measure and 3 points for quality measures that don’t meet data completeness requirements. Additionally, clinicians in small practices may apply to have the Promoting Interoperability performance category reweighted to zero. Small practices also have reduced reporting requirements in the Improvement Activities category:</p>
 <ul>
 <li>Medium-weighted activities are worth 20 points; and</li>
@@ -1059,15 +1084,15 @@ How are MIPS “eligible” clinicians affected by MACRA?
 </ul>
 <p>CMS also offers free and customized resources available within local communities, including direct, one-on-one support from the Small, Underserved, and Rural Support Initiative, in addition to CMS’ other no-cost technical assistance. Beginning with the 2019 performance period (year 3), only small practices — whether participating individually or as a group — may submit quality measures using Medicare Part B claims as a submission type. Lastly, small practices may continue to participate in MIPS as a virtual group.</p>
 </section>
-<section id="virtual-groups" class="level2">
-<h2 class="anchored" data-anchor-id="virtual-groups">Virtual Groups</h2>
+<section id="virtual-groups" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="virtual-groups"><span class="header-section-number">7.5</span> Virtual Groups</h2>
 <p>Beginning with the 2019 performance period, clinicians may participate in MIPS as an individual, as a group, as an APM entity in a MIPS APM, or as a virtual group. A virtual group is a combination of two or more TINs assigned to one or more solo practitioners or one or more groups consisting of 10 or fewer eligible clinicians that elect to form a virtual group for a performance period for a year. If a group chooses to join a virtual group, all of the clinicians in that group are part of the virtual group. The group’s final score and resulting payment adjustment percentage applies to all clinicians in the virtual group. The virtual group eligibility determination period aligns with the first period of data analysis under the MIPS eligibility determination period. For year 5, the determination period is Oct.&nbsp;1, 2019, to Sept.&nbsp;30, 2020 (including a 30-day claims run out).</p>
-<section id="eligibility" class="level3">
-<h3 class="anchored" data-anchor-id="eligibility">Eligibility</h3>
+<section id="eligibility" class="level3" data-number="7.5.1">
+<h3 data-number="7.5.1" class="anchored" data-anchor-id="eligibility"><span class="header-section-number">7.5.1</span> Eligibility</h3>
 <p>A virtual group election is considered a low-volume threshold opt-in for any prospective member of the virtual group that exceeds at least one, but not all three, of the low-volume threshold criteria. Clinicians can only participate in one virtual group per performance period. There is no limit on the size of a virtual group12. Virtual groups are held to the same requirements for each performance category as standard groups, and are responsible for aggregating data for their measures and activities across the virtual group. TINs can inquire about their TIN size prior to making an election during a 3-month time frame, which begins Oct.&nbsp;1 and ends Dec.&nbsp;31 of the calendar year prior to the applicable performance period.</p>
 </section>
-<section id="election-process" class="level3">
-<h3 class="anchored" data-anchor-id="election-process">Election Process</h3>
+<section id="election-process" class="level3" data-number="7.5.2">
+<h3 data-number="7.5.2" class="anchored" data-anchor-id="election-process"><span class="header-section-number">7.5.2</span> Election Process</h3>
 <p>There is a two-stage election process for virtual groups:</p>
 <p><strong>Stage 1</strong> (optional): If you’re a solo practitioner or part of a group with 10 or fewer eligible clinicians:</p>
 <ul>
@@ -1083,28 +1108,28 @@ How are MIPS “eligible” clinicians affected by MACRA?
 </section>
 </section>
 </section>
-<section id="quality-payment-api" class="level1">
-<h1>Quality Payment API</h1>
+<section id="quality-payment-api" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Quality Payment API</h1>
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="zxorbjwncd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zxorbjwncd table {
+<div id="dprakpyjzp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dprakpyjzp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zxorbjwncd thead, #zxorbjwncd tbody, #zxorbjwncd tfoot, #zxorbjwncd tr, #zxorbjwncd td, #zxorbjwncd th {
+#dprakpyjzp thead, #dprakpyjzp tbody, #dprakpyjzp tfoot, #dprakpyjzp tr, #dprakpyjzp td, #dprakpyjzp th {
   border-style: none;
 }
 
-#zxorbjwncd p {
+#dprakpyjzp p {
   margin: 0;
   padding: 0;
 }
 
-#zxorbjwncd .gt_table {
+#dprakpyjzp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1130,12 +1155,12 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-left-color: #D3D3D3;
 }
 
-#zxorbjwncd .gt_caption {
+#dprakpyjzp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zxorbjwncd .gt_title {
+#dprakpyjzp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1147,7 +1172,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-bottom-width: 0;
 }
 
-#zxorbjwncd .gt_subtitle {
+#dprakpyjzp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1159,9 +1184,9 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-top-width: 0;
 }
 
-#zxorbjwncd .gt_heading {
+#dprakpyjzp .gt_heading {
   background-color: #FFFFFF;
-  text-align: center;
+  text-align: left;
   border-bottom-color: #FFFFFF;
   border-left-style: none;
   border-left-width: 1px;
@@ -1171,13 +1196,13 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-right-color: #D3D3D3;
 }
 
-#zxorbjwncd .gt_bottom_border {
+#dprakpyjzp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #E4220C;
 }
 
-#zxorbjwncd .gt_col_headings {
+#dprakpyjzp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #E4220C;
@@ -1192,7 +1217,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-right-color: #D3D3D3;
 }
 
-#zxorbjwncd .gt_col_heading {
+#dprakpyjzp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1212,7 +1237,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   overflow-x: hidden;
 }
 
-#zxorbjwncd .gt_column_spanner_outer {
+#dprakpyjzp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1224,15 +1249,15 @@ How are MIPS “eligible” clinicians affected by MACRA?
   padding-right: 4px;
 }
 
-#zxorbjwncd .gt_column_spanner_outer:first-child {
+#dprakpyjzp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zxorbjwncd .gt_column_spanner_outer:last-child {
+#dprakpyjzp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zxorbjwncd .gt_column_spanner {
+#dprakpyjzp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #E4220C;
@@ -1244,11 +1269,11 @@ How are MIPS “eligible” clinicians affected by MACRA?
   width: 100%;
 }
 
-#zxorbjwncd .gt_spanner_row {
+#dprakpyjzp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zxorbjwncd .gt_group_heading {
+#dprakpyjzp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1274,7 +1299,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   text-align: left;
 }
 
-#zxorbjwncd .gt_empty_group_heading {
+#dprakpyjzp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1289,15 +1314,15 @@ How are MIPS “eligible” clinicians affected by MACRA?
   vertical-align: middle;
 }
 
-#zxorbjwncd .gt_from_md > :first-child {
+#dprakpyjzp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zxorbjwncd .gt_from_md > :last-child {
+#dprakpyjzp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zxorbjwncd .gt_row {
+#dprakpyjzp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1316,7 +1341,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   overflow-x: hidden;
 }
 
-#zxorbjwncd .gt_stub {
+#dprakpyjzp .gt_stub {
   color: #FFFFFF;
   background-color: #E4220C;
   font-size: 100%;
@@ -1329,7 +1354,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   padding-right: 5px;
 }
 
-#zxorbjwncd .gt_stub_row_group {
+#dprakpyjzp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1343,15 +1368,15 @@ How are MIPS “eligible” clinicians affected by MACRA?
   vertical-align: top;
 }
 
-#zxorbjwncd .gt_row_group_first td {
+#dprakpyjzp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zxorbjwncd .gt_row_group_first th {
+#dprakpyjzp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zxorbjwncd .gt_summary_row {
+#dprakpyjzp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1361,16 +1386,16 @@ How are MIPS “eligible” clinicians affected by MACRA?
   padding-right: 5px;
 }
 
-#zxorbjwncd .gt_first_summary_row {
+#dprakpyjzp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #E4220C;
 }
 
-#zxorbjwncd .gt_first_summary_row.thick {
+#dprakpyjzp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zxorbjwncd .gt_last_summary_row {
+#dprakpyjzp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1380,7 +1405,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-bottom-color: #E4220C;
 }
 
-#zxorbjwncd .gt_grand_summary_row {
+#dprakpyjzp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFCCC7;
   text-transform: inherit;
@@ -1390,7 +1415,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   padding-right: 5px;
 }
 
-#zxorbjwncd .gt_first_grand_summary_row {
+#dprakpyjzp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1400,7 +1425,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-top-color: #E4220C;
 }
 
-#zxorbjwncd .gt_last_grand_summary_row_top {
+#dprakpyjzp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1410,11 +1435,11 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-bottom-color: #E4220C;
 }
 
-#zxorbjwncd .gt_striped {
+#dprakpyjzp .gt_striped {
   background-color: #F4F4F4;
 }
 
-#zxorbjwncd .gt_table_body {
+#dprakpyjzp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #E4220C;
@@ -1423,7 +1448,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-bottom-color: #E4220C;
 }
 
-#zxorbjwncd .gt_footnotes {
+#dprakpyjzp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1437,7 +1462,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-right-color: #D3D3D3;
 }
 
-#zxorbjwncd .gt_footnote {
+#dprakpyjzp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1446,7 +1471,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   padding-right: 5px;
 }
 
-#zxorbjwncd .gt_sourcenotes {
+#dprakpyjzp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1460,7 +1485,7 @@ How are MIPS “eligible” clinicians affected by MACRA?
   border-right-color: #D3D3D3;
 }
 
-#zxorbjwncd .gt_sourcenote {
+#dprakpyjzp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1468,68 +1493,71 @@ How are MIPS “eligible” clinicians affected by MACRA?
   padding-right: 5px;
 }
 
-#zxorbjwncd .gt_left {
+#dprakpyjzp .gt_left {
   text-align: left;
 }
 
-#zxorbjwncd .gt_center {
+#dprakpyjzp .gt_center {
   text-align: center;
 }
 
-#zxorbjwncd .gt_right {
+#dprakpyjzp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zxorbjwncd .gt_font_normal {
+#dprakpyjzp .gt_font_normal {
   font-weight: normal;
 }
 
-#zxorbjwncd .gt_font_bold {
+#dprakpyjzp .gt_font_bold {
   font-weight: bold;
 }
 
-#zxorbjwncd .gt_font_italic {
+#dprakpyjzp .gt_font_italic {
   font-style: italic;
 }
 
-#zxorbjwncd .gt_super {
+#dprakpyjzp .gt_super {
   font-size: 65%;
 }
 
-#zxorbjwncd .gt_footnote_marks {
+#dprakpyjzp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zxorbjwncd .gt_asterisk {
+#dprakpyjzp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zxorbjwncd .gt_indent_1 {
+#dprakpyjzp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zxorbjwncd .gt_indent_2 {
+#dprakpyjzp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zxorbjwncd .gt_indent_3 {
+#dprakpyjzp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zxorbjwncd .gt_indent_4 {
+#dprakpyjzp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zxorbjwncd .gt_indent_5 {
+#dprakpyjzp .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
   <thead>
+    <tr class="gt_heading">
+      <td colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border" style=""><strong>Quality Payment API</strong> Data Dictionary</td>
+    </tr>
     
     <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id=""></th>
@@ -1684,147 +1712,86 @@ How are MIPS “eligible” clinicians affected by MACRA?
 </div>
 </div>
 </div>
+<p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(provider)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'dplyr'</code></pre>
+<div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode r code-annotation-code code-with-copy"><code class="sourceCode r"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(provider)</span>
+<span id="annotated-cell-2-2"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-lines="1,2,3,4" data-code-annotation="2" data-code-cell="annotated-cell-3">Query the API for each year that’s available with <code>map</code></span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-lines="5" data-code-annotation="3" data-code-cell="annotated-cell-3">Bind the results together by row</span>
+</dd>
+</dl>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:stats':
-
-    filter, lag</code></pre>
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.2     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.1     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
+<div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-3-1" class="code-annotation-target"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a>abbott_qpp <span class="ot">&lt;-</span> <span class="dv">2017</span><span class="sc">:</span><span class="dv">2021</span> <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-3-2"><a href="#annotated-cell-3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(\(x) <span class="fu">quality_payment</span>(</span>
+<span id="annotated-cell-3-3"><a href="#annotated-cell-3-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> x,</span>
+<span id="annotated-cell-3-4"><a href="#annotated-cell-3-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">npi =</span> <span class="dv">1730455775</span>)) <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-3-5" class="code-annotation-target"><a href="#annotated-cell-3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list_rbind</span>()</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>abbott_qpp <span class="ot">&lt;-</span> <span class="dv">2017</span><span class="sc">:</span><span class="dv">2021</span> <span class="sc">|&gt;</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  furrr<span class="sc">::</span><span class="fu">future_map</span>(\(x) <span class="fu">quality_payment</span>(<span class="at">year =</span> x, </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">npi =</span> <span class="dv">1730455775</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  purrr<span class="sc">::</span><span class="fu">list_rbind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>✖ No results for year: 2017 and npi: 1730455775</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>✖ No results for year: 2018 and npi: 1730455775</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>✖ No results for year: 2021 and npi: 1730455775</code></pre>
+<pre><code>✖ No results for year: 2017 and npi: 1730455775
+✖ No results for year: 2018 and npi: 1730455775
+✖ No results for year: 2021 and npi: 1730455775</code></pre>
 </div>
 </div>
+<p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>abbott_qpp <span class="sc">|&gt;</span> </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">contains</span>(<span class="st">"quality_measure"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(<span class="sc">!</span>year, </span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">names_to =</span> <span class="st">"type"</span>, </span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">values_to =</span> <span class="st">"val"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">separate_wider_delim</span>(type, <span class="st">"_"</span>, </span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>                              <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"m"</span>, <span class="st">"type"</span>, <span class="st">"qm_no"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unite</span>(<span class="st">"name"</span>, </span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>               <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"m"</span>), </span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">remove =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">sep =</span> <span class="st">" "</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> type, </span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_from =</span> val,</span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_fn =</span> list) <span class="sc">|&gt;</span> </span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unnest</span>(<span class="at">cols =</span> <span class="fu">c</span>(id, score)) <span class="sc">|&gt;</span> </span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(id))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 22 × 5
-    year name            qm_no id     score
-   &lt;int&gt; &lt;chr&gt;           &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;
- 1  2019 quality measure 1     ACO321 11.1 
- 2  2019 quality measure 2     001    9.6  
- 3  2019 quality measure 3     318    9.5  
- 4  2019 quality measure 4     112    8.6  
- 5  2019 quality measure 5     113    8.3  
- 6  2019 quality measure 6     236    8.2  
- 7  2020 quality measure 1     226    10   
- 8  2020 quality measure 1     318    9.4  
- 9  2020 quality measure 2     110    9.6  
-10  2020 quality measure 2     001    9.4  
-# ℹ 12 more rows</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>abbott_qpp <span class="sc">|&gt;</span> </span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, </span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">contains</span>(<span class="st">"quality_measure"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(<span class="sc">!</span>year, </span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">names_to =</span> <span class="st">"type"</span>, </span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">values_to =</span> <span class="st">"val"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">separate_wider_delim</span>(type, <span class="st">"_"</span>, </span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>                              <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"m"</span>, <span class="st">"type"</span>, <span class="st">"qm_no"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unite</span>(<span class="st">"name"</span>, </span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>               <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"m"</span>), </span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">remove =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">sep =</span> <span class="st">" "</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> type, </span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_from =</span> val,</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_fn =</span> list) <span class="sc">|&gt;</span> </span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unnest</span>(<span class="at">cols =</span> <span class="fu">c</span>(id, score)) <span class="sc">|&gt;</span> </span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(id))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 22 × 5
-    year name            qm_no id     score
-   &lt;int&gt; &lt;chr&gt;           &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;
- 1  2019 quality measure 1     ACO321 11.1 
- 2  2019 quality measure 2     001    9.6  
- 3  2019 quality measure 3     318    9.5  
- 4  2019 quality measure 4     112    8.6  
- 5  2019 quality measure 5     113    8.3  
- 6  2019 quality measure 6     236    8.2  
- 7  2020 quality measure 1     226    10   
- 8  2020 quality measure 1     318    9.4  
- 9  2020 quality measure 2     110    9.6  
-10  2020 quality measure 2     001    9.4  
-# ℹ 12 more rows</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>abbott_qpp <span class="sc">|&gt;</span> </span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>         final_score,</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>         practice_size, </span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>         part_type, </span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>         beneficiaries, </span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>         allowed_charges,</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>         services, </span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>         pmt_adj_pct, </span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>         complex_patient_bonus,</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>         quality_category_score,</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>         quality_improvement_bonus,</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>         pi_category_score,</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>         ia_score,</span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>         cost_score) <span class="sc">|&gt;</span> </span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>  provider<span class="sc">:::</span><span class="fu">gt_prov</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>abbott_qpp <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>         npi,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>         part_type,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>         specialty,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>         beneficiaries, </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>         allowed_charges,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>         services, </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>         pmt_adj_pct) <span class="sc">|&gt;</span> </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>(<span class="at">rowname_col =</span> <span class="st">"year"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">fmt_number</span>(</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(beneficiaries, </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                allowed_charges,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                services), <span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">cols_label</span>(<span class="at">part_type =</span> <span class="st">"PARTICIPATION"</span>,</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>                 <span class="at">allowed_charges =</span> <span class="st">"CHARGES"</span>, </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pmt_adj_pct =</span> <span class="st">"PAYMENT ADJUSTMENT"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">opt_stylize</span>(<span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">text_transform</span>(<span class="at">fn =</span> toupper, </span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>                     <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_column_labels</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="qasuozvjos" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cairo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#qasuozvjos table {
-  font-family: Cairo, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+<div id="blymbzgloh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#blymbzgloh table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qasuozvjos thead, #qasuozvjos tbody, #qasuozvjos tfoot, #qasuozvjos tr, #qasuozvjos td, #qasuozvjos th {
+#blymbzgloh thead, #blymbzgloh tbody, #blymbzgloh tfoot, #blymbzgloh tr, #blymbzgloh td, #blymbzgloh th {
   border-style: none;
 }
 
-#qasuozvjos p {
+#blymbzgloh p {
   margin: 0;
   padding: 0;
 }
 
-#qasuozvjos .gt_table {
+#blymbzgloh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1832,30 +1799,30 @@ Attaching package: 'dplyr'</code></pre>
   margin-right: auto;
   color: #333333;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: normal;
   font-style: normal;
   background-color: #FFFFFF;
-  width: 100%;
-  border-top-style: none;
-  border-top-width: 3px;
-  border-top-color: #A8A8A8;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A81600;
   border-right-style: none;
   border-right-width: 2px;
   border-right-color: #D3D3D3;
-  border-bottom-style: none;
+  border-bottom-style: solid;
   border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
+  border-bottom-color: #A81600;
   border-left-style: none;
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
 
-#qasuozvjos .gt_caption {
+#blymbzgloh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qasuozvjos .gt_title {
+#blymbzgloh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1867,7 +1834,7 @@ Attaching package: 'dplyr'</code></pre>
   border-bottom-width: 0;
 }
 
-#qasuozvjos .gt_subtitle {
+#blymbzgloh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1879,9 +1846,9 @@ Attaching package: 'dplyr'</code></pre>
   border-top-width: 0;
 }
 
-#qasuozvjos .gt_heading {
+#blymbzgloh .gt_heading {
   background-color: #FFFFFF;
-  text-align: left;
+  text-align: center;
   border-bottom-color: #FFFFFF;
   border-left-style: none;
   border-left-width: 1px;
@@ -1891,19 +1858,19 @@ Attaching package: 'dplyr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#qasuozvjos .gt_bottom_border {
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#qasuozvjos .gt_col_headings {
-  border-top-style: none;
-  border-top-width: 2px;
-  border-top-color: #FFFFFF;
+#blymbzgloh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
-  border-bottom-color: #000000;
+  border-bottom-color: #E4220C;
+}
+
+#blymbzgloh .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #E4220C;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #E4220C;
   border-left-style: none;
   border-left-width: 1px;
   border-left-color: #D3D3D3;
@@ -1912,11 +1879,11 @@ Attaching package: 'dplyr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#qasuozvjos .gt_col_heading {
+#blymbzgloh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
-  font-weight: bolder;
+  font-weight: normal;
   text-transform: inherit;
   border-left-style: none;
   border-left-width: 1px;
@@ -1932,11 +1899,11 @@ Attaching package: 'dplyr'</code></pre>
   overflow-x: hidden;
 }
 
-#qasuozvjos .gt_column_spanner_outer {
+#blymbzgloh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
-  font-weight: bolder;
+  font-weight: normal;
   text-transform: inherit;
   padding-top: 0;
   padding-bottom: 0;
@@ -1944,18 +1911,18 @@ Attaching package: 'dplyr'</code></pre>
   padding-right: 4px;
 }
 
-#qasuozvjos .gt_column_spanner_outer:first-child {
+#blymbzgloh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qasuozvjos .gt_column_spanner_outer:last-child {
+#blymbzgloh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qasuozvjos .gt_column_spanner {
+#blymbzgloh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
-  border-bottom-color: #000000;
+  border-bottom-color: #E4220C;
   vertical-align: bottom;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -1964,11 +1931,11 @@ Attaching package: 'dplyr'</code></pre>
   width: 100%;
 }
 
-#qasuozvjos .gt_spanner_row {
+#blymbzgloh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qasuozvjos .gt_group_heading {
+#blymbzgloh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1978,12 +1945,12 @@ Attaching package: 'dplyr'</code></pre>
   font-size: 100%;
   font-weight: initial;
   text-transform: inherit;
-  border-top-style: none;
+  border-top-style: solid;
   border-top-width: 2px;
-  border-top-color: #000000;
+  border-top-color: #E4220C;
   border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #FFFFFF;
+  border-bottom-width: 2px;
+  border-bottom-color: #E4220C;
   border-left-style: none;
   border-left-width: 1px;
   border-left-color: #D3D3D3;
@@ -1994,62 +1961,62 @@ Attaching package: 'dplyr'</code></pre>
   text-align: left;
 }
 
-#qasuozvjos .gt_empty_group_heading {
+#blymbzgloh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
   font-weight: initial;
-  border-top-style: none;
+  border-top-style: solid;
   border-top-width: 2px;
-  border-top-color: #000000;
+  border-top-color: #E4220C;
   border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #FFFFFF;
+  border-bottom-width: 2px;
+  border-bottom-color: #E4220C;
   vertical-align: middle;
 }
 
-#qasuozvjos .gt_from_md > :first-child {
+#blymbzgloh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qasuozvjos .gt_from_md > :last-child {
+#blymbzgloh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qasuozvjos .gt_row {
-  padding-top: 3px;
-  padding-bottom: 3px;
+#blymbzgloh .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
   padding-left: 5px;
   padding-right: 5px;
   margin: 10px;
-  border-top-style: solid;
+  border-top-style: none;
   border-top-width: 1px;
-  border-top-color: #D3D3D3;
+  border-top-color: #FFCCC7;
   border-left-style: none;
   border-left-width: 1px;
-  border-left-color: #D3D3D3;
+  border-left-color: #FFCCC7;
   border-right-style: none;
   border-right-width: 1px;
-  border-right-color: #D3D3D3;
+  border-right-color: #FFCCC7;
   vertical-align: middle;
   overflow-x: hidden;
 }
 
-#qasuozvjos .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
+#blymbzgloh .gt_stub {
+  color: #FFFFFF;
+  background-color: #E4220C;
   font-size: 100%;
   font-weight: initial;
   text-transform: inherit;
   border-right-style: solid;
-  border-right-width: 0px;
-  border-right-color: #FFFFFF;
+  border-right-width: 2px;
+  border-right-color: #E4220C;
   padding-left: 5px;
   padding-right: 5px;
 }
 
-#qasuozvjos .gt_stub_row_group {
+#blymbzgloh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2063,15 +2030,15 @@ Attaching package: 'dplyr'</code></pre>
   vertical-align: top;
 }
 
-#qasuozvjos .gt_row_group_first td {
+#blymbzgloh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qasuozvjos .gt_row_group_first th {
+#blymbzgloh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qasuozvjos .gt_summary_row {
+#blymbzgloh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2081,28 +2048,28 @@ Attaching package: 'dplyr'</code></pre>
   padding-right: 5px;
 }
 
-#qasuozvjos .gt_first_summary_row {
+#blymbzgloh .gt_first_summary_row {
   border-top-style: solid;
-  border-top-color: #D3D3D3;
+  border-top-color: #E4220C;
 }
 
-#qasuozvjos .gt_first_summary_row.thick {
+#blymbzgloh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qasuozvjos .gt_last_summary_row {
+#blymbzgloh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
   padding-right: 5px;
   border-bottom-style: solid;
   border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
+  border-bottom-color: #E4220C;
 }
 
-#qasuozvjos .gt_grand_summary_row {
+#blymbzgloh .gt_grand_summary_row {
   color: #333333;
-  background-color: #FFFFFF;
+  background-color: #FFCCC7;
   text-transform: inherit;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -2110,40 +2077,40 @@ Attaching package: 'dplyr'</code></pre>
   padding-right: 5px;
 }
 
-#qasuozvjos .gt_first_grand_summary_row {
+#blymbzgloh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-style: double;
   border-top-width: 6px;
-  border-top-color: #D3D3D3;
+  border-top-color: #E4220C;
 }
 
-#qasuozvjos .gt_last_grand_summary_row_top {
+#blymbzgloh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
   padding-right: 5px;
   border-bottom-style: double;
   border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
+  border-bottom-color: #E4220C;
 }
 
-#qasuozvjos .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
+#blymbzgloh .gt_striped {
+  background-color: #F4F4F4;
 }
 
-#qasuozvjos .gt_table_body {
+#blymbzgloh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
-  border-top-color: #D3D3D3;
+  border-top-color: #E4220C;
   border-bottom-style: solid;
   border-bottom-width: 2px;
-  border-bottom-color: #000000;
+  border-bottom-color: #E4220C;
 }
 
-#qasuozvjos .gt_footnotes {
+#blymbzgloh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2157,7 +2124,7 @@ Attaching package: 'dplyr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#qasuozvjos .gt_footnote {
+#blymbzgloh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2166,7 +2133,7 @@ Attaching package: 'dplyr'</code></pre>
   padding-right: 5px;
 }
 
-#qasuozvjos .gt_sourcenotes {
+#blymbzgloh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2180,141 +2147,113 @@ Attaching package: 'dplyr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#qasuozvjos .gt_sourcenote {
-  font-size: 12px;
+#blymbzgloh .gt_sourcenote {
+  font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
 
-#qasuozvjos .gt_left {
+#blymbzgloh .gt_left {
   text-align: left;
 }
 
-#qasuozvjos .gt_center {
+#blymbzgloh .gt_center {
   text-align: center;
 }
 
-#qasuozvjos .gt_right {
+#blymbzgloh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qasuozvjos .gt_font_normal {
+#blymbzgloh .gt_font_normal {
   font-weight: normal;
 }
 
-#qasuozvjos .gt_font_bold {
+#blymbzgloh .gt_font_bold {
   font-weight: bold;
 }
 
-#qasuozvjos .gt_font_italic {
+#blymbzgloh .gt_font_italic {
   font-style: italic;
 }
 
-#qasuozvjos .gt_super {
+#blymbzgloh .gt_super {
   font-size: 65%;
 }
 
-#qasuozvjos .gt_footnote_marks {
+#blymbzgloh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qasuozvjos .gt_asterisk {
+#blymbzgloh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qasuozvjos .gt_indent_1 {
+#blymbzgloh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qasuozvjos .gt_indent_2 {
+#blymbzgloh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qasuozvjos .gt_indent_3 {
+#blymbzgloh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qasuozvjos .gt_indent_4 {
+#blymbzgloh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qasuozvjos .gt_indent_5 {
+#blymbzgloh .gt_indent_5 {
   text-indent: 25px;
-}
-
-tbody tr:last-child {
-  border-bottom: 2px solid #ffffff00;
 }
 </style>
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
   <thead>
     
     <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="Year">Year</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="Final Score">Final Score</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="Practice Size">Practice Size</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="Part Type">Part Type</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="Beneficiaries">Beneficiaries</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="Allowed Charges">Allowed Charges</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="Services">Services</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="Pmt Adj Pct">Pmt Adj Pct</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="Complex Patient Bonus">Complex Patient Bonus</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="Quality Category Score">Quality Category Score</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="Quality Improvement Bonus">Quality Improvement Bonus</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="Pi Category Score">Pi Category Score</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="Ia Score">Ia Score</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="Cost Score">Cost Score</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id=""></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="NPI">NPI</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="PARTICIPATION">PARTICIPATION</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="SPECIALTY">SPECIALTY</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="BENEFICIARIES">BENEFICIARIES</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="CHARGES">CHARGES</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="SERVICES">SERVICES</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="PAYMENT ADJUSTMENT">PAYMENT ADJUSTMENT</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td headers="year" class="gt_row gt_right">2019</td>
-<td headers="final_score" class="gt_row gt_right">97.48</td>
-<td headers="practice_size" class="gt_row gt_right">1362</td>
-<td headers="part_type" class="gt_row gt_left">MIPS APM</td>
-<td headers="beneficiaries" class="gt_row gt_right">149918</td>
-<td headers="allowed_charges" class="gt_row gt_right">93441039</td>
-<td headers="services" class="gt_row gt_right">1148755</td>
-<td headers="pmt_adj_pct" class="gt_row gt_right">1.62</td>
-<td headers="complex_patient_bonus" class="gt_row gt_right">2.72</td>
-<td headers="quality_category_score" class="gt_row gt_right">100</td>
-<td headers="quality_improvement_bonus" class="gt_row gt_right">0.00</td>
-<td headers="pi_category_score" class="gt_row gt_right">82.54</td>
-<td headers="ia_score" class="gt_row gt_right">40</td>
-<td headers="cost_score" class="gt_row gt_right">0</td></tr>
-    <tr><td headers="year" class="gt_row gt_right">2020</td>
-<td headers="final_score" class="gt_row gt_right">100.00</td>
-<td headers="practice_size" class="gt_row gt_right">1626</td>
-<td headers="part_type" class="gt_row gt_left">MIPS APM</td>
-<td headers="beneficiaries" class="gt_row gt_right">144416</td>
-<td headers="allowed_charges" class="gt_row gt_right">83442369</td>
-<td headers="services" class="gt_row gt_right">1031323</td>
-<td headers="pmt_adj_pct" class="gt_row gt_right">1.87</td>
-<td headers="complex_patient_bonus" class="gt_row gt_right">5.24</td>
-<td headers="quality_category_score" class="gt_row gt_right">100</td>
-<td headers="quality_improvement_bonus" class="gt_row gt_right">0.18</td>
-<td headers="pi_category_score" class="gt_row gt_right">84.06</td>
-<td headers="ia_score" class="gt_row gt_right">40</td>
-<td headers="cost_score" class="gt_row gt_right">0</td></tr>
-    <tr><td headers="year" class="gt_row gt_right">2020</td>
-<td headers="final_score" class="gt_row gt_right">98.33</td>
-<td headers="practice_size" class="gt_row gt_right">45</td>
-<td headers="part_type" class="gt_row gt_left">MIPS APM</td>
-<td headers="beneficiaries" class="gt_row gt_right">5063</td>
-<td headers="allowed_charges" class="gt_row gt_right">2406594</td>
-<td headers="services" class="gt_row gt_right">22548</td>
-<td headers="pmt_adj_pct" class="gt_row gt_right">1.68</td>
-<td headers="complex_patient_bonus" class="gt_row gt_right">5.10</td>
-<td headers="quality_category_score" class="gt_row gt_right">100</td>
-<td headers="quality_improvement_bonus" class="gt_row gt_right">0.00</td>
-<td headers="pi_category_score" class="gt_row gt_right">77.45</td>
-<td headers="ia_score" class="gt_row gt_right">40</td>
-<td headers="cost_score" class="gt_row gt_right">0</td></tr>
+    <tr><th id="stub_1_1" scope="row" class="gt_row gt_right gt_stub">2019</th>
+<td headers="stub_1_1 npi" class="gt_row gt_right">1730455775</td>
+<td headers="stub_1_1 part_type" class="gt_row gt_left">MIPS APM</td>
+<td headers="stub_1_1 specialty" class="gt_row gt_left">Missing</td>
+<td headers="stub_1_1 beneficiaries" class="gt_row gt_right">149,918</td>
+<td headers="stub_1_1 allowed_charges" class="gt_row gt_right">93,441,039</td>
+<td headers="stub_1_1 services" class="gt_row gt_right">1,148,755</td>
+<td headers="stub_1_1 pmt_adj_pct" class="gt_row gt_right">1.62</td></tr>
+    <tr><th id="stub_1_2" scope="row" class="gt_row gt_right gt_stub">2020</th>
+<td headers="stub_1_2 npi" class="gt_row gt_right gt_striped">1730455775</td>
+<td headers="stub_1_2 part_type" class="gt_row gt_left gt_striped">MIPS APM</td>
+<td headers="stub_1_2 specialty" class="gt_row gt_left gt_striped">Missing</td>
+<td headers="stub_1_2 beneficiaries" class="gt_row gt_right gt_striped">144,416</td>
+<td headers="stub_1_2 allowed_charges" class="gt_row gt_right gt_striped">83,442,369</td>
+<td headers="stub_1_2 services" class="gt_row gt_right gt_striped">1,031,323</td>
+<td headers="stub_1_2 pmt_adj_pct" class="gt_row gt_right gt_striped">1.87</td></tr>
+    <tr><th id="stub_1_3" scope="row" class="gt_row gt_right gt_stub">2020</th>
+<td headers="stub_1_3 npi" class="gt_row gt_right">1730455775</td>
+<td headers="stub_1_3 part_type" class="gt_row gt_left">MIPS APM</td>
+<td headers="stub_1_3 specialty" class="gt_row gt_left">Obstetrics/Gynecology</td>
+<td headers="stub_1_3 beneficiaries" class="gt_row gt_right">5,063</td>
+<td headers="stub_1_3 allowed_charges" class="gt_row gt_right">2,406,594</td>
+<td headers="stub_1_3 services" class="gt_row gt_right">22,548</td>
+<td headers="stub_1_3 pmt_adj_pct" class="gt_row gt_right">1.68</td></tr>
   </tbody>
   
   
@@ -2322,53 +2261,112 @@ tbody tr:last-child {
 </div>
 </div>
 </div>
+<p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>hussain_qpp <span class="ot">&lt;-</span> <span class="dv">2017</span><span class="sc">:</span><span class="dv">2021</span> <span class="sc">|&gt;</span> </span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  furrr<span class="sc">::</span><span class="fu">future_map</span>(\(x) <span class="fu">quality_payment</span>(</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> x, </span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">npi =</span> <span class="dv">1043477615</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  purrr<span class="sc">::</span><span class="fu">list_rbind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>abbott_qpp <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">Final =</span> final_score,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">Quality =</span> quality_category_score,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>         <span class="st">"Performance Improvement"</span> <span class="ot">=</span> pi_category_score,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>         <span class="st">"Improvement Activities"</span> <span class="ot">=</span> ia_score,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">Cost =</span> cost_score,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>         complex_patient_bonus,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>         quality_improvement_bonus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 8
+   year Final Quality `Performance Improvement` `Improvement Activities`  Cost
+  &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;                                        &lt;dbl&gt; &lt;dbl&gt;
+1  2019  97.5     100 82.54                                           40     0
+2  2020 100       100 84.06                                           40     0
+3  2020  98.3     100 77.45                                           40     0
+# ℹ 2 more variables: complex_patient_bonus &lt;dbl&gt;,
+#   quality_improvement_bonus &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>abbott_qpp <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">contains</span>(<span class="st">"quality_measure"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(<span class="sc">!</span>year, </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">names_to =</span> <span class="st">"type"</span>, </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">values_to =</span> <span class="st">"val"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">separate_wider_delim</span>(type, <span class="st">"_"</span>, </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>                              <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"m"</span>, <span class="st">"type"</span>, <span class="st">"qm_no"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unite</span>(<span class="st">"name"</span>, </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>               <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"m"</span>), </span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">remove =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">sep =</span> <span class="st">" "</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> type, </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_from =</span> val,</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_fn =</span> list) <span class="sc">|&gt;</span> </span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unnest</span>(<span class="at">cols =</span> <span class="fu">c</span>(id, score)) <span class="sc">|&gt;</span> </span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(id))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 22 × 5
+    year name            qm_no id     score
+   &lt;int&gt; &lt;chr&gt;           &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;
+ 1  2019 quality measure 1     ACO321 11.1 
+ 2  2019 quality measure 2     001    9.6  
+ 3  2019 quality measure 3     318    9.5  
+ 4  2019 quality measure 4     112    8.6  
+ 5  2019 quality measure 5     113    8.3  
+ 6  2019 quality measure 6     236    8.2  
+ 7  2020 quality measure 1     226    10   
+ 8  2020 quality measure 1     318    9.4  
+ 9  2020 quality measure 2     110    9.6  
+10  2020 quality measure 2     001    9.4  
+# ℹ 12 more rows</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>hussain_qpp <span class="ot">&lt;-</span> <span class="dv">2017</span><span class="sc">:</span><span class="dv">2021</span> <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  furrr<span class="sc">::</span><span class="fu">future_map</span>(\(x) <span class="fu">quality_payment</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> x, </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">npi =</span> <span class="dv">1043477615</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  purrr<span class="sc">::</span><span class="fu">list_rbind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>hussain_qpp <span class="sc">|&gt;</span> </span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, </span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>         final_score,</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>         practice_size, </span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>         part_type, </span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>         beneficiaries, </span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>         allowed_charges,</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>         services, </span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>         pmt_adj_pct, </span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>         complex_patient_bonus,</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>         quality_category_score,</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>         quality_improvement_bonus,</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>         pi_category_score,</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>         ia_score,</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>         cost_score) <span class="sc">|&gt;</span> </span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>  provider<span class="sc">:::</span><span class="fu">gt_prov</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>hussain_qpp <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>         final_score,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>         practice_size, </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>         part_type, </span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>         beneficiaries, </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>         allowed_charges,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>         services, </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>         pmt_adj_pct, </span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>         complex_patient_bonus,</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>         quality_category_score,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>         quality_improvement_bonus,</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>         pi_category_score,</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>         ia_score,</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>         cost_score) <span class="sc">|&gt;</span> </span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  provider<span class="sc">:::</span><span class="fu">gt_prov</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="jaaqzcsrwl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="lrcljuxfna" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cairo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#jaaqzcsrwl table {
+#lrcljuxfna table {
   font-family: Cairo, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jaaqzcsrwl thead, #jaaqzcsrwl tbody, #jaaqzcsrwl tfoot, #jaaqzcsrwl tr, #jaaqzcsrwl td, #jaaqzcsrwl th {
+#lrcljuxfna thead, #lrcljuxfna tbody, #lrcljuxfna tfoot, #lrcljuxfna tr, #lrcljuxfna td, #lrcljuxfna th {
   border-style: none;
 }
 
-#jaaqzcsrwl p {
+#lrcljuxfna p {
   margin: 0;
   padding: 0;
 }
 
-#jaaqzcsrwl .gt_table {
+#lrcljuxfna .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2394,12 +2392,12 @@ tbody tr:last-child {
   border-left-color: #D3D3D3;
 }
 
-#jaaqzcsrwl .gt_caption {
+#lrcljuxfna .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jaaqzcsrwl .gt_title {
+#lrcljuxfna .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2411,7 +2409,7 @@ tbody tr:last-child {
   border-bottom-width: 0;
 }
 
-#jaaqzcsrwl .gt_subtitle {
+#lrcljuxfna .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2423,7 +2421,7 @@ tbody tr:last-child {
   border-top-width: 0;
 }
 
-#jaaqzcsrwl .gt_heading {
+#lrcljuxfna .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -2435,13 +2433,13 @@ tbody tr:last-child {
   border-right-color: #D3D3D3;
 }
 
-#jaaqzcsrwl .gt_bottom_border {
+#lrcljuxfna .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jaaqzcsrwl .gt_col_headings {
+#lrcljuxfna .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #FFFFFF;
@@ -2456,7 +2454,7 @@ tbody tr:last-child {
   border-right-color: #D3D3D3;
 }
 
-#jaaqzcsrwl .gt_col_heading {
+#lrcljuxfna .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2476,7 +2474,7 @@ tbody tr:last-child {
   overflow-x: hidden;
 }
 
-#jaaqzcsrwl .gt_column_spanner_outer {
+#lrcljuxfna .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2488,15 +2486,15 @@ tbody tr:last-child {
   padding-right: 4px;
 }
 
-#jaaqzcsrwl .gt_column_spanner_outer:first-child {
+#lrcljuxfna .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jaaqzcsrwl .gt_column_spanner_outer:last-child {
+#lrcljuxfna .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jaaqzcsrwl .gt_column_spanner {
+#lrcljuxfna .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #000000;
@@ -2508,11 +2506,11 @@ tbody tr:last-child {
   width: 100%;
 }
 
-#jaaqzcsrwl .gt_spanner_row {
+#lrcljuxfna .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jaaqzcsrwl .gt_group_heading {
+#lrcljuxfna .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2538,7 +2536,7 @@ tbody tr:last-child {
   text-align: left;
 }
 
-#jaaqzcsrwl .gt_empty_group_heading {
+#lrcljuxfna .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2553,15 +2551,15 @@ tbody tr:last-child {
   vertical-align: middle;
 }
 
-#jaaqzcsrwl .gt_from_md > :first-child {
+#lrcljuxfna .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jaaqzcsrwl .gt_from_md > :last-child {
+#lrcljuxfna .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jaaqzcsrwl .gt_row {
+#lrcljuxfna .gt_row {
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 5px;
@@ -2580,7 +2578,7 @@ tbody tr:last-child {
   overflow-x: hidden;
 }
 
-#jaaqzcsrwl .gt_stub {
+#lrcljuxfna .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2593,7 +2591,7 @@ tbody tr:last-child {
   padding-right: 5px;
 }
 
-#jaaqzcsrwl .gt_stub_row_group {
+#lrcljuxfna .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2607,15 +2605,15 @@ tbody tr:last-child {
   vertical-align: top;
 }
 
-#jaaqzcsrwl .gt_row_group_first td {
+#lrcljuxfna .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jaaqzcsrwl .gt_row_group_first th {
+#lrcljuxfna .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jaaqzcsrwl .gt_summary_row {
+#lrcljuxfna .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2625,16 +2623,16 @@ tbody tr:last-child {
   padding-right: 5px;
 }
 
-#jaaqzcsrwl .gt_first_summary_row {
+#lrcljuxfna .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jaaqzcsrwl .gt_first_summary_row.thick {
+#lrcljuxfna .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jaaqzcsrwl .gt_last_summary_row {
+#lrcljuxfna .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2644,7 +2642,7 @@ tbody tr:last-child {
   border-bottom-color: #D3D3D3;
 }
 
-#jaaqzcsrwl .gt_grand_summary_row {
+#lrcljuxfna .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2654,7 +2652,7 @@ tbody tr:last-child {
   padding-right: 5px;
 }
 
-#jaaqzcsrwl .gt_first_grand_summary_row {
+#lrcljuxfna .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2664,7 +2662,7 @@ tbody tr:last-child {
   border-top-color: #D3D3D3;
 }
 
-#jaaqzcsrwl .gt_last_grand_summary_row_top {
+#lrcljuxfna .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2674,11 +2672,11 @@ tbody tr:last-child {
   border-bottom-color: #D3D3D3;
 }
 
-#jaaqzcsrwl .gt_striped {
+#lrcljuxfna .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jaaqzcsrwl .gt_table_body {
+#lrcljuxfna .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2687,7 +2685,7 @@ tbody tr:last-child {
   border-bottom-color: #000000;
 }
 
-#jaaqzcsrwl .gt_footnotes {
+#lrcljuxfna .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2701,7 +2699,7 @@ tbody tr:last-child {
   border-right-color: #D3D3D3;
 }
 
-#jaaqzcsrwl .gt_footnote {
+#lrcljuxfna .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2710,7 +2708,7 @@ tbody tr:last-child {
   padding-right: 5px;
 }
 
-#jaaqzcsrwl .gt_sourcenotes {
+#lrcljuxfna .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2724,7 +2722,7 @@ tbody tr:last-child {
   border-right-color: #D3D3D3;
 }
 
-#jaaqzcsrwl .gt_sourcenote {
+#lrcljuxfna .gt_sourcenote {
   font-size: 12px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2732,63 +2730,63 @@ tbody tr:last-child {
   padding-right: 5px;
 }
 
-#jaaqzcsrwl .gt_left {
+#lrcljuxfna .gt_left {
   text-align: left;
 }
 
-#jaaqzcsrwl .gt_center {
+#lrcljuxfna .gt_center {
   text-align: center;
 }
 
-#jaaqzcsrwl .gt_right {
+#lrcljuxfna .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jaaqzcsrwl .gt_font_normal {
+#lrcljuxfna .gt_font_normal {
   font-weight: normal;
 }
 
-#jaaqzcsrwl .gt_font_bold {
+#lrcljuxfna .gt_font_bold {
   font-weight: bold;
 }
 
-#jaaqzcsrwl .gt_font_italic {
+#lrcljuxfna .gt_font_italic {
   font-style: italic;
 }
 
-#jaaqzcsrwl .gt_super {
+#lrcljuxfna .gt_super {
   font-size: 65%;
 }
 
-#jaaqzcsrwl .gt_footnote_marks {
+#lrcljuxfna .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jaaqzcsrwl .gt_asterisk {
+#lrcljuxfna .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jaaqzcsrwl .gt_indent_1 {
+#lrcljuxfna .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jaaqzcsrwl .gt_indent_2 {
+#lrcljuxfna .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jaaqzcsrwl .gt_indent_3 {
+#lrcljuxfna .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jaaqzcsrwl .gt_indent_4 {
+#lrcljuxfna .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jaaqzcsrwl .gt_indent_5 {
+#lrcljuxfna .gt_indent_5 {
   text-indent: 25px;
 }
 
@@ -2895,23 +2893,23 @@ tbody tr:last-child {
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>hussain_qpp <span class="sc">|&gt;</span> </span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, </span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">contains</span>(<span class="st">"quality_measure"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(<span class="sc">!</span>year, </span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">names_to =</span> <span class="st">"type"</span>, </span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">values_to =</span> <span class="st">"val"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">separate_wider_delim</span>(type, <span class="st">"_"</span>, </span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>                              <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"m"</span>, <span class="st">"type"</span>, <span class="st">"qm_no"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unite</span>(<span class="st">"name"</span>, </span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>               <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"m"</span>), </span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">remove =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">sep =</span> <span class="st">" "</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> type, </span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_from =</span> val,</span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_fn =</span> list) <span class="sc">|&gt;</span> </span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unnest</span>(<span class="at">cols =</span> <span class="fu">c</span>(id, score)) <span class="sc">|&gt;</span> </span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(id))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>hussain_qpp <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">contains</span>(<span class="st">"quality_measure"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(<span class="sc">!</span>year, </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">names_to =</span> <span class="st">"type"</span>, </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">values_to =</span> <span class="st">"val"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">separate_wider_delim</span>(type, <span class="st">"_"</span>, </span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>                              <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"m"</span>, <span class="st">"type"</span>, <span class="st">"qm_no"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unite</span>(<span class="st">"name"</span>, </span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>               <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"m"</span>), </span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">remove =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">sep =</span> <span class="st">" "</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> type, </span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_from =</span> val,</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_fn =</span> list) <span class="sc">|&gt;</span> </span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unnest</span>(<span class="at">cols =</span> <span class="fu">c</span>(id, score)) <span class="sc">|&gt;</span> </span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(id))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 44 × 5
     year name            qm_no id          score
@@ -2930,32 +2928,32 @@ tbody tr:last-child {
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>qpp_ga <span class="ot">&lt;-</span> <span class="dv">2017</span><span class="sc">:</span><span class="dv">2021</span> <span class="sc">|&gt;</span> </span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  furrr<span class="sc">::</span><span class="fu">future_map</span>(\(x) <span class="fu">quality_payment</span>(<span class="at">year =</span> x, </span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">state =</span> <span class="st">"GA"</span>, </span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">specialty =</span> <span class="st">"Internal Medicine"</span>, </span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">part_type =</span> <span class="st">"Individual"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  purrr<span class="sc">::</span><span class="fu">list_rbind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>qpp_ga <span class="ot">&lt;-</span> <span class="dv">2017</span><span class="sc">:</span><span class="dv">2021</span> <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  furrr<span class="sc">::</span><span class="fu">future_map</span>(\(x) <span class="fu">quality_payment</span>(<span class="at">year =</span> x, </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">state =</span> <span class="st">"GA"</span>, </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">specialty =</span> <span class="st">"Internal Medicine"</span>, </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">part_type =</span> <span class="st">"Individual"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  purrr<span class="sc">::</span><span class="fu">list_rbind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>qpp_ga <span class="sc">|&gt;</span> </span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, </span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>         npi,</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>         <span class="fu">contains</span>(<span class="st">"quality_measure"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(<span class="sc">!</span><span class="fu">c</span>(year, npi), </span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">names_to =</span> <span class="st">"type"</span>, </span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">values_to =</span> <span class="st">"val"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">separate_wider_delim</span>(type, <span class="st">"_"</span>, </span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>                              <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"m"</span>, <span class="st">"type"</span>, <span class="st">"qm_no"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unite</span>(<span class="st">"name"</span>, </span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>               <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"m"</span>), </span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">remove =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">sep =</span> <span class="st">" "</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> type, </span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_from =</span> val,</span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_fn =</span> list) <span class="sc">|&gt;</span> </span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unnest</span>(<span class="at">cols =</span> <span class="fu">c</span>(id, score)) <span class="sc">|&gt;</span> </span>
-<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(id))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>qpp_ga <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>         npi,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>         <span class="fu">contains</span>(<span class="st">"quality_measure"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(<span class="sc">!</span><span class="fu">c</span>(year, npi), </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">names_to =</span> <span class="st">"type"</span>, </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">values_to =</span> <span class="st">"val"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">separate_wider_delim</span>(type, <span class="st">"_"</span>, </span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>                              <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"m"</span>, <span class="st">"type"</span>, <span class="st">"qm_no"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unite</span>(<span class="st">"name"</span>, </span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>               <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"m"</span>), </span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">remove =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">sep =</span> <span class="st">" "</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> type, </span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_from =</span> val,</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_fn =</span> list) <span class="sc">|&gt;</span> </span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unnest</span>(<span class="at">cols =</span> <span class="fu">c</span>(id, score)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(id))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5,146 × 6
     year npi        name            qm_no id    score
@@ -2974,26 +2972,26 @@ tbody tr:last-child {
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>qpp_ga <span class="sc">|&gt;</span> </span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, </span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>         npi,</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>         <span class="fu">contains</span>(<span class="st">"pi_measure"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">c</span>(year, npi), </span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"type"</span>, </span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"val"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">separate_wider_delim</span>(</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    type, <span class="st">"_"</span>, </span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"m"</span>, <span class="st">"type"</span>, <span class="st">"qm_no"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unite</span>(<span class="st">"name"</span>, </span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>               <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"m"</span>), </span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">remove =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">sep =</span> <span class="st">" "</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> type, </span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_from =</span> val,</span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_fn =</span> list) <span class="sc">|&gt;</span> </span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unnest</span>(<span class="at">cols =</span> <span class="fu">c</span>(id, score)) <span class="sc">|&gt;</span> </span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(id))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>qpp_ga <span class="sc">|&gt;</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>         npi,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>         <span class="fu">contains</span>(<span class="st">"pi_measure"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">c</span>(year, npi), </span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"type"</span>, </span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"val"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">separate_wider_delim</span>(</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    type, <span class="st">"_"</span>, </span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"m"</span>, <span class="st">"type"</span>, <span class="st">"qm_no"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unite</span>(<span class="st">"name"</span>, </span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>               <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"m"</span>), </span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">remove =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">sep =</span> <span class="st">" "</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> type, </span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_from =</span> val,</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values_fn =</span> list) <span class="sc">|&gt;</span> </span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unnest</span>(<span class="at">cols =</span> <span class="fu">c</span>(id, score)) <span class="sc">|&gt;</span> </span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(id))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3,422 × 6
     year npi        name       qm_no id                 score
@@ -3012,47 +3010,47 @@ tbody tr:last-child {
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>qpp_ga <span class="sc">|&gt;</span> </span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, </span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>         npi,</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>         final_score,</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>         <span class="co">#practice_size, </span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>         <span class="co">#part_type, </span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>         <span class="co">#beneficiaries, </span></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>         <span class="co">#allowed_charges,</span></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>         <span class="co">#services, </span></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>         pmt_adj_pct, </span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>         complex_patient_bonus,</span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>         quality_category_score,</span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>         quality_improvement_bonus,</span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>         pi_category_score,</span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>         ia_score,</span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>         cost_score) <span class="sc">|&gt;</span> </span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(npi) <span class="sc">|&gt;</span> </span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>  provider<span class="sc">:::</span><span class="fu">gt_prov</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>qpp_ga <span class="sc">|&gt;</span> </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>         npi,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>         final_score,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>         <span class="co">#practice_size, </span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>         <span class="co">#part_type, </span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>         <span class="co">#beneficiaries, </span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>         <span class="co">#allowed_charges,</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>         <span class="co">#services, </span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>         pmt_adj_pct, </span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>         complex_patient_bonus,</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>         quality_category_score,</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>         quality_improvement_bonus,</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>         pi_category_score,</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>         ia_score,</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>         cost_score) <span class="sc">|&gt;</span> </span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(npi) <span class="sc">|&gt;</span> </span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>  provider<span class="sc">:::</span><span class="fu">gt_prov</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="tnemvlqnqz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="owohrqqoct" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cairo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#tnemvlqnqz table {
+#owohrqqoct table {
   font-family: Cairo, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tnemvlqnqz thead, #tnemvlqnqz tbody, #tnemvlqnqz tfoot, #tnemvlqnqz tr, #tnemvlqnqz td, #tnemvlqnqz th {
+#owohrqqoct thead, #owohrqqoct tbody, #owohrqqoct tfoot, #owohrqqoct tr, #owohrqqoct td, #owohrqqoct th {
   border-style: none;
 }
 
-#tnemvlqnqz p {
+#owohrqqoct p {
   margin: 0;
   padding: 0;
 }
 
-#tnemvlqnqz .gt_table {
+#owohrqqoct .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3078,12 +3076,12 @@ tbody tr:last-child {
   border-left-color: #D3D3D3;
 }
 
-#tnemvlqnqz .gt_caption {
+#owohrqqoct .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tnemvlqnqz .gt_title {
+#owohrqqoct .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3095,7 +3093,7 @@ tbody tr:last-child {
   border-bottom-width: 0;
 }
 
-#tnemvlqnqz .gt_subtitle {
+#owohrqqoct .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3107,7 +3105,7 @@ tbody tr:last-child {
   border-top-width: 0;
 }
 
-#tnemvlqnqz .gt_heading {
+#owohrqqoct .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -3119,13 +3117,13 @@ tbody tr:last-child {
   border-right-color: #D3D3D3;
 }
 
-#tnemvlqnqz .gt_bottom_border {
+#owohrqqoct .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tnemvlqnqz .gt_col_headings {
+#owohrqqoct .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #FFFFFF;
@@ -3140,7 +3138,7 @@ tbody tr:last-child {
   border-right-color: #D3D3D3;
 }
 
-#tnemvlqnqz .gt_col_heading {
+#owohrqqoct .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3160,7 +3158,7 @@ tbody tr:last-child {
   overflow-x: hidden;
 }
 
-#tnemvlqnqz .gt_column_spanner_outer {
+#owohrqqoct .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3172,15 +3170,15 @@ tbody tr:last-child {
   padding-right: 4px;
 }
 
-#tnemvlqnqz .gt_column_spanner_outer:first-child {
+#owohrqqoct .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tnemvlqnqz .gt_column_spanner_outer:last-child {
+#owohrqqoct .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tnemvlqnqz .gt_column_spanner {
+#owohrqqoct .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #000000;
@@ -3192,11 +3190,11 @@ tbody tr:last-child {
   width: 100%;
 }
 
-#tnemvlqnqz .gt_spanner_row {
+#owohrqqoct .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tnemvlqnqz .gt_group_heading {
+#owohrqqoct .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3222,7 +3220,7 @@ tbody tr:last-child {
   text-align: left;
 }
 
-#tnemvlqnqz .gt_empty_group_heading {
+#owohrqqoct .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3237,15 +3235,15 @@ tbody tr:last-child {
   vertical-align: middle;
 }
 
-#tnemvlqnqz .gt_from_md > :first-child {
+#owohrqqoct .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tnemvlqnqz .gt_from_md > :last-child {
+#owohrqqoct .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tnemvlqnqz .gt_row {
+#owohrqqoct .gt_row {
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 5px;
@@ -3264,7 +3262,7 @@ tbody tr:last-child {
   overflow-x: hidden;
 }
 
-#tnemvlqnqz .gt_stub {
+#owohrqqoct .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3277,7 +3275,7 @@ tbody tr:last-child {
   padding-right: 5px;
 }
 
-#tnemvlqnqz .gt_stub_row_group {
+#owohrqqoct .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3291,15 +3289,15 @@ tbody tr:last-child {
   vertical-align: top;
 }
 
-#tnemvlqnqz .gt_row_group_first td {
+#owohrqqoct .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tnemvlqnqz .gt_row_group_first th {
+#owohrqqoct .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tnemvlqnqz .gt_summary_row {
+#owohrqqoct .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3309,16 +3307,16 @@ tbody tr:last-child {
   padding-right: 5px;
 }
 
-#tnemvlqnqz .gt_first_summary_row {
+#owohrqqoct .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tnemvlqnqz .gt_first_summary_row.thick {
+#owohrqqoct .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tnemvlqnqz .gt_last_summary_row {
+#owohrqqoct .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3328,7 +3326,7 @@ tbody tr:last-child {
   border-bottom-color: #D3D3D3;
 }
 
-#tnemvlqnqz .gt_grand_summary_row {
+#owohrqqoct .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3338,7 +3336,7 @@ tbody tr:last-child {
   padding-right: 5px;
 }
 
-#tnemvlqnqz .gt_first_grand_summary_row {
+#owohrqqoct .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3348,7 +3346,7 @@ tbody tr:last-child {
   border-top-color: #D3D3D3;
 }
 
-#tnemvlqnqz .gt_last_grand_summary_row_top {
+#owohrqqoct .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3358,11 +3356,11 @@ tbody tr:last-child {
   border-bottom-color: #D3D3D3;
 }
 
-#tnemvlqnqz .gt_striped {
+#owohrqqoct .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tnemvlqnqz .gt_table_body {
+#owohrqqoct .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3371,7 +3369,7 @@ tbody tr:last-child {
   border-bottom-color: #000000;
 }
 
-#tnemvlqnqz .gt_footnotes {
+#owohrqqoct .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3385,7 +3383,7 @@ tbody tr:last-child {
   border-right-color: #D3D3D3;
 }
 
-#tnemvlqnqz .gt_footnote {
+#owohrqqoct .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3394,7 +3392,7 @@ tbody tr:last-child {
   padding-right: 5px;
 }
 
-#tnemvlqnqz .gt_sourcenotes {
+#owohrqqoct .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3408,7 +3406,7 @@ tbody tr:last-child {
   border-right-color: #D3D3D3;
 }
 
-#tnemvlqnqz .gt_sourcenote {
+#owohrqqoct .gt_sourcenote {
   font-size: 12px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3416,63 +3414,63 @@ tbody tr:last-child {
   padding-right: 5px;
 }
 
-#tnemvlqnqz .gt_left {
+#owohrqqoct .gt_left {
   text-align: left;
 }
 
-#tnemvlqnqz .gt_center {
+#owohrqqoct .gt_center {
   text-align: center;
 }
 
-#tnemvlqnqz .gt_right {
+#owohrqqoct .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tnemvlqnqz .gt_font_normal {
+#owohrqqoct .gt_font_normal {
   font-weight: normal;
 }
 
-#tnemvlqnqz .gt_font_bold {
+#owohrqqoct .gt_font_bold {
   font-weight: bold;
 }
 
-#tnemvlqnqz .gt_font_italic {
+#owohrqqoct .gt_font_italic {
   font-style: italic;
 }
 
-#tnemvlqnqz .gt_super {
+#owohrqqoct .gt_super {
   font-size: 65%;
 }
 
-#tnemvlqnqz .gt_footnote_marks {
+#owohrqqoct .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tnemvlqnqz .gt_asterisk {
+#owohrqqoct .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tnemvlqnqz .gt_indent_1 {
+#owohrqqoct .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tnemvlqnqz .gt_indent_2 {
+#owohrqqoct .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tnemvlqnqz .gt_indent_3 {
+#owohrqqoct .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tnemvlqnqz .gt_indent_4 {
+#owohrqqoct .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tnemvlqnqz .gt_indent_5 {
+#owohrqqoct .gt_indent_5 {
   text-indent: 25px;
 }
 
@@ -22084,7 +22082,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./nppes.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">NPPES</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">NPI Registry</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

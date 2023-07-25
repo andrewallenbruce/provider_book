@@ -1,43 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://andrewallenbruce.github.io/provider_book/intro.html</loc>
-    <lastmod>2023-07-21T10:05:09.247Z</lastmod>
-  </url>
-  <url>
     <loc>https://andrewallenbruce.github.io/provider_book/index.html</loc>
-    <lastmod>2023-07-21T10:05:16.371Z</lastmod>
+    <lastmod>2023-07-25T06:42:17.149Z</lastmod>
   </url>
   <url>
-    <loc>https://andrewallenbruce.github.io/provider_book/nppes.html</loc>
-    <lastmod>2023-07-21T10:04:09.047Z</lastmod>
+    <loc>https://andrewallenbruce.github.io/provider_book/intro.html</loc>
+    <lastmod>2023-07-25T06:42:17.159Z</lastmod>
   </url>
   <url>
     <loc>https://andrewallenbruce.github.io/provider_book/npi.html</loc>
-    <lastmod>2023-07-21T16:35:07.116Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andrewallenbruce.github.io/provider_book/summary.html</loc>
-    <lastmod>2023-07-18T17:36:27.136Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andrewallenbruce.github.io/provider_book/references.html</loc>
-    <lastmod>2023-07-18T17:36:33.687Z</lastmod>
+    <lastmod>2023-07-25T06:42:17.159Z</lastmod>
   </url>
   <url>
     <loc>https://andrewallenbruce.github.io/provider_book/taxonomy.html</loc>
-    <lastmod>2023-07-24T23:16:31.030Z</lastmod>
+    <lastmod>2023-07-25T06:42:17.175Z</lastmod>
   </url>
   <url>
     <loc>https://andrewallenbruce.github.io/provider_book/enroll_id.html</loc>
-    <lastmod>2023-07-21T10:04:40.897Z</lastmod>
+    <lastmod>2023-07-25T06:42:17.190Z</lastmod>
   </url>
   <url>
-    <loc>https://andrewallenbruce.github.io/provider_book/claims_forms.html</loc>
-    <lastmod>2023-07-21T16:34:35.181Z</lastmod>
+    <loc>https://andrewallenbruce.github.io/provider_book/pecos.html</loc>
+    <lastmod>2023-07-25T06:42:17.206Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andrewallenbruce.github.io/provider_book/nppes.html</loc>
+    <lastmod>2023-07-25T06:42:17.221Z</lastmod>
   </url>
   <url>
     <loc>https://andrewallenbruce.github.io/provider_book/qpp.html</loc>
-    <lastmod>2023-07-25T06:27:55.671Z</lastmod>
+    <lastmod>2023-07-25T09:33:48.685Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andrewallenbruce.github.io/provider_book/claims_forms.html</loc>
+    <lastmod>2023-07-25T06:42:41.495Z</lastmod>
   </url>
 </urlset>

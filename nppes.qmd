@@ -1,4 +1,4 @@
-# NPPES {.unnumbered}
+# NPI Registry
 
 ```{r}
 library(provider)
