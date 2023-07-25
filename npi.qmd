@@ -1,4 +1,4 @@
-# NPI {.unnumbered}
+# NPI
 
 A National Provider Identifier (NPI) is a unique 10-digit identification number issued to health care providers in the United States by the Centers for Medicare and Medicaid Services (CMS). The NPI has replaced the Unique Physician Identification Number (UPIN) as the required identifier for Medicare services, and is used by other payers, including commercial healthcare insurers. The transition to the NPI was mandated as part of the Administrative Simplifications portion of the Health Insurance Portability and Accountability Act of 1996 (HIPAA).
 

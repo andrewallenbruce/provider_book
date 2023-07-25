@@ -35,6 +35,7 @@ book:
     - part: "Use Cases"
       chapters: 
         - claims_forms.qmd
+    - glossary.qmd
 
 bibliography: references.bib
 

@@ -412,18 +412,15 @@ dplyr::tibble(
 
 
 ```{r}
-library(provider)               # <1>
-library(tidyverse)              # <1>
-abbott_qpp <- 2017:2021 |>      # <2>
-  map(\(x) quality_payment(     # <2>
-    year = x,                   # <2> 
-    npi = 1730455775)) |>       # <2> 
-  list_rbind()                  # <3>
-```
+library(provider)               
+library(tidyverse)
 
-1. Load `provider` and the `tidyverse`
-2. Query the API for each year that's available with `map`
-3. Bind the results together by row
+abbott_qpp <- 2017:2021 |>      
+  map(\(x) quality_payment(   
+    year = x,                 
+    npi = 1730455775)) |>      
+  list_rbind()                
+```
 
 <br>
 
@@ -467,23 +464,37 @@ abbott_qpp |>
 <br>
 
 ```{r}
-abbott_qpp |> 
-  select(year, 
-         contains("quality_measure")) |> 
-  tidyr::pivot_longer(!year, 
-                      names_to = "type", 
-                      values_to = "val") |> 
-  tidyr::separate_wider_delim(type, "_", 
-                              names = c("q", "m", "type", "qm_no")) |> 
-  tidyr::unite("name", 
-               c("q", "m"), 
-               remove = TRUE, 
-               sep = " ") |> 
-  tidyr::pivot_wider(names_from = type, 
-                     values_from = val,
-                     values_fn = list) |> 
-  tidyr::unnest(cols = c(id, score)) |> 
+abbott_measures <- abbott_qpp |> 
+  select(year, contains("quality_measure")) |> 
+  pivot_longer(!year, names_to = "type", values_to = "val") |> 
+  separate_wider_delim(type, "_", names = c("category", "m", "type", "group")) |> 
+  mutate(m = NULL) |> 
+  pivot_wider(names_from = type, values_from = val, values_fn = list) |> 
+  unnest(cols = c(id, score)) |> 
   filter(!is.na(id))
+
+abbott_measures
+```
+
+
+
+```{r}
+measures_2019 <- jsonlite::fromJSON("C:/Users/andyb/Desktop/provider_book/data/measures-data_2019.json") |> 
+  mutate(year = 2019,
+         submissionMethods = NULL,
+         eMeasureUuid = NULL,
+         substitutes = NULL,
+         .before = title) |> 
+  unnest(cols = c(reportingCategory))
+
+measures_2019 |> 
+  count(category)
+
+abbott_measures |> 
+  left_join(measures_2019, 
+            by = join_by(year, category, id == measureId)) |> 
+  janitor::remove_empty(which = c("rows", "cols")) |> 
+  mutate(group = NULL)
 ```
 
 
@@ -542,6 +553,8 @@ hussain_qpp |>
 
 
 ```{r}
+#| echo: false
+#| eval: false
 qpp_ga <- 2017:2021 |> 
   furrr::future_map(\(x) quality_payment(year = x, 
                                          state = "GA", 
@@ -552,6 +565,8 @@ qpp_ga <- 2017:2021 |>
 
 
 ```{r}
+#| echo: false
+#| eval: false
 qpp_ga |> 
   select(year, 
          npi,
@@ -574,6 +589,8 @@ qpp_ga |>
 
 
 ```{r}
+#| echo: false
+#| eval: false
 qpp_ga |> 
   select(year, 
          npi,
@@ -597,6 +614,8 @@ qpp_ga |>
 ```
 
 ```{r}
+#| echo: false
+#| eval: false
 qpp_ga |> 
   select(year, 
          npi,

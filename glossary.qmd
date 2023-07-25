@@ -1,0 +1,46 @@
+# Glossary
+
+## APM Incentive Payment
+
+The APM Incentive Payment that an eligible clinician receives as a QP is a lump sum payment equal to 5 percent of the QP’s estimated aggregate payments for Medicare Part B covered professional services (services paid under or based on the Medicare PFS) for the prior year.
+
+## APM Performance Pathway
+
+The APM Performance Pathway (APP) is an optional MIPS reporting and scoring pathway for MIPS eligible clinicians who are also participants in MIPS APMs.
+
+## Attest
+
+Manual entry of data during the submission period for the Promoting Interoperability and improvement activities performance categories. (E.g. Typing in numerators and denominator, or marking an action or activity as performed.)
+
+## Determination Period
+
+A 24-month period in which CMS reviews past and current Medicare Part B Claims and PECOS data to evaluate clinicians and practices for MIPS eligibility. Each determination period consists of two 12-month segments.
+
+ECQMs
+A clinical quality measure that is captured in certified electronic health record technology (CEHRT). Data is collected in a structured, consistent format during the process of patient care.
+
+Final Score
+An overall assessment for each MIPS eligible clinician for a performance period. The score is determined by assessing a MIPS eligible clinician’s applicable measures and activities for each performance category. The MIPS eligible clinician’s final score determines their MIPS payment adjustment.
+
+High-Weighted Activities
+High weighted activities address areas with the greatest impact on patient care, safety, health, and well-being, or require significant investment of time and resources.
+
+MVPs
+MIPS Value Pathways
+MIPS Value Pathways (MVPs) are a subset of measures and activities, established through rule-making, that can be used to meet MIPS reporting requirements.
+
+The MVPs framework aims to align and connect measures and activities across the quality, cost, and improvement activities performance categories of MIPS for different specialties or conditions.
+
+Participation Option
+Participation option refers to the levels at which data can be collected and submitted, or reported, to CMS for MIPS. There are 5 participation options for MIPS reporting: individual, group, virtual group, subgroup, and APM Entity.
+
+
+PECOS
+Provider Enrollment, Chain, And Ownership System
+Helps suppliers and providers manage Medicare enrollment tasks online.
+
+CMS reviews past and current PECOS data as part of MIPS eligibility determinations, as well as identifying TINs to which we will issue QP payments.
+
+QP
+Qualifying Alternative Payment Model Participant
+An eligible clinician who has met or exceeded the payment amount or patient count thresholds based on participation in an Advanced APM.
