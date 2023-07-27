@@ -23,6 +23,223 @@ The **Advanced APM track** provides an opportunity to reward clinicians for sign
 
 Eligible clinicians with QP status are also excluded from MIPS. If an eligible clinician participating in an Advanced APM doesn’t achieve QP status for the year, they’ll need to participate in MIPS, unless they’re otherwise excluded.
 
+## Performance Categories
+
+MIPS tracks data in four performance categories: Quality, Cost, Improvement Activities, and Promoting Interoperability. Each category is weighted and contributes to a MIPS eligible clinician’s or group’s final score.
+
+MIPS Year 7 (2023) performance categories and weights in the final score are:
+
+```{r}
+#| code-fold: true
+dplyr::tibble(
+  CATEGORY = c("**COST**", 
+                             "**QUALITY**", 
+                             "**IMPROVEMENT ACTIVITIES**", 
+                             "**PROMOTING INTEROPERABILITY**"),
+  WEIGHT = c(0.3, 0.3, 0.15, 0.25),
+  REQUIREMENTS = c("No reporting requirement, as data are pulled from administrative claims.<br><br>
+                               <b>To be scored:</b><br><ul><li>25 total cost measures</li><li>23 MIPS Episode-Based Cost Measures</li></ul>",
+                               "Report a full year of data on 6 measures, including 1 Outcome or High Priority Measure, or all measures in a Specialty Measure Set",
+                               "<b>Groups of 16+ Clinicians:</b> Report on a minimum of 4 medium weighted activities or 2 high-weighted activities for at least a continuous 90-day period<br><br><b>Small practices (15 or fewer clinicians):</b> Report 1 high-weighted or 2 medium-weighted activities for at least a continuous 90-day period",
+                               "<ol type='1'>
+                               <li>Use <b>2015 Edition Certified EHR Technology</b> for more than 90 consecutive days in the performance period.</li>
+                               <li>Submit a <b>Yes</b> to the <i>Prevention of Information Blocking Attestation.</i></li>
+                               <li>Submit a <b>Yes</b> to the <i>ONC Direct Review Attestation.</i></li>
+                               <li>Submit a <b>Yes</b> to the unscored <i>Safety Assurance Factors for EHR Resilience (SAFER) Guides</i> measure.</li>
+                               <li>Submit a <b>Yes</b> to the <i>Security Risk Analysis</i> measure.</li>
+                               <li>Report the 5 or 6 measures or claim exclusions.</li>
+                               </ol>"),
+  "SUBMISSION OPTIONS" = c(
+    #COST
+    "<ul><li>INDIVIDUAL</li><ul><li>Administrative Claims</li></ul></li>
+    <li>GROUP<ul><li>Administrative Claims</li></ul></li></ul>",
+    #QUALITY                  
+    "<ul><li>INDIVIDUAL</li><ul><li>QCDR</li><li>Qualified Registry</li>
+    <li>EHR</li><li>Administrative Claims</li></ul></li>
+    <li>GROUP<ul><li>QCDR</li><li>Qualified Registry</li>
+    <li>EHR</li><li>Administrative Claims</li><li>CMS Web Interface</li>
+    <li>CAHPS for MIPS</li></ul></li></ul>",
+    #IMPROVEMENT ACTIVITIES
+    "<ul><li>INDIVIDUAL</li><ul><li>QCDR</li><li>Qualified Registry</li>
+    <li>EHR</li><li>Direct Attestation</li></ul></li>
+    <li>GROUP<ul><li>QCDR</li><li>Qualified Registry</li>
+    <li>EHR</li><li>CMS Web Interface</li>
+    <li>Direct Attestation</li></ul></li></ul>",
+    #PROMOTING INTEROPERABILITY
+    "<ul><li>INDIVIDUAL</li><ul><li>QCDR</li>
+    <li>Qualified Registry</li><li>EHR</li>
+    <li>Direct Attestation</li></ul></li>
+    <li>GROUP<ul><li>QCDR</li><li>Qualified Registry</li>
+    <li>EHR</li><li>CMS Web Interface</li>
+    <li>Direct Attestation</li></ul></li></ul>")) |> 
+  gt::gt(rowname_col = "CATEGORY") |> 
+  gt::fmt_markdown() |> 
+  gt::fmt_percent(columns = "WEIGHT", 
+                  decimals = 0) |> 
+  gt::cols_align("left") |>  
+  gt::tab_header(title = gt::md("**2023 REPORTING REQUIREMENTS:**"),
+                 subtitle = gt::md("MIPS PERFORMANCE CATEGORIES")) |> 
+  gt::opt_align_table_header("left") |> 
+  gt::opt_stylize(color = "red") |> 
+  gt::opt_table_outline() |> 
+  gt::tab_options(table_body.hlines.style = "dashed")
+```
+
+### Cost
+
+The Cost category assesses eligible clinicians and groups on the resources used to treat attributed Medicare beneficiaries. For the 2023 performance year, Cost performance accounts for 30 percent of a MIPS final score. Unlike other MIPS categories that require data submission, cost performance is measured via Medicare Part B claims data.
+
+MIPS participants are awarded points based on their cost performance against measure benchmarks. In 2023, the Cost performance category measures include:
+
+   * Total per Capita Cost measure
+   * Medicare Spending per Beneficiary Clinician (MSPB-C) measure
+   * Episode-based measures
+
+### Quality
+
+Quality is worth 30 percent of an eligible clinician’s or group’s MIPS final score in the 2023 performance year. MIPS participants can choose from hundreds of quality measures and must submit a full year of data on six quality measures for compliance in this category. Each measure is worth up to 10 points, with the number of points earned based on data completeness compared to national benchmarks.
+
+Achieving the highest score in the Quality performance category (60 points) requires MIPS eligible clinicians to report at least one outcome measure or high-priority measure. A high-priority measure is a MIPS quality measure listed in the categories for outcome, appropriate use, patient safety, efficiency, patient experience, care coordination, or opioid-related measures.
+
+For the 2023 performance period, CMS moves away from using historical benchmarks for scoring administrative claims measures and will use performance period data. New measures will have a 7-point scoring floor for the first performance period and a 5-point scoring floor in the second performance period.
+
+### Improvement Activities
+
+The MIPS Improvement Activities category identifies measures for improving clinical practice or care delivery that potentially result in improved patient outcomes. Improvement activities focus on care coordination, patient engagement, and patient safety.
+
+The Improvement Activities category is worth 15 percent of the MIPS final score. To earn full credit, a clinician or group must complete activities equal to a maximum 50 points or successfully participate in a patient-centered medical home or medical home payment model, or in a similar specialty practice and a MIPS APM.
+
+### Promoting Interoperability
+
+Promoting Interoperability, formerly called Advancing Care Information, requires the meaningful use of certified electronic health record technology (CEHRT), promoting the secure exchange of health information. The foremost intention driving this category is to create a patient-driven healthcare system where patients have the information needed to become active healthcare consumers.
+
+Promoting Interoperability is worth 25 percent of the MIPS final score for most providers. In some cases, a provider may qualify for an exception from this MIPS category. If granted an exception in performance year 2023, the Promoting Interoperability category will be re-weighted to 0 percent, and the Quality performance category will be increased by 25 percent to 55 percent.
+
+The following providers will have automatic re-weighting for the 2023 performance period:
+
+   * Clinical social workers
+   * Physical therapists
+   * Occupational therapists
+   * Qualified speech-language pathologists
+   * Qualified audiologists
+   * Clinical psychologists
+   * Registered dieticians or nutrition professionals.
+
+Small practices will also continue to qualify for automatic re-weighting in performance year 2023. There is no need to submit a Promoting Interoperability Hardship Exception application.
+
+### Final Score
+
+MIPS scores assess an eligible clinician’s overall performance in the four MIPS categories compared to the CMS performance threshold score. Eligible clinicians will receive a score in each performance category, which is then weighted accordingly and totaled in their final score. The final MIPS score, which ranges from 0-100 points, will determine the payment adjustment an eligible clinician receives.
+
+The performance threshold defines the score required to earn a neutral to positive payment adjustment for a given year.
+
+   * Scores below the performance threshold result in a negative payment adjustment.
+   * Scores at the performance threshold result in a neutral payment adjustment.
+   Scores above the performance threshold result in a positive payment adjustment.
+
+The 2023 MIPS performance threshold remains at 75 points. This is the minimum final score needed to avoid a downward payment adjustment to Medicare Part B claims in 2025.
+
+```{r}
+#| code-fold: true
+dplyr::tibble(
+  w = c("YEAR"),
+  x = c(1:7),
+  Year = c(2017:2023),
+  y = c(3, 15, 30, 45, 60, 75, 75),
+  z = c("points")) |> 
+  tidyr::unite("qpp", w:x, sep = " ") |> 
+  tidyr::unite("Threshold", y:z, sep = " ") |> 
+  gt::gt(rowname_col = "qpp") |> 
+  gt::cols_align("center") |> 
+  gt::tab_header(title = gt::md("**MIPS PERFORMANCE** THRESHOLD SCORES")) |> 
+  gt::opt_align_table_header("left") |> 
+  gt::opt_stylize(color = "red") |> 
+  gt::opt_table_outline() |> 
+  gt::tab_footnote(
+    footnote = gt::md("Earned by submitting a single Quality measure or attesting<br>to performing one improvement activity for 90 days."), 
+    locations = gt::cells_body(columns = Threshold,
+                               rows = Year == 2017)) |> 
+  gt::tab_footnote(
+    footnote = "Achieved through multiple pathways.", 
+    locations = gt::cells_body(columns = Threshold,
+                               rows = Year != 2017)) |> 
+  gt::opt_footnote_marks(marks = "letters")
+```
+
+
+### Bonus Points
+
+The 2022 performance year was the last year for an additional performance threshold and/or additional MIPS adjustment for exceptional performance. There will be no option to gain bonus points for the 2023 performance year/2025 payment year.
+
+### Performance/Payment Timeline
+
+Based on a provider’s MIPS performance score, a payment adjustment is applied to the Medicare payment of every Part B item and service billed by the provider. The payment adjustment is received in the payment year, two years after the performance year.
+
+```{r}
+dplyr::tibble(
+  Year = c(2017:2023),
+  x = c("Year"),
+  perf = c(1:7),
+  y = c(NA, NA, rep("Year", 5)),
+  pay = c(NA, NA, 1:5)) |> 
+  tidyr::unite("Performance", x:perf, sep = " ") |> 
+  tidyr::unite("Payment", y:pay, sep = " ", na.rm = TRUE) |> 
+  dplyr::mutate(Payment = dplyr::na_if(Payment, "")) |> 
+  gt::gt(rowname_col = "Year") |> 
+  gt::cols_align("center") |> 
+  gt::tab_header(title = gt::md("**TWO-YEAR** PERFORMANCE-PAYMENT GAP")) |> 
+  gt::opt_align_table_header("left") |> 
+  gt::opt_stylize(color = "red") |> 
+  gt::opt_table_outline() |> 
+  gt::sub_missing()
+```
+
+### MIPS Rewards
+
+CMS estimates that MIPS eligible clinicians who choose not to participate in MIPS lose an average 8.2 percent in Part B reimbursement. That amounts to a hefty sum when you consider an 8.2 percent loss on every Part B item and service billed by a provider. A potential annual Medicare reimbursement of \$100,000, for example, becomes \$82,000 — minus \$18,000 in much-needed revenue. So, here’s the \$18,000 question:
+
+**What Does MACRA Mean for Physicians?**
+
+MACRA rewards physicians for shifting to value over volume through the MIPS track of the QPP and can greatly enhance a clinician’s profit margin through better Medicare reimbursement.
+
+But a clinician’s MIPS score has broader implications that translate into more far-reaching and long-term rewards. It’s vitally important, therefore, for the MIPS clinician and staff — from medical coders and billers to clinical documentation specialists, auditors, and practice managers — to educate themselves every year on updates to the Quality Payment Program final rule.
+
+Understandably, MIPS performance depends on knowledge of ever-evolving MIPS reporting requirements. Without current and reliable MACRA proficiency, a physician’s far-reaching and long-term rewards can fast become far-reaching and long-term penalties. Here’s why.
+
+**MIPS Is Competition**
+
+MIPS points are scored on a peer-percentile benchmark scale, which essentially means that MIPS clinicians compete against each other, and the winners who score big profit on two fronts — revenue and reputation.
+
+Because MACRA is budget neutral, the law requires MIPS financial penalties to fund MIPS financial rewards. Low-performing MIPS clinicians who earn negative reimbursement adjustments, in other words, pay for the positive incentives their high-performing peers receive.
+
+In the first two years of MACRA, CMS made it relatively easy for MIPS clinicians to avoid penalties. A corollary to this accommodation meant high-performing clinicians received lower than expected incentive payments. In subsequent years, CMS increased the program difficulty and raised reporting requirements. For 2020, this translated into bigger financial gains or losses at stake for MIPS participants.
+
+Still, CMS caps the maximum upward adjustments it awards at three times the maximum negative adjustment, which limits the moneys available for financial rewards. The implications of this raise the bar for high performers. While each point a clinician scores above the performance threshold results in higher incentives, exactly how much one clinician’s score will earn depends on the performance of every clinician.
+
+The only way to ensure you receive the maximum available incentive payment is to recognize the competition factor and ambitiously invest in your MIPS performance. Again, this will require onboarding your team and making sure all staff are fluent in MACRA Year 7, equipped with working knowledge of current MIPS requirements.
+
+**MIPS Means PR**
+
+MIPS financial rewards extend beyond Part B incentive payments. You could say, in fact, that Part B incentive payments are just the tip of the iceberg in terms of potential revenue gains associated with MIPS performance.
+
+MIPS scores become clinician marketing — free advertising for exceptional performers, as well as potential liability for underperformers.
+
+By law, MACRA requires CMS to publish MIPS final scores and performance category scores on every MIPS participant within 12 months of the performance year through CMS’ online portal, Physician Compare.
+
+In its efforts for optimal transparency — as consumers spend more out-of-pocket for their healthcare — CMS has taken public reporting a step further by making Physician Compare data sets available to third-party physician rating websites. This means your MIPS score will affect patient attraction among all commercial payer populations, as well as Medicare beneficiaries.
+
+What's more, to ensure MIPS performance measures clearly delineate peer-to-peer comparisons, the MACRA Final Rule instituted a 5-star rating system in 2018 to help healthcare consumers accurately interpret the MIPS 100-point performance scale.
+
+As with any business, revenue and reputation go hand in hand. Research demonstrates that online physician reviews drive patient healthcare decisions — that more consumers rely on physician reviews than any other U.S. service or product, according to Harvard Business School. Its analysis of Yelp reviews, for instance, show a 5-9 percent revenue increase linked to each star on a 5-star scale — meaning that a 5-star rating can potentially boost a clinician’s annual revenue by 36 percent.
+
+Voluntarily opting into MIPS, for those whose participation is not mandatory, deserves serious consideration, as the program automatically serves as the frontline initiative of practice marketing and pays in big dividends.
+
+But the risks to underperforming in MIPS are equally substantial, which underscores the need for eligible clinicians to provide their staff with expert MACRA education each year to avert damage to their reputations and ensure they reap the rewards they deserve.
+
+Understand that MIPS scores are irrevocable, a permanent part of public record. Furthermore, CMS ties MIPS scores to the practitioner so that scores follow the practitioner from one practice to another. If, for example, a clinician performs poorly in 2023 and joins a group in 2024, the new group will inherit the clinician’s 2023 performance via his or her 2025 payment adjustment.
+
+MIPS scores, therefore, give clinicians a tremendous advantage or, possibly, a handicap. Performances will not only impact patient attraction and retention but also physician recruiting, contracting, and compensation plans.
+
 ## MIPS Eligibility and Engagement
 
 Clinicians are included and required to participate in MIPS if they meet all 3 of the following requirements: 
@@ -153,7 +370,7 @@ In separate rulemaking, CMS also added a new COVID-19 Clinical Trials improvemen
 
 Not every healthcare provider is required to participate in the Quality Payment Program (QPP). First and foremost, payment adjustments only apply to professional services paid under Medicare Part B, so providers who don’t accept Medicare Part B are excluded.
 
-::: {.callout-note}
+::: {.callout-note collapse="true"}
 ## MIPS Eligible Clinicians in 2021
 
 For the 2018 performance year, CMS defined eligible clinicians (identified by a unique billing Tax Identification Number (TIN) and National Provider Identifier (NPI) combination) as any of the following healthcare professionals:
@@ -222,7 +439,7 @@ Note: CMS states in the 2021 MPFS final rule that it anticipates the PHE for COV
 
 Remember: if a clinician, group, or virtual group submits data for the 2021 performance period, the data submission overrides the application and the clinician, group, or virtual group will be scored on the data submitted.
 
-::: {.callout-note}
+::: {.callout-note collapse="true"}
 ## How are MIPS “ineligible” clinicians affected by MACRA?
 
 ***Revenue***
@@ -235,7 +452,7 @@ CMS allows a 30-day “opt-out” period for low-volume eligible clinicians to v
 :::
 
 
-::: {.callout-note}
+::: {.callout-note collapse="true"}
 ## How are MIPS “eligible” clinicians affected by MACRA?
 
 ***Revenue***
